@@ -1,6 +1,7 @@
 body {
 background: #A6DBB7;
 text-align: center;
+background-image: url(background1.gif);
 }
 #main{
 	width: 1000px;
@@ -9,10 +10,46 @@ text-align: center;
 	margin:25px auto ;
 	border: dotted 15px #A6DBB7;
 
+
+
 }
 h1{
 	text-align: center;
 	font-family: Gill Sans Extrabold, sans-serif;
 	font:small-caps bold 64px/1 sans-serif;
 	color: #A6DBB7
+}
+
+td {
+  padding: 15px;
+  text-align: justify-all;
+
+}
+
+table#t01 {
+  width: 50%; 
+
+  border: 1px solid white;
+  border-collapse: collapse;
+  overflow: scroll;
+  border-color: #e7fbda;
+  
+}
+
+table#t01 td:nth-child(even) {
+  background-color: #A6DBB7;
+  border: 1px solid white;
+    border-color: #e7fbda;
+}
+
+table#t01 td:nth-child(odd) {
+  background-color: #A6DBB7;
+  border: 1px solid black;
+  border-color: #e7fbda;
+}
+
+table#t01 th {
+  color: #e7fbda;
+  background-color:#80a78d;
+    border-color: #e7fbda;
 }
