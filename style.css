@@ -19,6 +19,7 @@ p {
      white-space: nowrap;
      overflow: hidden;
      text-overflow: ellipsis;
+     size: 100px;
 }
 
 /**TO DO : ADD LINKS OT NAVIGATION BAR + CHANGE COLOR */
