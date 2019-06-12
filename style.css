@@ -109,6 +109,7 @@ img {
   border-radius: 50%;
   height: auto;
   width: 40%;
+  object-fit: contain;
 
 }
 
