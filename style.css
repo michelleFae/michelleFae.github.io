@@ -15,7 +15,7 @@ background-image: url(images/background1.gif);
 }
 
 p {
-     width: 250px;
+     width: 100px;
      white-space: nowrap;
      overflow: hidden;
      text-overflow: ellipsis;
