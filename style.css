@@ -104,11 +104,11 @@ table#t01 th {
 /** images */
 
 img {
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 30%;
+  max-width: 30%;
   border-radius: 70%;
   height: auto;
-  width: auto;
+  width: 40%;
 
 }
 
