@@ -111,7 +111,7 @@ img {
   height: auto;
   width: 40%;
   object-fit: contain;
-  display: ruby-base-container;
+  display: block;
 
 }
 
