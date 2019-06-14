@@ -111,7 +111,6 @@ img {
   height: auto;
   width: 40%;
   object-fit: contain;
-  display: block;
 
 }
 
@@ -119,7 +118,6 @@ img {
 /**todo: add cooler hover animations for image*/
 img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 0, 0.75);
-  background-image: url(images/background1.gif);
 }
 
 
