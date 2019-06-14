@@ -111,6 +111,7 @@ img {
   height: auto;
   width: 40%;
   object-fit: contain;
+  display: ruby-base-container;
 
 }
 
@@ -118,6 +119,35 @@ img {
 /**todo: add cooler hover animations for image*/
 img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 0, 0.75);
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .overlay {
+  opacity: 1;
 }
 
 
