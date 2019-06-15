@@ -124,7 +124,7 @@ img.profile:hover{
   width: 300px;
   height: 300px;
   border-radius: 10px;
-  transform: scaleY(3);
+  transform: scale(3);
 }
 
 
