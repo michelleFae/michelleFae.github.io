@@ -117,12 +117,15 @@ img {
 }
 
 
-/**todo: add cooler hover animations for image*/
-img:hover {
+
+img.custom:hover,
+img.custom:focus {
   box-shadow: 0 0 2px 1px rgba(0, 140, 0, 0.75);
-
-
+  width: 200px;
+  height: 200px;
 }
+
+
 .center {
   display: block;
   margin-left: auto;
