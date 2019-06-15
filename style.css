@@ -1,6 +1,6 @@
 
-/** colors if you want green theme: #e7fbda;#4CAF50;#A6DBB7*/
-/** colors if you want blue theme: #c8e0f2;#8bd1ec; #5f8bea*/
+/** colors if you want green theme: #e7fbda;#4CAF50;#A6DBB7;#80a78d*/
+/** colors if you want blue theme: #c8e0f2;#8bd1ec; #5f8bea;#8587d8*/
 
 body {
 background: #5f8bea;
@@ -100,7 +100,7 @@ table#t01 td:nth-child(odd) {
 
 table#t01 th {
   color: #c8e0f2;
-  background-color:#80a78d;
+  background-color:#8587d8;
     border-color: #c8e0f2;
 }
 
@@ -123,7 +123,7 @@ img {
 
 img.profile:hover{
 
-  box-shadow: 0 0 2px 1px rgba(0, 140, 0, 0.75);
+  box-shadow: 0 0 2px 1px rgba(87, 251, 255, 0.75); /**green theme: rgba(0, 140, 0, 0.75);*/
 
   border-radius: 10px;
   transform: scale(2.8);
