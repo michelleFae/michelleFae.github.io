@@ -121,11 +121,10 @@ img {
 img.profile:hover{
 
   box-shadow: 0 0 2px 1px rgba(0, 140, 0, 0.75);
-  width: 300px;
-  height: 350px;
+  width: 200px;
+  height: 250px;
   border-radius: 10px;
-
-  transform: scale(3.9);
+  transform: scale(3.5);
 }
 
 
