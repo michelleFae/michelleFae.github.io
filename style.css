@@ -25,6 +25,7 @@ background-image: url(images/background2.gif);
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 5000;
 }
 
 /* Styling links*/
