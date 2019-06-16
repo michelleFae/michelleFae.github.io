@@ -5,7 +5,7 @@
 body {
 background: #5f8bea;
 text-align: center;
-background-image: url(images/background1.gif);
+background-image: url(images/background2.gif);
 }
 
 #main{
@@ -15,13 +15,9 @@ background-image: url(images/background1.gif);
 	margin:70px auto ;
 	border: dotted 15px #5f8bea;
    
- 
 }
 
-/**TO DO : ADD LINKS OT NAVIGATION BAR + CHANGE COLOR */
-
 /**Navigation bar */
-/* Add a black background color to the top navigation */
 
 .topnav {
   background-color: #333; 
@@ -31,7 +27,7 @@ background-image: url(images/background1.gif);
   width: 100%;
 }
 
-/* Style the links inside the navigation bar */
+/* Styling links*/
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -42,13 +38,13 @@ background-image: url(images/background1.gif);
 
 }
 
-/* Change the color of links on hover */
+/* links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Add a color to the active/current link */
+/* active/current link color */
 .topnav a.active {
   background-color: #8bd1ec;
   color: white;
@@ -73,7 +69,6 @@ td {
   padding: 15px;
   text-align: justify-all;
   
-
 }
 
 /** table */
@@ -104,7 +99,6 @@ table#t01 th {
     border-color: #c8e0f2;
 }
 
-
 /** images */
 
 img {
@@ -119,16 +113,13 @@ img {
 
 }
 
-
-
 img.profile:hover{
 
-  box-shadow: 0 0 2px 1px rgba(87, 251, 255, 0.75); /**green theme: rgba(0, 140, 0, 0.75);*/
+  box-shadow: 0 0 2px 1px rgba(87, 251, 255, 0.75); /** green theme: rgba(0, 140, 0, 0.75);*/
 
   border-radius: 10px;
   transform: scale(2.8);
 }
-
 
 .center {
   display: block;
