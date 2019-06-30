@@ -25,7 +25,7 @@ position: static;
 
 .parallax { 
   /* The image used */
-  background-image: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
+  background-image: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.coastalliving.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2017%2F08%2Fmain%2Fwhite-sand-beach-hawaii-fish-poop-parrotfish-481237337.jpg%3Fitok%3DW_QjKIrz&w=400&c=sc&poi=face&q=85);
 
   /* Set a specific height */
   height: 550px; 
