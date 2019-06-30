@@ -105,12 +105,10 @@ table#t01 tr:hover td{
   /**background-color:#8bd1ec;*/
   background-image: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
   color: #c8e0f2;
+  font-weight: bold;
 
 
 
-}
-a:link{
-  color: #ebd4ff;
 }
 
 /** images */
