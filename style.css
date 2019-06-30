@@ -83,7 +83,7 @@ table#t01 {
 }
 
 table#t01 td:nth-child(even) {
-  background-color: #5f8bea;
+  background-color: #8bd1ec;
   border: 1px solid white;
     border-color: #c8e0f2;
 }
