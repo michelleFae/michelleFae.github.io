@@ -6,6 +6,7 @@ body {
 background: #5f8bea;
 text-align: center;
 background-image: url(images/background2.gif);
+position: static;
 }
 
 
@@ -16,6 +17,7 @@ background-image: url(images/background2.gif);
 	background: #c8e0f2;
 	margin:70px auto ;
 	border: dotted 15px #5f8bea;
+  position: static;
    
 }
 
