@@ -100,8 +100,9 @@ table#t01 th {
   border-color: #c8e0f2;
 }
 
-tr:hover {
-  background-color:#8bd1ec;}
+table#t01 tr:hover{
+  background-color:#8bd1ec;
+}
 
 /** images */
 
