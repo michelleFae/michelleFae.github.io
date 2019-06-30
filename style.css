@@ -28,7 +28,8 @@ position: static;
   background-image: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
 
   /* Set a specific height */
-  height: 500px; 
+  height: 550px; 
+  width: 700px
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
