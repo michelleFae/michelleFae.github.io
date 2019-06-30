@@ -96,7 +96,7 @@ table#t01 td:nth-child(odd) {
 
 table#t01 th {
   color: #c8e0f2;
-  background-color:#8587d8;
+  /**background-color:#8587d8;*/
     border-color: #c8e0f2;
 }
 
