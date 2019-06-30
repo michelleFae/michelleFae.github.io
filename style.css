@@ -80,12 +80,13 @@ table#t01 {
   border-collapse: collapse;
   overflow: scroll;
   border-color: #c8e0f2;
+
 }
 
 table#t01 td:nth-child(even) {
   background-color: #5f8bea;
   border: 1px solid white;
-    border-color: #c8e0f2;
+  border-color: #c8e0f2;
 }
 
 table#t01 td:nth-child(odd) {
@@ -103,6 +104,8 @@ table#t01 th {
 table#t01 tr:hover td{
   /**background-color:#8bd1ec;*/
   background-image: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
+  color: #c8e0f2;
+
 }
 
 /** images */
