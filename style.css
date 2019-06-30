@@ -89,15 +89,14 @@ table#t01 td:nth-child(even) {
 }
 
 table#t01 td:nth-child(odd) {
-  background-color: #5f8bea;
+  background-color: #8bd1ec;
   border: 1px solid black;
   border-color: #c8e0f2;
 }
 
 table#t01 th {
   color: #c8e0f2;
-  /**background-color:#8587d8;*/
-    border-color: #c8e0f2;
+  border-color: #c8e0f2;
 }
 
 /** images */
