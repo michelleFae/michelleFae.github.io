@@ -158,7 +158,7 @@ img.profile:hover{
 /** parallax image */
 .parallax {
   /* The image used */
-  background-image: url("img_parallax.jpg");
+  background-image: url("img.png");
 
   /* Set a specific height */
   min-height: 800px; 
