@@ -112,7 +112,7 @@ table#t01 th {
 }
 
 table#t01 tr:hover td{
-  /**background-color:#8bd1ec;*/
+  background-color:#8bd1ec; /** incase image does not load */
   background-image: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
   color: #edf7ff;
   font-weight: bold;
