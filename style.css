@@ -162,10 +162,10 @@ img.profile:hover{
 /** parallax image */
 .parallax {
   /* The image used */
-  background-image: url("images/index1.png");
+  background-image: url("images/index.png");
 
   /* Set a specific height */
-  min-height: 800px; 
+  min-height: 100vh; 
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
