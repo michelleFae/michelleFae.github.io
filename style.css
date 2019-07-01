@@ -3,9 +3,9 @@
 /** colors if you want blue theme: #c8e0f2;#8bd1ec; #5f8bea;#8587d8*/
 
 body {
-background: #5f8bea;
+background: #8CC0EF;
 text-align: center;
-background-image: url(images/background2.gif);
+background-image: url(images/background3.gif);
 position: static;
 }
 
@@ -16,7 +16,7 @@ position: static;
 	height: 2000px;
 	background: #c8e0f2;
 	margin:70px auto ;
-	border: dotted 15px #5f8bea;
+	border: dotted 15px #8CC0EF;
   position: static;
    
 }
@@ -63,7 +63,7 @@ h1{
 	text-align: center;
 	font-family: Gill Sans Extrabold, sans-serif;
 	font:small-caps bold 64px/1 sans-serif;
-	color: #5f8bea;
+	color: #8CC0EF;
 
 }
 
@@ -71,7 +71,7 @@ h2{
   text-align: center;
   font-family: futura;
   font:italic;
-  color: #5f8bea;
+  color: #8CC0EF;
 }
 
 td {
@@ -92,13 +92,13 @@ table#t01 {
 }
 
 table#t01 td:nth-child(even) {
-  background-color: #5f8bea;
+  background-color: #8CC0EF;
   border: 1px solid white;
   border-color: #c8e0f2;
 }
 
 table#t01 td:nth-child(odd) {
-  background-color: #5f8bea;
+  background-color: #8CC0EF;
   border: 1px solid black;
   border-color: #c8e0f2;
 }
