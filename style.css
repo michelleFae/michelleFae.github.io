@@ -160,6 +160,7 @@ img.profile:hover{
 }
 
 /** parallax image */
+@media only screen and (max-device-width: 1366px) {
 .parallax {
   /* The image used */
   background-image: url("images/index.png");
@@ -172,6 +173,7 @@ img.profile:hover{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 }
 
 
