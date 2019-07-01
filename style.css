@@ -21,15 +21,15 @@ position: static;
 	margin:70px auto ;
 	border: dotted 15px #8CC0EF;
   position: static;
-  border-image: 
-    linear-gradient(
-      to bottom, 
-      white, #8CC0EF) 1 100%;
 
-   
 }
 
 
+.borderMain {
+  border: 20px solid;
+  border-image-source: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
+  border-image-slice: 60 30;
+}
 
 /**Navigation bar */
 
