@@ -14,12 +14,17 @@ position: static;
 #main{
 	width: 1000px;
 	height: 2000px;
-	background: #edf7ff;
+	/*background: #edf7ff;*/
+
+  background-color: #edf7ff; /* For browsers that do not support gradients */
+  background-image: linear-gradient(rgb(237, 247, 255,0.2), rgb(192, 231, 250,1)); /* Standard syntax (must be last) */
 	margin:70px auto ;
 	border: dotted 15px #8CC0EF;
   position: static;
+
    
 }
+
 
 
 
