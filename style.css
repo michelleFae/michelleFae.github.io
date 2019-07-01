@@ -27,8 +27,6 @@ position: static;
 
 
 
-
-
 /**Navigation bar */
 
 .topnav {
@@ -155,6 +153,21 @@ img.profile:hover{
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+/** parallax image */
+.parallax {
+  /* The image used */
+  background-image: url("img_parallax.jpg");
+
+  /* Set a specific height */
+  min-height: 800px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
