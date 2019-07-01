@@ -21,6 +21,10 @@ position: static;
 	margin:70px auto ;
 	border: dotted 15px #8CC0EF;
   position: static;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      white, #8CC0EF) 1 100%;
 
    
 }
@@ -158,7 +162,7 @@ img.profile:hover{
 /** parallax image */
 .parallax {
   /* The image used */
-  background-image: url("images/index.png");
+  background-image: url("images/index1.png");
 
   /* Set a specific height */
   min-height: 800px; 
