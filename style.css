@@ -159,10 +159,6 @@ img.profile:hover{
   width: 50%;
 }
 
-/** parallax image */
-.parallax {
-  display:none;
-}
 
 @media only screen and (max-device-width: 1366px) {
 .parallax {
