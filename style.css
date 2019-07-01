@@ -25,11 +25,6 @@ position: static;
 }
 
 
-.borderMain {
-  border: 20px solid;
-  border-image-source: url(https://media0.giphy.com/media/3oEdvaxmd15YTHy6Uo/source.gif);
-  border-image-slice: 60 30;
-}
 
 /**Navigation bar */
 
