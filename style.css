@@ -144,7 +144,7 @@ img.profile:hover{
   box-shadow: 0 0 2px 1px rgba(87, 251, 255, 0.75); /** green theme: rgba(0, 140, 0, 0.75);*/
 
   border-radius: 10px;
-  transform: scale(2.8);
+  transform: scale(3);
 }
 
 .center {
