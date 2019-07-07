@@ -16,13 +16,15 @@
 
 <!-- bubbles -->
 
+<!-- bubbles -->
+
 	<html>
 	
 
 	<script>
 
 		var brd = document.createElement("DIV");
-		document.body.insertBefore(brd, document.getElementById("parallax"));
+		document.body.insertBefore(brd, document.getElementById("main"));
 
 		bubbles = [];
 
@@ -89,7 +91,7 @@
 			}
 			color += 'FF'
 
-			newBubble(x, y, size, color);
+			newBubble(x, y + 1000 , size, color);
 		}
 
 		function bubblePushAround(deltaTime)
