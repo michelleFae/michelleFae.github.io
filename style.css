@@ -181,7 +181,7 @@ img.profile:hover{
 /** bubble on mouse click */
 .bubble {
    z-index : 999;
-   position : relative;
+   position : static;
    border-radius : 50%;
 }
 
