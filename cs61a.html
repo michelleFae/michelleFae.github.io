@@ -10,8 +10,8 @@
   	<a href="https://michellefae.github.io/index">Home</a>
   	<a class=active href="/cs61a"> CS 61A </a>
 	</div>
+<!-- bubbles -->
 
-	
 	<html>
 	
 
@@ -80,9 +80,11 @@
 			var size = minbub + (maxbub - minbub) * Math.random();
 			var digits = '0123456789ABCDEF';
 			var color = '#';
-			for (var i = 0; i < 6; i++) {
+			for (var i = 0; i < 4; i++) {
 				color += digits[Math.floor(Math.random() * 16)];
 			}
+			color += 'FF'
+
 			newBubble(x, y, size, color);
 		}
 
