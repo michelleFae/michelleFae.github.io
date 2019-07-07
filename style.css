@@ -178,5 +178,12 @@ img.profile:hover{
 }
 }
 
+/** bubble on mouse click */
+.bubble {
+   z-index : 999;
+   position : absolute;
+   border-radius : 50%;
+}
+
 
 
