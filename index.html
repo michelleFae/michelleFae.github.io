@@ -27,7 +27,7 @@
 		bubbles = [];
 
 		const d = 5000;
-		const o = 0.7;
+		const o = 0.5;
 		const r = 0.001;
 		const f = 0.0025;
 		const p = 0.00000001;
@@ -81,7 +81,7 @@
 
 		function generateBubbles(x, y)
 		{
-			var size = minbub + (maxbub - minbub) * Math.random();
+			var size = minbub + (maxbub - minbub + 1) * Math.random();
 			var digits = '0123456789ABCDEF';
 			var color = '#';
 			for (var i = 0; i < 4; i++) {
