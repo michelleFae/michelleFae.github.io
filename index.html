@@ -20,13 +20,13 @@
 
 	<script>
 
-		var board = document.createElement("DIV");
-		document.body.insertBefore(board, document.getElementById("main"));
+		var brd = document.createElement("DIV");
+		document.body.insertBefore(brd, document.getElementById("main"));
 
 		bubbles = [];
 
 		const d = 5000;
-		const o = 0.5; // decerase to decrease opacity change
+		const o = 0.7;
 		const r = 0.001;
 		const f = 0.0025;
 		const p = 0.00000001;
@@ -52,7 +52,7 @@
 			bubble.position.y = y;
 			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
 			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
-			board.appendChild(bubble);
+			brd.appendChild(bubble);
 			if(bubbles == null)
 				bubbles = [];
 			bubbles.push(bubble);
@@ -80,7 +80,11 @@
 
 		function generateBubbles(x, y)
 		{
+
 			var size = Math.random() * (maxbub - minbub ) + minbub;
+
+			var size = minbub + (maxbub - minbub) * Math.random();
+
 			var digits = '0123456789ABCDEF';
 			var color = '#';
 			for (var i = 0; i < 4; i++) {
@@ -152,6 +156,7 @@
 
 	</script>
 </html>
+
 
 	<div id="main">
 
