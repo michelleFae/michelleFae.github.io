@@ -13,7 +13,6 @@
 	</div>
 	<div class="parallax"></div>
 
-
 <!-- bubbles -->
 
 	<html>
@@ -21,13 +20,13 @@
 
 	<script>
 
-		var brd = document.createElement("DIV");
-		document.body.insertBefore(brd, document.getElementById("main"));
+		var board = document.createElement("DIV");
+		document.body.insertBefore(board, document.getElementById("main"));
 
 		bubbles = [];
 
 		const d = 5000;
-		const o = 0.5;
+		const o = 0.5; // decerase to decrease opacity change
 		const r = 0.001;
 		const f = 0.0025;
 		const p = 0.00000001;
@@ -53,7 +52,7 @@
 			bubble.position.y = y;
 			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
 			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
-			brd.appendChild(bubble);
+			board.appendChild(bubble);
 			if(bubbles == null)
 				bubbles = [];
 			bubbles.push(bubble);
@@ -81,7 +80,7 @@
 
 		function generateBubbles(x, y)
 		{
-			var size = minbub + (maxbub - minbub) * Math.random();
+			var size = Math.random() * (maxbub - minbub ) + minbub;
 			var digits = '0123456789ABCDEF';
 			var color = '#';
 			for (var i = 0; i < 4; i++) {
@@ -89,7 +88,7 @@
 			}
 			color += 'FF'
 
-			newBubble(x, y + 900 , size, color);
+			newBubble(x, y, size, color);
 		}
 
 		function bubblePushAround(deltaTime)
@@ -153,7 +152,6 @@
 
 	</script>
 </html>
-
 
 	<div id="main">
 
