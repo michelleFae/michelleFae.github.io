@@ -20,7 +20,7 @@ position: static;
   background-image: linear-gradient(rgb(237, 247, 255,0), rgb(192, 231, 250,0.5),rgb(150, 221, 255,1)); 
 	margin:70px auto ;
 	border: dotted 15px #8CC0EF;
-  
+  position: static;
 
 }
 
