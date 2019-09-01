@@ -10,13 +10,27 @@
   	<a href="https://michellefae.github.io/index">Home</a>
   	<a class=active href="/cs61a"> CS 61A </a>
 	</div>
-<!-- bubbles -->
-
 	<html>
-	
-
 	<script>
+		//arrow
+		const $icon = document.querySelector('.icon');
+		const $arrow = document.querySelector('.arrow');
 
+		  $arrow.animate([
+			    {top: '20px'},
+			    {top: '70px'},
+			    {top: '0px'},
+			    {top: '40px'},
+			    {top: '20px'},
+			    {top: '0px'},
+			    {top: '20px'}],
+		    {
+			    duration: 2000,
+			    iterations: Infinity
+		    }
+		);
+
+        //bubbles; 
 		var brd = document.createElement("DIV");
 		document.body.insertBefore(brd, document.getElementById("main"));
 
@@ -48,7 +62,11 @@
 			bubble.position.x = x;
 			bubble.position.y = y;
 			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
+			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
+
+
+
+
 			brd.appendChild(bubble);
 			if(bubbles == null)
 				bubbles = [];
@@ -152,8 +170,13 @@
 		}
 
 	</script>
+
+
 </html>
 
+	<div class="icon">
+  		<div class="arrow"> </div>
+	</div>
 
 
 	<div id="main">
