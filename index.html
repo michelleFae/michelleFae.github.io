@@ -160,8 +160,9 @@
 
 	<div class="icon">
 	  		<div class="arrow"></div>
-	  		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</div>
+	<div temp> </div>
+
 
 	<script>
 		//arrow
@@ -181,6 +182,13 @@
 			    iterations: Infinity
 		    }
 		);
+
+		$(window).on('resize', function () {
+    $('.icon').toggleClass('temp', $(window).width() < 768);
+});
+
+
+
 	</script>
 
 	<div id="main">
