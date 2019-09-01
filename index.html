@@ -19,6 +19,25 @@
 	
 
 	<script>
+		//arrow
+		const $icon = document.querySelector('.icon');
+		const $arrow = document.querySelector('.arrow');
+
+		  $arrow.animate([
+			    {top: '20px'},
+			    {top: '70px'},
+			    {top: '0px'},
+			    {top: '40px'},
+			    {top: '20px'},
+			    {top: '0px'},
+			    {top: '20px'}],
+		    {
+			    duration: 2000,
+			    iterations: Infinity
+		    }
+		);
+
+		//bubbles  
 
 		var brd = document.createElement("DIV");
 		document.body.insertBefore(brd, document.getElementById("main"));
@@ -157,6 +176,9 @@
 	</script>
 </html>
 
+	<div class="icon">
+	  		<div class="arrow"></div>
+	</div>
 
 	<div id="main">
 
