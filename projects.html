@@ -7,28 +7,36 @@
 
 <body>
 	<div class="topnav">
-  	<a href="https://michellefae.github.io/index">Home</a>
-  	<a class=active href="/projects"> projects </a>
+  	<a href="./index">Home</a>
+  	<a href="./cs61a">CS 61A</a>
+  	<a class=active href="./projects"> Projects </a>
 	</div>
 	<html>
 	<script>
 
-        //bubbles; 
+
+		/* bubbles */
 		var brd = document.createElement("DIV");
 		document.body.insertBefore(brd, document.getElementById("main"));
 
+		/* keeps track of all existing bubbles on screen */
 		bubbles = [];
 
+		/* bubble variables to determine bubble interaction pyhsics." */
 		const d = 5000;
-		const o = 0.7;
+		const o = 0.7; 
 		const r = 0.001;
 		const f = 0.0025;
 		const p = 0.00000001;
+		/* radius of smallest bubble. */ 
 		const minbub = 10;
+		/* radius of biggest bubble. */ 
 		const maxbub = 50;
+		/* offset of bubble from cursor. */ 
 		const cursorXOffset = 5;
 		const cursorYOffset = 0;
 
+		/* generates a new bubble at coordinate (X,Y), of size SIZE, of color COLOR." */
 		function newBubble(x, y, size, color)
 		{
 			var bubble = document.createElement("DIV");
@@ -45,14 +53,10 @@
 			bubble.position.x = x;
 			bubble.position.y = y;
 			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
-
-
-
-
+			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
+			
+			// attach the bubble to the div so it is seen
 			brd.appendChild(bubble);
-			if(bubbles == null)
-				bubbles = [];
 			bubbles.push(bubble);
 			return bubble;
 		}
@@ -76,6 +80,7 @@
 			generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
 		}
 
+		/* chooses bubble color and size  randomly */
 		function generateBubbles(x, y)
 		{
 
@@ -90,7 +95,7 @@
 			}
 			color += 'FF'
 
-			newBubble(x, y, size, color);
+			newBubble(x, y + 900, size, color);
 		}
 
 		function bubblePushAround(deltaTime)
@@ -161,195 +166,61 @@
 
 	<div id="main">
 
-		<h1>Michelle's CS 61A class</h1> 
-		Welcome to CS 61A!!!
-		<br>
-		<br>
-		<br> <h2>Announcements: </h2>
-				<br> 🌀 Thank you for an amazing semester!
-				<br>
-				<!-- <br> There are currently no announcements to display. -->
-		<br> 
-		<br>
-		<br><h2>Helpful Links: </h2>
-				<br> 🐚 Python tutor: <a href="http://pythontutor.com/visualize.html#mode=edit"> click here </a>
-				<br> 🐚 Past finals: <a href="https://tbp.berkeley.edu/courses/cs/61A/"> click here </a>
-			
-		<br>
-		<br>
+		<h1>Some of my projects:</h1> 
+
+		<h2> NOTE: THIS PAGE IS STILL IN DEVELOPMENT </h2>
+
+ 		<div class="container2">
+			<div class="polaroid">
+	  			<img src="images/bfc.gif" alt="Berkeley Free Clinic" class="projImage" style="width:100%">
+	  			<p class="projP">Complaint System - Berkeley Free Clinic</p>
+		  		<div class="overlay">
+					<div class="projText" style="overflow-y: scroll;  overflow-x: hidden; height:300px;">
+						<p> Language(s): Google Scripts / Javascript </p>
+						
+						<p>
+						In November 2019, I attended the Hack For Social Impact Hackathon and got the opportunity to build a complaint system for the Berkeley Free Clinic, an NPO right next to campus. 
+						</p>
+						<p>
+						I formed a team with two other people and raced against the clock to finish the entire project in less than 48 hours. Our final product was a complaint system which recieves complaints from patients and sends out weekly reminder emails to employees that have unresolved complaints.
+
+						The Berkeley Free Clinic ended up choosing our project and uses the Complaint System till today!
+		    			</p>
+		    		</div>
+		  		</div>
+			</div>
+		</div>
+
+
+
+		<div class="container2">
+			<div class="polaroid">
+	  			<img src="images/bfc.gif" alt="Berkeley Free Clinic" class="projImage" style="width:100%">
+	  			<p class="projP">UPE - advice page + website</p>
+		  		<div class="overlay">
+					<div class="projText" style="overflow-y: scroll;  overflow-x: hidden; height:300px;">
+						<p> Language(s): Javascript, HTML, CSS</p>
+						
+						<p>
+						I was elected as a Professional Development Officer for Upsilon Pi Epsilon in Spring 2020. 
+						</p>
+						<p>
+						I formed a team with two other people and raced against the clock to finish the entire project in less than 48 hours. Our final product was a complaint system which recieves complaints from patients and sends out weekly reminder emails to employees that have unresolved complaints.
+
+						The Berkeley Free Clinic ended up choosing our project and uses the Complaint System till today!
+		    			</p>
+		    		</div>
+		  		</div>
+			</div>
+		</div>
 
 		
 
-		<table id ="t01" align="center">
-
-			<tr>
-				<th>Date</th>
-				<th>Topic(s)</th>
-				<th>Resources</th>
-			</tr>
-			<tr>
-				<td>06/25, 06/26</td>
-				<td>setting up for 61a, expressions, functions</td>
-
-				
-				<td><a href="https://1drv.ms/u/s!AguzOBOqbBd6gQdtEsnEGSMP7iLO"> 🐚 Lab 00 - notes (one note)</a> 
-					<br>
-					<br><a href="https://1drv.ms/u/s!AguzOBOqbBd6gQdtEsnEGSMP7iLO"> 🐚 Disc 00 - notes (one note)</a>
-				</td> 
-		
-			</tr>
-			<tr>
-				<td>06/27</td>
-				<td>UNIX Commands (optional), arithmetic, boolean logic, control, errors, print and None</td>
-			
-				<td><a href="https://1drv.ms/u/s!AguzOBOqbBd6gQdtEsnEGSMP7iLO"> 🐚 Lab 01 - notes (one note)</a> 
-					<br>
-					<br> <a href="https://youtu.be/yJvmT5q5-5A"> 🐚 print() and None (youtube)</a> 
-					<br>
-
-				</td> 
-
-			</tr>
-
-			<tr>
-				<td>06/28</td>
-				<td>Environment diagrams + review of 06/27</td>
-				<td> <a href="https://docs.google.com/presentation/d/1Fclk0xKaFUVeZqpoYfqwQjRWVCxRlqYE8wb4TWgqy4U/edit?usp=sharing"> 🐚 Disc 01 (slides) </a>
-					<br>
-
-			</td>
-
-			</tr>
 
 
 
 
-			<tr>
-				<td>07/02, 07/03</td>
-				<td>Lambdas & HOFs</td>
-				<td> 
-					<a href="https://docs.google.com/presentation/d/18v8dtuvdo1m5Q8FdMJa3Ml28NFTnydoE0B6avirThio/edit?usp=sharing"> 🐚 Lab 02 (slides) </a>
-					<br>
-					<br> <a href="https://docs.google.com/presentation/d/1_1Gr3q9zUpbDDuHKK0cdIRjvqTWndBO0EFVVCbvVkw8/edit?usp=sharing"> 🐚 Disc 02 (slides) </a>
-					<br>
-			
 
-			</td>
-			</tr>
-			<tr>
-				<td>07/05 </td>
-				<td>Abstraction & List Mutation</td>
-				<td> 
-					<a href="https://docs.google.com/presentation/d/1EGgjtuHPuavFp0H81gX6zmJHl85r7EaLHPYYy_YJByo/edit?usp=sharing"> 🐚 Lab 04 (slides) </a>
-					<br>
-
-			</td>
-
-			</tr>
-
-			<tr>
-				<td>07/10</td>
-				<td> Recursion (tree recursion included)</td>
-				<td> 
-					 <a href="https://docs.google.com/presentation/d/1CWFgOHoMiaTkpL9DTEKuXd4l81LJk2hQeupQ8gR2Hew/edit?usp=sharing"> 🐚 Disc 03 (slides) </a>
-			</td>
-			</tr>
-
-			<tr>
-				<td>07/11, 07/12</td>
-				<td> Trees and list mutation</td>
-				<td> 
-					 <a href="https://docs.google.com/presentation/d/1HuetlQGNXYLciEKLW7oVuOOOwVoIe8Sf9gyt6zM0GcM/edit?usp=sharing"> 🐚 Lab 05 (slides) </a>
-					 <br>
-					 <a href="https://docs.google.com/presentation/d/166Wiw1roT2VU5iWD9-5UI6rSQ6ixUc4thoL2SoZIx3w/edit?usp=sharing"> 🐚 Disc 04 (slides) </a>
-			</td>
-			</tr>
-
-			
-			<tr>
-				<td>07/16, 07/17</td>
-				<td> Nonlocal(lab), midterm review, & Iterators/Generators</td>
-				<td> <a href="https://docs.google.com/presentation/d/1H8v7KtMAhYpPR5rlEuvZavqbezDFi0qmoDo8MdRYOhg/edit?usp=sharing"> 🐚 Lab 06 (slides) </a>
-					<br>
-					<a href="https://docs.google.com/presentation/d/1EyHeIW1Cm6QkHpopj3_gePHt0-1MJGGfcG_-_E-Az0k/edit?usp=sharing"> 🐚 Disc 05 (slides) </a>
-			</td>
-			</tr>
-
-			<tr>
-				<td colspan="3" style="text-align:center" background="http://dribbble.s3.amazonaws.com/users/46035/screenshots/1184676/fishschool_gif_080513.gif">📝 MIDTERM 📝 </td>
-			</tr>
-
-			<tr>
-				<td>07/23</td>
-				<td> Object Oriented Programming + nonlocal review(discussion)</td>
-				<td> <a href="https://docs.google.com/presentation/d/14sNzxOh_C6PJ-rEaCJqlq0mgD4Mjw92E64Pf5U_inxQ/edit?usp=sharing"> 🐚 Lab 08 (slides) </a>
-					<br> <a href="https://docs.google.com/presentation/d/1kvjuX6LEDssZtpCpJnVEsG9ln4vj3xPmCfXaRTrKWdU/edit?usp=sharing"> 🐚 Disc 06 (slides) </a>
-			</td>
-			</tr>
-
-			<tr>
-				<td>07/25</td>
-				<td> Trees & Linked Lists & Interfaces</td>
-				<td> <a href="https://docs.google.com/presentation/d/1nouSFEw4qovsehd2rsxo7gHThJ89JlzE8OK_rTxLqyw/edit?usp=sharing"> 🐚 Lab 09 (slides) </a>
-					<br> <a href="https://docs.google.com/presentation/d/1qXVdhv9lgjDNCZ9d5ay1VtQsNDIvJrkSpdU0QQKp-Do/edit?usp=sharing"> 🐚 Disc 07 (slides) </a>
-			</td>
-			</tr>
-			<tr>
-				<td>07/30, 07/31</td>
-				<td> scheme </td>
-				<td> <a href="https://drive.google.com/file/d/1mUos_s3o70EIQvY70uAFi2S8q3WLQuzW/view?usp=sharing"> 🐚 Lab 10 (slides) (scheme basics) </a>
-					<br> <a href="https://docs.google.com/presentation/d/1bJUvL0Jf1rKxDj1f30yzaNRm9-T7s1ZDRzJc3GoUx74/edit?usp=sharing"> 🐚 Disc 08 (slides) </a>
-					
-			</td>
-			</tr>
-		
-			<tr>
-				<td>08/01</td>
-				<td> scheme interpreter </td>
-				<td>  <a href="https://docs.google.com/presentation/d/1CC2JUpHvrY4htV4OM-jvSOqgF7CIVv57xieaWe5AXiU/edit?usp=sharing"> 🐚 Lab 11 (slides) </a>
-					
-			</td>
-			</tr>
-
-			<tr>
-				<td>08/02</td>
-				<td> tail calls and Macros</td>
-				<td> <a href="https://docs.google.com/presentation/d/1gxgmj6Jr64UiKDMCtGj2rJ1KFYsA1jmgPCiVrRpwhM8/edit?usp=sharing"> 🐚 Disc 09 (slides) </a>
-			</td>
-			</tr>
-			<tr>
-				<td>08/06</td>
-				<td> Macros </td>
-				<td> <a href="https://docs.google.com/presentation/d/17e6azFiavo7Fb3oEBYrOz7ucvmFYj4sHX_DA9pVD8uw/edit?usp=sharing"> 🐚 Lab 12 (slides) </a>
-			</td>
-			</tr>
-
-			<tr>
-				<td>08/07</td>
-				<td> Streams </td>
-				<td> <a href="https://docs.google.com/presentation/d/1RCHII0mVYuwMiBxtOawj0Tnf-8rb66IniSSVn1W0odM/edit?usp=sharing"> 🐚 Disc 10 (slides) </a>
-			</td>
-			</tr>
-			<tr>
-				<td>08/09</td>
-				<td> SQL </td>
-				<td> <a href="https://docs.google.com/presentation/d/1o5XT3g9hV3R5Kps_6c8g8qBuo-UzzH7urqqraEd-eIQ/edit?usp=sharing"> 🐚 Lab 13 (slides) </a>
-					<br>
-					<a href="https://docs.google.com/presentation/d/1fN5Tu9B0H-p9WzEoBs6ut-KRi1f05Atv7HTpapjyM54/edit?usp=sharing"> 🐚 Disc 11(slides) </a>
-			</td>
-			</tr>
-			<tr>
-				<td>08/14</td>
-				<td> Final Review </td>
-				<td> <a href="https://docs.google.com/presentation/d/17FV7dMR6Qu-70DVJZxemO137-20W8m2lDYye-Lk29gU/edit?usp=sharing"> 🐚 FINAL REVIEW - DISC 12 (slides) </a>
-			</td>
-			</tr>
-			<tr>
-				<td colspan="3" style="text-align:center" background="https://media.giphy.com/media/WZLh0SNzYnTtS/giphy.gif"> <font color="white"> 📝 FINAL EXAM 📝 </font> </td>
-			</tr>
-
-
-		</table>
 	</div>
 </body>
 </html>
