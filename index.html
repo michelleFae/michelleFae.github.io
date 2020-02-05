@@ -14,30 +14,35 @@
 	<div class="parallax"></div>
 
 	<html>
-	
 
-	<!-- I made this webpage in order to learn html+css+javascript and to help my cs61a students access my discussion slides more easily! This is my first time dabbling in these languages (and I'm enjoying it so much (too much)! :) -->
 
 	<script>
 		
 
-		//bubbles  
+		/* bubbles */
+
 
 		var brd = document.createElement("DIV");
 		document.body.insertBefore(brd, document.getElementById("main"));
 
+		/* keeps track of all existing bubbles on screen */
 		bubbles = [];
 
+		/* bubble variables to determine bubble interaction pyhsics." */
 		const d = 5000;
-		const o = 0.7;
+		const o = 0.7; 
 		const r = 0.001;
 		const f = 0.0025;
 		const p = 0.00000001;
+		/* radius of smallest bubble. */ 
 		const minbub = 10;
+		/* radius of biggest bubble. */ 
 		const maxbub = 50;
+		/* offset of bubble from cursor. */ 
 		const cursorXOffset = 5;
 		const cursorYOffset = 0;
 
+		/* generates a new bubble at coordinate (X,Y), of size SIZE, of color COLOR." */
 		function newBubble(x, y, size, color)
 		{
 			var bubble = document.createElement("DIV");
@@ -55,9 +60,9 @@
 			bubble.position.y = y;
 			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
 			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
+			
+			// attach the bubble to the div so it is seen
 			brd.appendChild(bubble);
-			if(bubbles == null)
-				bubbles = [];
 			bubbles.push(bubble);
 			return bubble;
 		}
@@ -81,6 +86,7 @@
 			generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
 		}
 
+		/* chooses bubble color and size  randomly */
 		function generateBubbles(x, y)
 		{
 
