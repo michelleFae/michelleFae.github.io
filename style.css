@@ -143,7 +143,7 @@ table#t01 tr:hover a {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #8CC0EF;
+  background-color: #333;
   overflow: hidden;
   width: 100%;
   height: 0;
@@ -180,7 +180,7 @@ div.container {
 
 .projP{
   text-align: center;
-  color: #8CC0EF;
+  color: #333;
 
 }
 
@@ -309,4 +309,8 @@ img.profile:hover{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: justify;
+}
+
+.blueLink {
+	color: #8CC0EF;
 }
