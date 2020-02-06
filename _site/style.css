@@ -195,9 +195,9 @@ div.container {
 .profileImage{
   max-height: 30%;
   max-width: 30%;
-  border-radius: 50%;
+  border-radius: 20%;
   height: auto;
-  width: 40%;
+  width: 100%;
   object-fit: contain;
   display: block;
   margin: auto;
@@ -208,7 +208,7 @@ img.profile:hover{
 
   box-shadow: 0 0 2px 1px rgba(87, 251, 255, 0.75); /** green theme: rgba(0, 140, 0, 0.75);*/
 
-  border-radius: 10px;
+  border-radius: 100%;
   transform: scale(3);
 }
 
@@ -218,6 +218,8 @@ img.profile:hover{
   margin-right: auto;
   width: 50%;
 }
+
+
 
 
 /** parallax image */
