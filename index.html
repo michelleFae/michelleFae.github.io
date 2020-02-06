@@ -1,251 +1,243 @@
 <html>
-<head>
-<title> Michelle Fae D'Souza </title>
-<link href="style.css" type="text/css" rel="stylesheet">
-<link rel="shortcut icon" type="image/png" href="images/logo0.png">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	
-	<div class="topnav">
-  	<a class=active href="./index">Home</a>
-  	<a href="./cs61a">CS 61A</a>
-  	<a  href="./projects"> Projects </a>
-	</div>
-	<div class="parallax"></div>
-
-	<html>
-
-
-	<script>
-		
-
-		/* bubbles */
-		var brd = document.createElement("DIV");
-		document.body.insertBefore(brd, document.getElementById("main"));
-
-		/* keeps track of all existing bubbles on screen */
-		bubbles = [];
-
-		/* bubble variables to determine bubble interaction pyhsics." */
-		const d = 5000;
-		const o = 0.7; 
-		const r = 0.001;
-		const f = 0.0025;
-		const p = 0.00000001;
-		/* radius of smallest bubble. */ 
-		const minbub = 10;
-		/* radius of biggest bubble. */ 
-		const maxbub = 50;
-		/* offset of bubble from cursor. */ 
-		const cursorXOffset = 5;
-		const cursorYOffset = 0;
-
-		/* generates a new bubble at coordinate (X,Y), of size SIZE, of color COLOR." */
-		function newBubble(x, y, size, color)
-		{
-			var bubble = document.createElement("DIV");
-			bubble.setAttribute('class', 'bubble');
-			bubble.style = "background-color : " + color + ";";
-			bubble.bubbleSize = size;
-			bubble.style.height = bubble.bubbleSize * 2 + "px";
-			bubble.style.width = bubble.bubbleSize * 2 + "px";
-			bubble.time = d;
-			bubble.velocity = [];
-			bubble.velocity.x = 0;
-			bubble.velocity.y = 0;
-			bubble.position = [];
-			bubble.position.x = x;
-			bubble.position.y = y;
-			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
-			
-			// attach the bubble to the div so it is seen
-			brd.appendChild(bubble);
-			bubbles.push(bubble);
-			return bubble;
-		}
-
-		var msedwn = false;
-
-		document.onmousedown = function(e) {
-			msedwn = true;
-		}
-
-		document.onmouseup = function(e) {
-			msedwn = false;
-		}
-
-		document.onmousemove = function(e) {
-			if(msedwn)
-				generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
-		}
-
-		document.ontouchmove = function(e) {
-			generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
-		}
-
-		/* chooses bubble color and size  randomly */
-		function generateBubbles(x, y)
-		{
-
-			var size = Math.random() * (maxbub - minbub ) + minbub;
-
-			var size = minbub + (maxbub - minbub) * Math.random();
-
-			var digits = '0123456789ABCDEF';
-			var color = '#';
-			for (var i = 0; i < 4; i++) {
-				color += digits[Math.floor(Math.random() * 16)];
-			}
-			color += 'FF'
-
-			newBubble(x, y + 900, size, color);
-		}
-
-		function bubblePushAround(deltaTime)
-		{
-			for(i = 0; i < bubbles.length; i++)
-			{
-				for(j = i + 1; j < bubbles.length; j++)
-				{
-					var bubbleOne = bubbles[i];
-					var bubbleTwo = bubbles[j];
-					var Dx = bubbleOne.position.x - bubbleTwo.position.x;
-					var Dy = bubbleOne.position.y - bubbleTwo.position.y;
-					var D2 = Dx * Dx + Dy * Dy;
-					var R12 = bubbleOne.bubbleSize * bubbleOne.bubbleSize;
-					var R22 = bubbleTwo.bubbleSize * bubbleTwo.bubbleSize;
-					if(D2 < R12 + R22)
-					{
-						var D = Math.sqrt(D2);
-						var F1 = (D2 - (R12 + R22)) * R22;
-						var F2 = (D2 - (R12 + R22)) * R12;
-						bubbleOne.velocity.x -= F1 * p * Dx / D * deltaTime;
-						bubbleOne.velocity.y += F1 * p * Dy / D * deltaTime;
-						bubbleTwo.velocity.x += F2 * p * Dx / D * deltaTime;
-						bubbleTwo.velocity.y -= F2 * p * Dy / D * deltaTime;
-					}
-				}
-			}
-		}
-
-		var before = Date.now();
-		var id = setInterval(frame, 5);
-		
-		function frame()
-		{
-			var current = Date.now();
-			var deltaTime = current - before;
-			before = current;
-			bubblePushAround(deltaTime);
-			for(i in bubbles)
-			{
-				var bubble = bubbles[i];
-				bubble.time -= deltaTime;
-				if(bubble.time > 0)
-				{
-					bubble.velocity.y += f * deltaTime;
-					bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
-					bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
-					bubble.position.x += bubble.velocity.x * deltaTime;
-					bubble.position.y -= bubble.velocity.y * deltaTime;
-					bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-					bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
-					bubble.style.opacity = o * (bubble.time / d);
-				}
-				else
-				{
-					bubble.parentNode.removeChild(bubble);
-					bubbles.splice(i, 1);
-				}
-			}
-		}
-
-	</script>
-</html>
-
-	<div class="icon">
-	  		<div class="arrow"></div>
-	</div>
-
-
-	<script>
-		//arrow
-		const $icon = document.querySelector('.icon');
-		const $arrow = document.querySelector('.arrow');
-
-		$arrow.animate([
-			    {top: '20px'},
-			    {top: '70px'},
-			    {top: '0px'},
-			    {top: '40px'},
-			    {top: '20px'},
-			    {top: '0px'},
-			    {top: '20px'}],
-		    {
-			    duration: 2000,
-			    iterations: Infinity
-		    }
-		);
-		
-
-
-
-	</script>
-
-	<div id="main">
-
-		<h1>About Me</h1> 
-		<br>
-		<br>
-	
-    <img src="images/profile2.png"
-         alt="A picture of Michelle" class ="profileImage"
-         onmouseover="this.src='images/logo5.png';"
-         onmouseout="this.src='images/profile2.png';">
-		<br>
-		<div style = "position:relative; text-align: center;">
-        <pre>Hello!! I'm Michelle - a third-year Computer Science major 
+    <head>
+        <title> Michelle Fae D'Souza </title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="images/logo0.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="topnav">
+            <a class=active href="./index">Home</a>
+            <a href="./cs61a">CS 61A</a>
+            <a  href="./projects"> Projects </a>
+            <a href="./feedback">Feedback</a>
+            <div style="float: right;">
+                <a href="https://www.linkedin.com/in/michelle-fae-d-souza-6216b5116/"><img src="images/linkedIn.png" alt="linkedin" height="20px"></a>
+                <a href="https://github.com/michelleFae"><img src="images/git.png" alt="Github" height="20px"></a>
+            </div>
+        </div>
+        <div class="parallax"></div>
+        <html>
+            <script>
+                /* bubbles */
+                var brd = document.createElement("DIV");
+                document.body.insertBefore(brd, document.getElementById("main"));
+                
+                /* keeps track of all existing bubbles on screen */
+                bubbles = [];
+                
+                /* bubble variables to determine bubble interaction pyhsics." */
+                const d = 5000;
+                const o = 0.7; 
+                const r = 0.001;
+                const f = 0.0025;
+                const p = 0.00000001;
+                /* radius of smallest bubble. */ 
+                const minbub = 10;
+                /* radius of biggest bubble. */ 
+                const maxbub = 50;
+                /* offset of bubble from cursor. */ 
+                const cursorXOffset = 5;
+                const cursorYOffset = 0;
+                
+                /* generates a new bubble at coordinate (X,Y), of size SIZE, of color COLOR." */
+                function newBubble(x, y, size, color)
+                {
+                	var bubble = document.createElement("DIV");
+                	bubble.setAttribute('class', 'bubble');
+                	bubble.style = "background-color : " + color + ";";
+                	bubble.bubbleSize = size;
+                	bubble.style.height = bubble.bubbleSize * 2 + "px";
+                	bubble.style.width = bubble.bubbleSize * 2 + "px";
+                	bubble.time = d;
+                	bubble.velocity = [];
+                	bubble.velocity.x = 0;
+                	bubble.velocity.y = 0;
+                	bubble.position = [];
+                	bubble.position.x = x;
+                	bubble.position.y = y;
+                	bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+                	bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
+                	
+                	// attach the bubble to the div so it is seen
+                	brd.appendChild(bubble);
+                	bubbles.push(bubble);
+                	return bubble;
+                }
+                
+                var msedwn = false;
+                
+                document.onmousedown = function(e) {
+                	msedwn = true;
+                }
+                
+                document.onmouseup = function(e) {
+                	msedwn = false;
+                }
+                
+                document.onmousemove = function(e) {
+                	if(msedwn)
+                		generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
+                }
+                
+                document.ontouchmove = function(e) {
+                	generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
+                }
+                
+                /* chooses bubble color and size  randomly */
+                function generateBubbles(x, y)
+                {
+                
+                	var size = Math.random() * (maxbub - minbub ) + minbub;
+                
+                	var size = minbub + (maxbub - minbub) * Math.random();
+                
+                	var digits = '0123456789ABCDEF';
+                	var color = '#';
+                	for (var i = 0; i < 4; i++) {
+                		color += digits[Math.floor(Math.random() * 16)];
+                	}
+                	color += 'FF'
+                
+                	newBubble(x, y + 900, size, color);
+                }
+                
+                function bubblePushAround(deltaTime)
+                {
+                	for(i = 0; i < bubbles.length; i++)
+                	{
+                		for(j = i + 1; j < bubbles.length; j++)
+                		{
+                			var bubbleOne = bubbles[i];
+                			var bubbleTwo = bubbles[j];
+                			var Dx = bubbleOne.position.x - bubbleTwo.position.x;
+                			var Dy = bubbleOne.position.y - bubbleTwo.position.y;
+                			var D2 = Dx * Dx + Dy * Dy;
+                			var R12 = bubbleOne.bubbleSize * bubbleOne.bubbleSize;
+                			var R22 = bubbleTwo.bubbleSize * bubbleTwo.bubbleSize;
+                			if(D2 < R12 + R22)
+                			{
+                				var D = Math.sqrt(D2);
+                				var F1 = (D2 - (R12 + R22)) * R22;
+                				var F2 = (D2 - (R12 + R22)) * R12;
+                				bubbleOne.velocity.x -= F1 * p * Dx / D * deltaTime;
+                				bubbleOne.velocity.y += F1 * p * Dy / D * deltaTime;
+                				bubbleTwo.velocity.x += F2 * p * Dx / D * deltaTime;
+                				bubbleTwo.velocity.y -= F2 * p * Dy / D * deltaTime;
+                			}
+                		}
+                	}
+                }
+                
+                var before = Date.now();
+                var id = setInterval(frame, 5);
+                
+                function frame()
+                {
+                	var current = Date.now();
+                	var deltaTime = current - before;
+                	before = current;
+                	bubblePushAround(deltaTime);
+                	for(i in bubbles)
+                	{
+                		var bubble = bubbles[i];
+                		bubble.time -= deltaTime;
+                		if(bubble.time > 0)
+                		{
+                			bubble.velocity.y += f * deltaTime;
+                			bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
+                			bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
+                			bubble.position.x += bubble.velocity.x * deltaTime;
+                			bubble.position.y -= bubble.velocity.y * deltaTime;
+                			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+                			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
+                			bubble.style.opacity = o * (bubble.time / d);
+                		}
+                		else
+                		{
+                			bubble.parentNode.removeChild(bubble);
+                			bubbles.splice(i, 1);
+                		}
+                	}
+                }
+                
+            </script>
+        </html>
+        <div class="icon">
+            <div class="arrow"></div>
+        </div>
+        <script>
+            //arrow
+            const $icon = document.querySelector('.icon');
+            const $arrow = document.querySelector('.arrow');
+            
+            $arrow.animate([
+            	    {top: '20px'},
+            	    {top: '70px'},
+            	    {top: '0px'},
+            	    {top: '40px'},
+            	    {top: '20px'},
+            	    {top: '0px'},
+            	    {top: '20px'}],
+                {
+            	    duration: 2000,
+            	    iterations: Infinity
+                }
+            );
+            
+            
+            
+            
+        </script>
+        <div id="main">
+            <h1>About Me</h1>
+            <br>
+            <br>
+            <img src="images/profile2.png"
+                alt="A picture of Michelle" class ="profileImage"
+                onmouseover="this.src='images/logo5.png';"
+                onmouseout="this.src='images/profile2.png';">
+            <br>
+            <div style = "position:relative; text-align: center;">
+                <pre>Hello!! I'm Michelle - a third-year Computer Science major 
         at UC Berkeley! I love poetry, puzzles, programming, and playing the piano ... 
         and also alliterations, apparently!
 
         </pre>
-        <br>
-		<br>
-         
-        <span title="Good Job! :) " style="color:blue">(hover here if you were able to spot BOTH the alliterations!)</span>
-		<br>
-		<br> <h2> Discussion:</h2> 
-		<br>Time: Wednesdays & Fridays ~ 9:30 am - 11:00 am
-		<br>Location: Wheeler 220	
-		<br>
-		<br> <h2> Lab: </h2>
-		<br>Time: Tuesdays & Thursdays ~ 9:30 am - 11:00 am
-		<br>Location: Soda 273
-        <br>
-        <br> <h2> Office hours: </h2>
-
-		<br>Time: Mondays & Wednesdays ~ 6:00 pm - 7:00 pm
-		<br>Location: Cory 293
-		<br>
-		<br> <h2> Contact Info: </h2>
-		<br> <a href="mailto:michelled@berkeley.edu?subject=[Mail from website]">michelled@berkeley.edu</a>  
-		<br>
-		<br> <h2> Logistics: </h2>
-		<br>I'm also in charge of logistics for CS 61A!
-		<br>~the right person to contact should you need any assistance on any logistical issues~
-		<br>
-		<br> <h2> Anonymous Feedback form: </h2>
-
-		<br> I love reading/listening to feedback! Let me know what you think of my teaching <a href="https://docs.google.com/forms/d/e/1FAIpQLScQynzW5YS1txmjHgT28VElwxQG7RjItISvv7QefcwrAvDNyA/viewform?usp=sf_link">HERE</a>!
-		<br>
-		<br>
-
-
-	</div>
-	</div>
-
-
-</body>
+                <br>
+                <br>
+                <span title="Good Job! :) " style="color:blue">(hover here if you were able to spot BOTH the alliterations!)</span>
+                <br>
+                <br> 
+                <h2> Discussion:</h2>
+                <br>Time: Wednesdays & Fridays ~ 9:30 am - 11:00 am
+                <br>Location: Wheeler 220	
+                <br>
+                <br> 
+                <h2> Lab: </h2>
+                <br>Time: Tuesdays & Thursdays ~ 9:30 am - 11:00 am
+                <br>Location: Soda 273
+                <br>
+                <br> 
+                <h2> Office hours: </h2>
+                <br>Time: Mondays & Wednesdays ~ 6:00 pm - 7:00 pm
+                <br>Location: Cory 293
+                <br>
+                <br> 
+                <h2> Contact Info: </h2>
+                <br> <a href="mailto:michelled@berkeley.edu?subject=[Mail from website]">michelled@berkeley.edu</a>  
+                <br>
+                <br> 
+                <h2> Logistics: </h2>
+                <br>I'm also in charge of logistics for CS 61A!
+                <br>~the right person to contact should you need any assistance on any logistical issues~
+                <br>
+                <br> 
+                <h2> Anonymous Feedback form: </h2>
+                <br> I love reading/listening to feedback! Let me know what you think of my teaching <a href="https://docs.google.com/forms/d/e/1FAIpQLScQynzW5YS1txmjHgT28VElwxQG7RjItISvv7QefcwrAvDNyA/viewform?usp=sf_link">HERE</a>!
+                <br>
+                <br>
+            </div>
+        </div>
+    </body>
 </html>
