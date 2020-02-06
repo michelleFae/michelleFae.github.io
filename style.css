@@ -12,8 +12,9 @@ position: static;
 
 
 #main{
-	width: 1000px;
+	
 	/*background: #edf7ff;*/
+  width: 75%;
 
   background-color: #edf7ff; /* For browsers that do not support gradients */
   background-image: linear-gradient(rgb(237, 247, 255,0), rgb(192, 231, 250,0.5),rgb(150, 221, 255,1)); 
