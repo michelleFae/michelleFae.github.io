@@ -6,6 +6,7 @@ body {
 background: #8CC0EF;
 text-align: center;
 background-image: url(images/background3.gif);
+
 position: static;
 }
 
@@ -23,6 +24,22 @@ position: static;
   position: static;
 
 }
+
+#main-feedback{
+  
+  /*background: #edf7ff;*/
+ 
+
+  background-color: #edf7ff; /* For browsers that do not support gradients */
+  background-image: linear-gradient(rgb(237, 247, 255,0), rgb(192, 231, 250,0.5),rgb(150, 221, 255,1)); 
+  margin:70px auto ;
+  border: dotted 15px #8CC0EF;
+  position: static;
+  display: inline-block
+
+}
+
+
 
 
 
@@ -132,6 +149,7 @@ table#t01 tr:hover a {
     padding-right:10%;
     padding-left: 10%;
   }
+
 }
 
 
@@ -150,6 +168,7 @@ table#t01 tr:hover a {
   width: 100%;
   height: 0;
   transition: .5s ease;
+
 }
 
 .container2:hover .overlay {
@@ -227,12 +246,13 @@ img.profile:hover{
 /** parallax image */
 
 .parallax {
-  display:block;
+  
 
   /* The image used */
   background-image: url("images/index.png");
   /* Set a specific height */
-  min-height: 90vh; 
+  min-height: 90vh;
+   
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
