@@ -89,7 +89,7 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
 
 /* Infospot popups */
 
-  #desc-container {
+ #FSO-container, #desc-container {
     max-width: 500px;
     max-height: 500px;
     min-width: 200px;
@@ -101,7 +101,7 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
     -webkit-overflow-scrolling: touch;
   }
 
-  #desc-container > iframe {
+  #FSO-container, #desc-container > iframe {
     border: none;
     width:100%;
   }
