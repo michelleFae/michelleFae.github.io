@@ -91,9 +91,9 @@ h1  {
 .option {
     display: flex;
     align-items: center;
-    height: 18%;
+    height: 8%;
     margin-top: 10px;
-    padding: 5px;
+    padding: 2.5px;
 }
 
 .option:hover {

@@ -1,6 +1,7 @@
 // num questions
 const numQuestions = Object.keys(questions).length;
 const shift = 100 / numQuestions;
+const numNonOptionItems = 1; //OBJECTS IS NUMBER OF THINGS IN THE QUESTION - 1.
 
 // for keeping track of the score
 var score = {};
@@ -35,8 +36,11 @@ function setupQuestion() {
     }
   qnText.innerText = qn.question;
 
+
+  // ASSUMPTION: NUM OF OBJECTS IS NUMBER OF THINGS IN THE QUESTION - 1.
+  var numOptions = Object.keys(qn).length - numNonOptionItems;
   // updates each of the options for the current question
-  for (var i = 0; i < numQuestions - 1; i++) {
+  for (var i = 0; i < numOptions; i++) {
     var option = document.getElementById("option" + i);
     if (option == null) {
       console.log("rere");
@@ -56,10 +60,14 @@ function setupQuestion() {
 // to unselect all of the options
 function resetOptions() {
   var btn = document.getElementsByTagName("input");
-  btn[0].checked = false;
-  btn[1].checked = false;
-  btn[2].checked = false;
-  btn[3].checked = false;
+  for (var i = 0; i < btn.length; i++) {
+     btn[i].checked = false;
+  }
+  // btn[0].checked = false;
+  // btn[1].checked = false;
+  // btn[2].checked = false;
+  // btn[3].checked = false;
+  // btn[4].checked = false; //todo: automate for x buttons
 }
 
 // to select the option that is clicked
