@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="js/questions.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/scripts.js"></script>
+    <div class="fullpage black-bg centered">
+        <div class="container start">
+            <h1 id="questionaire-title">Which Career Track is Right for You?</h1>
+
+            <div id="questionaire-info">
+            	<p>The Foreign Service has five different career tracks: Consular Affairs, Economic Affairs, Management Affairs, Political Affairs, and Public Diplomacy. At the beginning of the hiring process, you must choose a track. We know that this can be a tough decision, so we have developed a questionnaire to help you match your interests to the career track that may be right for you.</p>
+            	<p> You will be presented with 10 work activities from each of the five tracks (in random order), and asked to rate how interested you would be in performing each of the 50 activities. It only takes about 10 minutes to complete and your results will be tabulated into a useful chart. Please remember that this is just a guide. Trust your personal judgment, not solely the results of the questionnaire, in selecting the career track that is right for you.
+            	</p>
+            </div>
+
+            <div class="centered">
+                <div class="button" onclick="showPage(2); setupQuestion();">
+                    <p>START</p>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden">
+            <h1 id="personality-type"></h1>
+            <p id="personality-part-1"></p>
+            <p id="personality-part-2"></p>
+            <p id="personality-recommended"></p>
+            <br>
+            <div class="centered">
+                <div class="button" onclick="showPage(0); setupQuestion();">
+                    <p>RETRY</p>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden">
+            <div id="progress-bar">
+                <div id="progress">1/5</div>
+            </div>
+            <h2 id="question"></h2>
+            <div class="option" id="option0" onclick="select(this)">
+                <input type="radio" name="answer" value="0" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option1" onclick="select(this)">
+                <input type="radio" name="answer" value="1" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option2" onclick="select(this)">
+                <input type="radio" name="answer" value="2" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option3" onclick="select(this)">
+                <input type="radio" name="answer" value="3" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
