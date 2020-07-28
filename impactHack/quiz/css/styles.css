@@ -30,6 +30,14 @@ h1  {
     align-items: center;
 }
 
+.quizBackground {
+    margin: 0;
+    background-image: url("../../assets/quizAssets/flagBackdrop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .container {
     height: 90vh;
     width: 65vw;
