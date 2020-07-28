@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: url("https://michellefae.github.io/ImpactHack/assets/quizAssets/flagBackdrop.jpg");
+    background-image: url("../../assets/quizAssets/flagBackdrop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,7 +21,7 @@ h1  {
 }
 
 .black-bg {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.6);
 }
 
 .centered {
@@ -63,7 +63,7 @@ h1  {
 .button {
     cursor: pointer;
     padding: 0px 20px;
-    border: 2px solid cyan;
+    border: 2px solid #ceab82;
     border-radius: 5px;
     text-align: center;
     width: 100px;
@@ -84,7 +84,7 @@ h1  {
 #progress {
     width: 20%;
     text-align: right;
-    border-bottom: 2px solid cyan;
+    border-bottom: 2px solid #ceab82;
     margin-bottom: -2px;
 }
 
