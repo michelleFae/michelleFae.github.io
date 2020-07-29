@@ -26,8 +26,8 @@ h1, h4 {
 }
 
 .fullpage {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
 }
 
 .black-bg {
@@ -49,8 +49,8 @@ h1, h4 {
 }
 
 .container {
-    height: 90vh;
-    width: 65vw;
+    height: auto;
+    width: auto;
     max-width: 700px;
     padding: 20px;
     background-color: rgba(0,0,0,0.5);
