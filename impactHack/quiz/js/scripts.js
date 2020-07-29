@@ -123,7 +123,7 @@ function next() {
 function findHighest(score) {
 
     var highestScore = -Number.MAX_VALUE;
-    var highestPersonality;
+    var highestPersonality = [];
 
     // todo edge case: ties
 
@@ -131,9 +131,11 @@ function findHighest(score) {
     for (var [key, value] of Object.entries(score)) {
       score[key] = value * 100 / maxScores[key];
       value = score[key];
-      if (highestScore < value) {
+      if (highestScore == value) {
+        highestPersonality.push(key);
+      } else if (highestScore < value) {
         highestScore = value;
-        highestPersonality = key;
+        highestPersonality = [key];
       }
     }
 
@@ -154,12 +156,23 @@ function getOptionNum(traitScore) {
   }
 }
 
+function prettyWithAnd(highestPersonality) {
+  /* returns a string of words in the list highestPersonality, with commas and ands. */
+  /* assumes len highest personality >= 1 */
+  var finalStr = "";
+  if (highestPersonality.length == 1) {
+    return highestPersonality[0];
+  }
+  for (var i = 0; i < highestPersonality.length - 1; i++) {
+    finalStr = finalStr + highestPersonality[i] + ", ";
+  }
+  return finalStr + "and " + highestPersonality[highestPersonality.length - 1];
+}
+
 function setResultpage(results, highestPersonality) {
     // get the description of the personality and update the result page
-    var personalityResult = results[highestPersonality];
-
     document.getElementById("personality-type").innerText =
-      "You are best suited for " + highestPersonality + "!"; //todo: chaneg to accomodate ties
+      "You are best suited for " + prettyWithAnd(highestPersonality) + "!"; //todo: chaneg to accomodate ties
 
 
     // take care of highest personality:
@@ -173,7 +186,7 @@ function setResultpage(results, highestPersonality) {
           var barKey = "option"+ i + "-progress";
           var optionbar = document.getElementById(barKey);
           optionbar.style.width =  traitScore + "%";
-          optionbar.innerText = traitScore.toFixed(0) + "%";
+          optionbar.innerText = traitScore.toFixed(1) + "%";
 
           //option0-info1 & 2
           if (optionNum != 0) {

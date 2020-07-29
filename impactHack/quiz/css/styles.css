@@ -10,14 +10,14 @@ h2,
 #progress-bar #progress,
 label,
 p,
-h1, h5
+h5
 {
-    font-family: 'arial';
+    font-family: 'ITC Avant Garde Gothic Book';
     color: white;
 }
 
-h4 {
-    font-family: 'arial';
+h1, h4 {
+    font-family: 'Archivo Regular';
     color: #ceab82;
 }
 
