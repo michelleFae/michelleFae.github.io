@@ -192,6 +192,9 @@ function setResultpage(results, highestPersonality) {
           if (optionNum != 0) {
             document.getElementById("option" + i + "-info1").textContent = results[trait][4];
             document.getElementById("option" + i + "-info2").textContent = results[trait][5];
+          } else {
+            document.getElementById("option" + i + "-info1").textContent = "";
+            document.getElementById("option" + i + "-info2").textContent = "";
           }
      }
      

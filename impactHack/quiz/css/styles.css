@@ -16,14 +16,18 @@ h5
     color: white;
 }
 
+h1 {
+    margin-block-end: 0.0em;
+}
+
 h1, h4 {
     font-family: 'Archivo Regular';
     color: #ceab82;
 }
 
 .fullpage {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .black-bg {
@@ -53,30 +57,30 @@ h1, h4 {
 }
 
 #questionaire-title {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
     text-align: center;
 }
 
 #questionaire-info {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     margin-left: 5%;
     margin-right: 5%;
     text-align: justify;
     font-size: 18px;
     overflow-y: scroll;
-    height: 50%;
+    height: 20%;
 }
 
 #result-info {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     margin-left: 5%;
     margin-right: 5%;
     text-align: justify;
     overflow-y: scroll;
-    height: 50%;
+    height: 20%;
 }
 
 .hidden {
