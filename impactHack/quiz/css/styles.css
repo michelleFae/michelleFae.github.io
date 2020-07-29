@@ -10,9 +10,15 @@ h2,
 #progress-bar #progress,
 label,
 p,
-h1  {
+h1, h5
+{
     font-family: 'arial';
     color: white;
+}
+
+h4 {
+    font-family: 'arial';
+    color: #ceab82;
 }
 
 .fullpage {
@@ -63,6 +69,15 @@ h1  {
     height: 50%;
 }
 
+#result-info {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: justify;
+    overflow-y: scroll;
+    height: 50%;
+}
 
 .hidden {
     display: none;
@@ -116,6 +131,11 @@ h1  {
 .content img {
     max-height: 100%;
 }
+
+.small-text {
+    font-size: small;
+}
+/* results */
 
 #option0-bar {
     width: 100%;

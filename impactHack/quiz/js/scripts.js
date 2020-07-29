@@ -129,11 +129,7 @@ function findHighest(score) {
 
     //normalizes scrore+get highest
     for (var [key, value] of Object.entries(score)) {
-      console.log("val for " + key + " is " + value);
-      console.log("maxscore for " + key + " is " + maxScores[key]);
       score[key] = value * 100 / maxScores[key];
-      console.log("score for " + key + " is " + value);
-      console.log("score[key] for " + key + " is " + score[key]);
       value = score[key];
       if (highestScore < value) {
         highestScore = value;
@@ -144,35 +140,47 @@ function findHighest(score) {
     return [highestScore, highestPersonality];
 }
 
-function setResultpage(results, highestPersonality) {
+/* Assumption - trait score is a percentage */
+function getOptionNum(traitScore) {
+   
+  if (traitScore < 30) {
+    return 0;
+  } else if (traitScore < 60) {
+    return 1;
+  } else if (traitScore < 80) {
+    return 2;
+  } else {
+    return 3;
+  }
+}
 
+function setResultpage(results, highestPersonality) {
     // get the description of the personality and update the result page
     var personalityResult = results[highestPersonality];
+
     document.getElementById("personality-type").innerText =
-      highestPersonality;
-    document.getElementById("personality-part-1").textContent =
-      personalityResult[0];
-    document.getElementById("personality-part-2").innerText =
-      personalityResult[1];
-    document.getElementById("personality-recommended").innerText =
-      personalityResult[2];
-      //todo: create progress bars for each thing in result if showAll flag is true
+      "You are best suited for " + highestPersonality + "!"; //todo: chaneg to accomodate ties
 
-    console.log("results is "+ results);
-    console.log("results.keys.len is "+ Object.keys(results).length);
-    console.log("results.keys.len is "+ results.length);
 
-    // show bar
-    for (const [i, [trait, traitScore]] of Object.entries(Object.entries(score))){
-      console.log("i is "+ i);
-      var barKey = "option"+ i + "-progress";
-      var optionbar = document.getElementById(barKey);
-      console.log("score[key] for " + trait + " is " + score[trait]);
-      //var normalizedScore = (traitScore / 160) * 100  ; //todo: change hardcoded 80 // change 
-      // console.log("normalizedScore is "+ normalizedScore);
-      optionbar.style.width =  traitScore + "%";
-      optionbar.innerText = traitScore.toFixed(0) + "%";
-    }
+    // take care of highest personality:
+
+     for (const [i, [trait, traitScore]] of Object.entries(Object.entries(score))) {
+          document.getElementById("option" + i + "-title").textContent = "About " + trait;
+          const optionNum = getOptionNum(traitScore);
+          document.getElementById("option" + i + "-suitability").textContent = results[trait][optionNum];
+
+          //set progress bar
+          var barKey = "option"+ i + "-progress";
+          var optionbar = document.getElementById(barKey);
+          optionbar.style.width =  traitScore + "%";
+          optionbar.innerText = traitScore.toFixed(0) + "%";
+
+          //option0-info1 & 2
+          if (optionNum != 0) {
+            document.getElementById("option" + i + "-info1").textContent = results[trait][4];
+            document.getElementById("option" + i + "-info2").textContent = results[trait][5];
+          }
+     }
      
 }
 

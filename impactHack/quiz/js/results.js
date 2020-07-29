@@ -1,28 +1,43 @@
 // Result page info
 const results = {
   "Consular Affairs": [
-    "If you imagine yourself bungee jumping in New Zealand, running with the bulls in Pamplona, dancing until 6 in the morning in Berlin, heliskiing from the top of a mountain in Banff or boating down the Amazon, all signs point to you being an adventure traveler.",
-    "National Geographic has a list of the top adventure tour operators and outfitters worldwide that may be worth a look. Of course, you don't need to be a part of a tour to have an adventure, but if you're not sure what adventure travel means or if you just want an idea of what kind of companies operate tours and which ones to use, it's a great place to start.",
-    "<p> hello</p>"
+    "An interest score of below 30% indicates that Consular Affairs might not be the best pick for you.",
+    "A score between 30% to 60% implies that you do show some interest in the Consular Affairs track. You'd be a fair match for a consular affairs role!",
+     "A score between 60% to 80% implies that you show significant interest in the Consular Affairs track! You would make a great Consular Affairs Diplomat!",
+    "A score above 80% indicates that you are an excellent match for the Consular Affairs track! You'd be a perfect fit on the Consular Affairs team!",
+    "Here's a bit more about Consular Affairs: Consular officers facilitate adoptions, help evacuate Americans, and combat fraud to protect our borders and fight human trafficking. Consular officers touch people’s lives in important ways, often reassuring families in crisis.",
+    "Just like you, Consular Officers excel in picking up local customs as well as cultural, economic and political conditions. Consular officers make prompt, informed decisions that affect the lives of not only Americans abroad but also other foreign citizens. Consular officers also work on keeping Washington up to date on current consular issues which might include fraud trends, visa workloads, or delicate American citizen cases involving victims of crime or child abductions."
   ],
   "Economic Affairs": [
-    "If your travel dreams are populated by the perfect sunset on a secluded beach in the Seychelles, gondola rides in Venice, and catching falling Sakura flowers, this is probably you.",
-    "Travel can be an amazing way to inspire creativity and connect with your inner muse! Check out Travel and Leisure's list of the 50 most dreamy places for a general idea of what's out there in the way of romantic destinations. The notion of taking off to far-flung places is a dream come through in itself, so grab your passports, and get out and see the world.",
-       "<p> hello</p>"
+    "An interest score of below 30% indicates that Economic Affairs might not be the best choice for you.",
+    "A score between 30% to 60% implies that you do show some interest in the Economic Affairs track. You'd be a fair match for an Economic Affairs role!",
+     "A score between 60% to 80% implies that you show significant interest in Economic Affairs! You would make a great Economic Affairs Diplomat!",
+    "A score above 80% indicates that you are an excellent match for an Economic Affairs position! You'd be a perfect fit on the team!",
+    "Here's a bit more about Economic Affairs: Economic Officers work with foreign governments and other US Governmental agencies on technology, science, economic, trade, energy, and environmental issues both domestically and overseas.",
+    "Just like you, Economic Officers excel at collaborating with a wide variety of government officials, business leaders, international organizations and researchers. They are also very good at developing strong relationships with important economic figures. Economic Officers love spending their time negotiating and maintaining positive economic and trade relations between the US and other countries."
   ],
-  "Management Affairs": [
-    "If travel is just another way you broaden your internal encyclopedia with art, culture, and history, and your dream itinerary includes days filled with museums, archeological sites, groundbreaking architecture and traditional experiences, you may be an intellectual traveler.",
-    "Lucky for you, destinations all over the world cater to the student inside of all of us. The world's full of lessons, and travel is the way to learn them.",
-       "<p> hello</p>"
+  "Management Affairs":  [
+    "An interest score of below 30% indicates that Management Affairs might not be the best track for you.",
+    "A score between 30% to 60% implies that you do show some interest in the Management Affairs track. You'd be a fair match for a Management Affairs role!",
+     "A score between 60% to 80% implies that you show significant interest in Management Affairs! You would make a great Management Affairs Diplomat!",
+    "A score above 80% indicates that you are an excellent match for a Management Officer! You'd truly be a perfect fit!",
+    "Here's a bit more about Management Affairs: Management officers are resourceful, creative, action-oriented “go to” leaders responsible for all embassy operations from real estate to people to budget.",
+    "Just like you, Management Officers lead and inspire others. They're able to stay calm in fast-paced, mission critical environments while they solve multidisciplinary problems. Management Affairs Diplomats also encourage professional growth in other staff."
   ],
-    "Political Affairs": [
-    "If travel is just another way you broaden your internal encyclopedia with art, culture, and history, and your dream itinerary includes days filled with museums, archeological sites, groundbreaking architecture and traditional experiences, you may be an intellectual traveler.",
-    "Lucky for you, destinations all over the world cater to the student inside of all of us. The world's full of lessons, and travel is the way to learn them.",
-        "<p> hello</p>"
+    "Political Affairs":  [
+    "An interest score of below 30% indicates that Political Affairs might not be the best place for you.",
+    "A score between 30% to 60% implies that you do show some interest in the Political Affairs track. You'd be a fair match for a Political Affairs role!",
+     "A score between 60% to 80% implies that you show significant interest in Political Affairs! You would make a great Political Affairs Diplomat!",
+    "A score above 80% indicates that you are an excellent match for a Political Affairs position! You'd be a perfect fit on the team!",
+    "Here's a bit more about Political Affairs: Political Officers analyze host country political events and must be able to negotiate and communicate effectively with all levels of foreign government officials.",
+    "Just like you, Political Officers are able to identify and nurture strong relationships with informed country individuals, who are able to provide thoughtful and sometimes advance information. Political Diplomats excel at reporting and explaining foreign events under time pressure. Political officers enjoy monitoring the political climate of their foreign post."
   ],
-  "Public Diplomacy": [
-    "If your travel dreams are populated by the perfect sunset on a secluded beach in the Seychelles, gondola rides in Venice, and catching falling Sakura flowers, this is probably you.",
-    "Travel can be an amazing way to inspire creativity and connect with your inner muse! Check out Travel and Leisure's list of the 50 most dreamy places for a general idea of what's out there in the way of romantic destinations. The notion of taking off to far-flung places is a dream come through in itself, so grab your passports, and get out and see the world.",
-        "<p> hello</p>"
+  "Public Diplomacy":  [
+    "An interest score of below 30% indicates that Public Diplomacy might not be the best post for you.",
+    "A score between 30% to 60% implies that you do show some interest in the Public Diplomacy track. You'd be a fair match for a Public Diplomacy role!",
+     "A score between 60% to 80% implies that you show significant interest in the Public Diplomacy! You would make a great Public Diplomacy Diplomat!",
+    "A score above 80% indicates that you are an excellent match for the a Public Diplomacy position! You'd be a perfect fit on the team!",
+    "Here's a bit more about Public Diplomacy Officers: Public Diplomacy Officers engage, inform, and influence opinion leaders, local non-governmental groups, the next generation of leaders, academics, think tanks, government officials and the full range of civil society in order to promote mutual understanding and support for US policy goals.",
+    "Just like you, Public Diplomacy Officers excel at bridging cultures and promoting shared understanding between the US and other nations through strong interpersonal skills. These officers are able to innovatively discover new technologies to better communicate US stances and programs with host country individuals. Public Diplomacy Officers enjoy networking and collaborating with host nation contacts to shape the public message and perceptions about the United States."
   ]
 };
