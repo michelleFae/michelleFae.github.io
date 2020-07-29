@@ -88,8 +88,26 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
 
 
 /* Infospot popups */
+ #FSO-container {
+    height: 80%
+    width: 80%;
+    min-width: 200px;
+    min-height: 250px;
+    background: #fff;
+    color: #000;
+    border-radius: 3px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
- #FSO-container, #desc-container {
+  #FSO-container > iframe {
+    border: none;
+    width:90%;
+  }
+
+
+
+#desc-container {
     max-width: 500px;
     max-height: 500px;
     min-width: 200px;
@@ -101,7 +119,7 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
     -webkit-overflow-scrolling: touch;
   }
 
-  #FSO-container, #desc-container > iframe {
+#desc-container > iframe {
     border: none;
     width:100%;
   }
