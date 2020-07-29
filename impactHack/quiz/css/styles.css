@@ -55,6 +55,8 @@ h1, h4 {
     max-width: 700px;
     padding: 20px;
     background-color: rgba(0,0,0,0.5);
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 #questionaire-title {
