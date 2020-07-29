@@ -1,3 +1,11 @@
+const maxScores = {
+  "Consular Affairs":80,
+  "Economic Affairs":80,
+  "Management Affairs":71,
+  "Political Affairs":80,
+   "Public Diplomacy":72,  
+}
+
 // constant to store all the questions and answers
 const questions = {
   question0: {
@@ -6,7 +14,7 @@ const questions = {
       type: "string",
       content: "This is very uninteresting. Definintely not.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -15,7 +23,7 @@ const questions = {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -1,
+      pointsGained: 1,
       isRequired: false
     },
     option2: {
@@ -23,7 +31,7 @@ const questions = {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 2,
       isRequired: false
     },
     option3: {
@@ -31,7 +39,7 @@ const questions = {
       content:
         "I would like to do this. Reconciling conflicts seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 1,
+      pointsGained: 3,
       isRequired: false
     },
     option4: {
@@ -39,7 +47,7 @@ const questions = {
       content:
         "I would LOVE to do this. Conflict Resolution is very interesting and is right up my ally",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 4,
       isRequired: false
     }
   },
@@ -49,7 +57,7 @@ question1: {
       type: "string",
       content: "This is very uninteresting. Definintely not.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -58,7 +66,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -1,
+      pointsGained: 1,
       isRequired: false
     },
     option2: {
@@ -66,7 +74,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 2,
       isRequired: false
     },
     option3: {
@@ -74,7 +82,7 @@ question1: {
       content:
         "I would like to do this. I would like to make use of my organizational skills!",
       personality: "Public Diplomacy",
-      pointsGained: 1,
+      pointsGained: 3,
       isRequired: false
     },
     option4: {
@@ -82,7 +90,7 @@ question1: {
       content:
         "I would LOVE to do this. Putting together a press conference for my Ambassador as well as visiting ones would be extremely fun!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 4,
       isRequired: false
     }
   },
@@ -92,7 +100,7 @@ question1: {
       type: "string",
       content: "This is very uninteresting. Definintely not.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -101,7 +109,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -109,7 +117,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -117,7 +125,7 @@ question1: {
       content:
         "I would like to do this! Working on and improving health and safety programs seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -125,7 +133,7 @@ question1: {
       content:
         "I would LOVE to do this! I believe I would extremely enjoy and be able to effectively develop such programs!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -135,7 +143,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -144,7 +152,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -152,7 +160,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -160,7 +168,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -168,7 +176,7 @@ question1: {
       content:
         "I would LOVE to put in those extra hours in order to manage things. I'd be a great fit for this!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -178,7 +186,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -187,7 +195,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -195,7 +203,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -203,7 +211,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -211,17 +219,17 @@ question1: {
       content:
         "I would LOVE to do this. Negotiating is very fun & interesting!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
     question5: {
-    question: "Working as part of a team that includes representatives from other U.S. government agencies, would you like to serve as the Embassy’s point person organizing all details of an American senior official’s visit to your host nation to discuss bilateral cooperation on cybersecurity, including proposals for meetings, seating charts, and briefing books??",
+    question: "Working as part of a team that includes representatives from other U.S. government agencies, would you like to serve as the Embassy’s point person organizing all details of an American senior official’s visit to your host nation to discuss bilateral cooperation on cybersecurity, including proposals for meetings, seating charts, and briefing books?",
     option0: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting. I definintely do not see myself as the Embassy’s point person.",
       personality:"Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -230,7 +238,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -238,7 +246,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -246,7 +254,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -254,7 +262,7 @@ question1: {
       content:
         "I would LOVE to be the Embassy’s point person and would be a great fit for this!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -264,7 +272,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -273,7 +281,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -281,7 +289,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -289,7 +297,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -297,7 +305,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -307,7 +315,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -316,7 +324,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -324,7 +332,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -332,7 +340,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -340,7 +348,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -350,7 +358,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -359,7 +367,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -367,7 +375,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -375,7 +383,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -383,7 +391,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -393,7 +401,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -402,7 +410,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -410,7 +418,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -418,7 +426,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -426,7 +434,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -436,7 +444,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -445,7 +453,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -453,7 +461,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -461,7 +469,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -469,7 +477,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -479,7 +487,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this doesn't seem like the right task for me.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -488,7 +496,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -1,
+      pointsGained: 1,
       isRequired: false
     },
     option2: {
@@ -496,7 +504,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 2,
       isRequired: false
     },
     option3: {
@@ -504,7 +512,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 1,
+      pointsGained: 3,
       isRequired: false
     },
     option4: {
@@ -512,7 +520,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 4,
       isRequired: false
     }
   },
@@ -522,7 +530,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -531,7 +539,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -1,
+      pointsGained: 1,
       isRequired: false
     },
     option2: {
@@ -539,7 +547,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 2,
       isRequired: false
     },
     option3: {
@@ -547,7 +555,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 1,
+      pointsGained: 3,
       isRequired: false
     },
     option4: {
@@ -555,7 +563,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 4,
       isRequired: false
     }
   },
@@ -565,7 +573,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -574,7 +582,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -582,7 +590,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -590,7 +598,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -598,7 +606,7 @@ question1: {
       content:
         "I would LOVE to help out U.S. prisioners in foreign countries! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -608,7 +616,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -617,7 +625,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -625,7 +633,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -633,7 +641,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -641,7 +649,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -651,7 +659,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -660,7 +668,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -668,7 +676,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -676,7 +684,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -684,7 +692,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -694,7 +702,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -703,7 +711,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -711,7 +719,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -719,7 +727,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -727,7 +735,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -737,7 +745,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -746,7 +754,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -754,7 +762,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -762,7 +770,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -770,7 +778,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -780,7 +788,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -789,7 +797,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -797,7 +805,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -805,7 +813,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -813,7 +821,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -823,7 +831,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -832,7 +840,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -840,7 +848,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -848,7 +856,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -856,7 +864,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -866,7 +874,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -875,7 +883,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -883,7 +891,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -891,7 +899,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -899,7 +907,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -909,7 +917,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -918,7 +926,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -926,7 +934,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -934,7 +942,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -942,7 +950,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -952,7 +960,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -961,7 +969,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -969,7 +977,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -977,7 +985,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -985,7 +993,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -995,7 +1003,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1004,7 +1012,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1012,7 +1020,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1020,7 +1028,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1028,7 +1036,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1038,7 +1046,7 @@ question1: {
       type: "string", 
       content: "This sounds very uninteresting. I would definintely not want to do this.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1047,7 +1055,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1055,7 +1063,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1063,7 +1071,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1071,7 +1079,7 @@ question1: {
       content:
         "I would LOVE to do this! This is a very interesting job!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1081,7 +1089,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1090,7 +1098,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1098,7 +1106,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1106,7 +1114,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1114,7 +1122,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1124,7 +1132,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1133,7 +1141,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1141,7 +1149,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1149,7 +1157,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1157,7 +1165,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1167,7 +1175,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1176,7 +1184,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1184,7 +1192,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1192,7 +1200,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1200,7 +1208,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1210,7 +1218,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1219,7 +1227,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1227,7 +1235,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1235,7 +1243,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1243,7 +1251,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1253,7 +1261,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1262,7 +1270,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1270,7 +1278,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1278,7 +1286,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1286,7 +1294,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1296,7 +1304,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1305,7 +1313,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1313,7 +1321,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1321,7 +1329,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1329,7 +1337,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1339,7 +1347,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1348,7 +1356,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1356,7 +1364,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1364,7 +1372,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1372,7 +1380,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1382,7 +1390,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1391,7 +1399,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1399,7 +1407,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1407,7 +1415,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1415,7 +1423,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1425,7 +1433,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1434,7 +1442,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1442,7 +1450,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1450,7 +1458,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1458,7 +1466,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1468,7 +1476,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1477,7 +1485,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1485,7 +1493,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1493,7 +1501,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1501,7 +1509,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1511,7 +1519,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Consular Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1520,7 +1528,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Consular Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1528,7 +1536,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Consular Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1536,7 +1544,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Consular Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1544,7 +1552,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Consular Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1554,7 +1562,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1563,7 +1571,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1571,7 +1579,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1579,7 +1587,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1587,7 +1595,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1597,7 +1605,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1606,7 +1614,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1614,7 +1622,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1622,7 +1630,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1630,7 +1638,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1640,7 +1648,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1649,7 +1657,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1657,7 +1665,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1665,7 +1673,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1673,7 +1681,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1683,7 +1691,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1692,7 +1700,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1700,7 +1708,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1708,7 +1716,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1716,7 +1724,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1726,7 +1734,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1735,7 +1743,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1743,7 +1751,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1751,7 +1759,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1759,7 +1767,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1769,7 +1777,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1778,7 +1786,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1786,7 +1794,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1794,7 +1802,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1802,7 +1810,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1812,7 +1820,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1821,7 +1829,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -1,
+      pointsGained: 1,
       isRequired: false
     },
     option2: {
@@ -1829,7 +1837,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 2,
       isRequired: false
     },
     option3: {
@@ -1837,7 +1845,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 1,
+      pointsGained: 3,
       isRequired: false
     },
     option4: {
@@ -1845,7 +1853,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 4,
       isRequired: false
     }
   },
@@ -1855,7 +1863,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1864,7 +1872,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -1,
+      pointsGained: 1,
       isRequired: false
     },
     option2: {
@@ -1872,7 +1880,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 2,
       isRequired: false
     },
     option3: {
@@ -1880,7 +1888,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 1,
+      pointsGained: 3,
       isRequired: false
     },
     option4: {
@@ -1888,7 +1896,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 4,
       isRequired: false
     }
   },
@@ -1898,7 +1906,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1907,7 +1915,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1915,7 +1923,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1923,7 +1931,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1931,7 +1939,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1941,7 +1949,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Economic Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1950,7 +1958,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Economic Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -1958,7 +1966,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Economic Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -1966,7 +1974,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Economic Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -1974,7 +1982,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Economic Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -1984,7 +1992,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -1993,7 +2001,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -2001,7 +2009,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -2009,7 +2017,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -2017,7 +2025,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -2027,7 +2035,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Management Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -2036,7 +2044,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Management Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -2044,7 +2052,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Management Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -2052,7 +2060,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Management Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -2060,7 +2068,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Management Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -2070,7 +2078,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -2079,7 +2087,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -2087,7 +2095,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -2095,7 +2103,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -2103,7 +2111,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -2113,7 +2121,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Political Affairs",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -2122,7 +2130,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Political Affairs",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -2130,7 +2138,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Political Affairs",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -2138,7 +2146,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Political Affairs",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -2146,7 +2154,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Political Affairs",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   },
@@ -2156,7 +2164,7 @@ question1: {
       type: "string", 
       content: "Definintely not - this sounds very uninteresting.",
       personality: "Public Diplomacy",
-      pointsGained: -4,
+      pointsGained: 0,
       isRequired: false,
       requiredMsg: "Selecting this option would automatically deem you unfit for this position."
     },
@@ -2165,7 +2173,7 @@ question1: {
       content:
         "This is uninteresting. I'd rather spend my time doing some other task.",
       personality: "Public Diplomacy",
-      pointsGained: -2,
+      pointsGained: 2,
       isRequired: false
     },
     option2: {
@@ -2173,7 +2181,7 @@ question1: {
       content:
         "I am neutral towards doing this. I don't mind doing this, but wouldn't mind doing something else either.",
       personality: "Public Diplomacy",
-      pointsGained: 0,
+      pointsGained: 4,
       isRequired: false
     },
     option3: {
@@ -2181,7 +2189,7 @@ question1: {
       content:
         "I would like to do this. It seems quite interesting!",
       personality: "Public Diplomacy",
-      pointsGained: 2,
+      pointsGained: 6,
       isRequired: false
     },
     option4: {
@@ -2189,7 +2197,7 @@ question1: {
       content:
         "I would LOVE to help out in this way! This is a very interesting task!",
       personality: "Public Diplomacy",
-      pointsGained: 4,
+      pointsGained: 8,
       isRequired: false
     }
   }

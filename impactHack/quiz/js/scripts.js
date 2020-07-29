@@ -63,11 +63,6 @@ function resetOptions() {
   for (var i = 0; i < btn.length; i++) {
      btn[i].checked = false;
   }
-  // btn[0].checked = false;
-  // btn[1].checked = false;
-  // btn[2].checked = false;
-  // btn[3].checked = false;
-  // btn[4].checked = false; //todo: automate for x buttons
 }
 
 // to select the option that is clicked
@@ -119,6 +114,8 @@ function next() {
 
     // set question count to 0 so that when the user wishes to retry, the quiz is on the right question count
     currentQn = 0;
+    //reset score
+    initScore(results);
     showPage(1);
   }
 }
@@ -130,7 +127,14 @@ function findHighest(score) {
 
     // todo edge case: ties
 
-    for (const [key, value] of Object.entries(score)) {
+    //normalizes scrore+get highest
+    for (var [key, value] of Object.entries(score)) {
+      console.log("val for " + key + " is " + value);
+      console.log("maxscore for " + key + " is " + maxScores[key]);
+      score[key] = value * 100 / maxScores[key];
+      console.log("score for " + key + " is " + value);
+      console.log("score[key] for " + key + " is " + score[key]);
+      value = score[key];
       if (highestScore < value) {
         highestScore = value;
         highestPersonality = key;
@@ -145,13 +149,31 @@ function setResultpage(results, highestPersonality) {
     // get the description of the personality and update the result page
     var personalityResult = results[highestPersonality];
     document.getElementById("personality-type").innerText =
-      highestPersonality + " Traveller";
+      highestPersonality;
     document.getElementById("personality-part-1").textContent =
       personalityResult[0];
     document.getElementById("personality-part-2").innerText =
       personalityResult[1];
     document.getElementById("personality-recommended").innerText =
       personalityResult[2];
+      //todo: create progress bars for each thing in result if showAll flag is true
+
+    console.log("results is "+ results);
+    console.log("results.keys.len is "+ Object.keys(results).length);
+    console.log("results.keys.len is "+ results.length);
+
+    // show bar
+    for (const [i, [trait, traitScore]] of Object.entries(Object.entries(score))){
+      console.log("i is "+ i);
+      var barKey = "option"+ i + "-progress";
+      var optionbar = document.getElementById(barKey);
+      console.log("score[key] for " + trait + " is " + score[trait]);
+      //var normalizedScore = (traitScore / 160) * 100  ; //todo: change hardcoded 80 // change 
+      // console.log("normalizedScore is "+ normalizedScore);
+      optionbar.style.width =  traitScore + "%";
+      optionbar.innerText = traitScore.toFixed(0) + "%";
+    }
+     
 }
 
 // bring the particular page into view.
@@ -164,4 +186,11 @@ function showPage(num) {
   pages[1].style.display = "none";
   pages[2].style.display = "none";
   pages[num].style.display = "block";
+}
+
+function setUpTraitProgress(divName){
+  var progress = shift + currentQn * shift;
+  var progressbar = document.getElementById("progress");
+  progressbar.style.width = progress + "%";
+  progressbar.innerText = currentQn + 1 + "/" + numQuestions;
 }
