@@ -204,6 +204,21 @@ h1, h4 {
      background-image: url("https://image.flaticon.com/icons/svg/733/733579.svg");
 }
 
+/* Scroll bar */
+body::-webkit-scrollbar {
+  width: 0.7em;
+  background: #c0392b;
+}
+body::-webkit-scrollbar-thumb {
+  background: #c0392b;
+  height:30px;
+}
+
+body::-webkit-scrollbar-track-piece
+{
+   display:none;
+}
+
 /* results */
 
 #option0-bar {

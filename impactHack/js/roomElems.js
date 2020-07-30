@@ -34,6 +34,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   linkPanoInfoSpotWtInfo (new THREE.Vector3(4000.00, 723.01, 4.34), "FSO-container", true, blackRoom, "Foreign Service Officers", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"desc-container" , true, blackRoom, "Foreign Service Specialists", "https://michelleFae.github.io/ImpactHack/tempIntroRoom/assets/exhibitRooms/textSample.jpg");
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-4999.97, 742.82, 76.35), 'desc-container', true,  blackRoom, "Civil Service Officers", PANOLENS.DataImage.Info);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-125.28, 1562.97, -5000.00), 'desc-container', true,  blackRoom, "Digital Diplomat Go", PANOLENS.DataImage.Info);
 
 
   // Add Scenes
