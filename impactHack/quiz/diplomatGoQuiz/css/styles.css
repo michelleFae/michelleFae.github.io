@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: rgba(255,255,255,0.1);
-    background-image: url("../../assets/quizAssets/flagBackdrop.jpg");
+    background-image: url("../../../assets/quizAssets/flagBackdrop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,7 +11,8 @@ h2,
 #progress-bar #progress,
 label,
 p,
-h5
+h5,
+h6
 {
     font-family: 'ITC Avant Garde Gothic Book';
     color: white;
@@ -43,15 +44,15 @@ h1, h4 {
 
 .quizBackground {
     margin: 0;
-    background-image: url("../../assets/quizAssets/flagBackdrop.jpg");
+    background-image: url("../../../assets/quizAssets/flagBackdrop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .container {
-    height: auto;
-    width: auto;
+    height: 50%;
+    width: 50%;
     max-width: 700px;
     padding: 20px;
     background-color: rgba(0,0,0,0.5);
@@ -104,11 +105,12 @@ h1, h4 {
 }
 
 #progress-bar {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-bottom: 2px solid rgba(255,255,255,0.1);
+    display:inline-block;
 }
 
 #progress {
@@ -116,6 +118,15 @@ h1, h4 {
     text-align: right;
     border-bottom: 2px solid #ceab82;
     margin-bottom: -2px;
+}
+
+#running-score {
+    text-align: right;
+    float: right;
+    border-style: ridge;
+    border-color: rgba(255,255,255,0.9);
+    color: #ceab82;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .option {
@@ -139,9 +150,60 @@ h1, h4 {
     max-height: 100%;
 }
 
+#collectible-diplomat img {
+    max-height: 100%;
+}
+
 .small-text {
     font-size: small;
 }
+
+/* sharing icons */
+/* container */
+
+#share {
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* buttons */
+
+#share a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 20%;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.75;
+    transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+    opacity: 1;
+}
+
+/* icons */
+
+#share i {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+   
+    background-image: url("https://image.flaticon.com/icons/svg/124/124010.svg");
+}
+
+.twitter {
+     background-image: url("https://image.flaticon.com/icons/svg/733/733579.svg");
+}
+
 /* results */
 
 #option0-bar {
