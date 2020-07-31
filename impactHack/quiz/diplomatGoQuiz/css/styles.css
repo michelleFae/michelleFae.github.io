@@ -60,6 +60,15 @@ h1, h4 {
     overflow-y: scroll;
 }
 
+.non-scroll-container {
+    height: 50%;
+    width: 50%;
+    max-width: 700px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5);
+    max-height: 100vh;
+}
+
 #questionaire-title {
     margin-top: 5%;
     margin-bottom: 5%;
