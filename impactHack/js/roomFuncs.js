@@ -46,6 +46,10 @@
     }
   }
 
+  function addInfoSpotFunc(item, _) {
+    linkPanoInfoSpotWtInfo (new THREE.Vector3(item.positionVector[0], item.positionVector[1], item.positionVector[2]), item.container, item.displayOnNavbar, item.panoramaRoom, item.title, item.image);
+  }
+
 
   function onFocus () {
     this.focus( parameters.duration, TWEEN.Easing[ parameters.curve ][ parameters.easing ] );
