@@ -14,7 +14,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   };
 
   // Init rooms
-  blackRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/blackRoom/walls/blackRoomReal.png');
+  blackRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/blackRoom/blackRoomWtTop.png');
   whiteRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/whiteRoom/resizedImage/whiteRoomEmpty.png');
   redRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/redRoom/redRoomEmpty.png');
   blueRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/blueRoom/walls/BlueRoomEmpty1.png');
@@ -51,7 +51,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   // Civil Service Room Items
 
   // Insert Info Spots
-  linkPanoInfoSpotWtInfo (new THREE.Vector3(-109.84, 5000.00, -228.22), "general-info-container", true, blackRoom, "General Information", PANOLENS.DataImage.Info);
+  //linkPanoInfoSpotWtInfo (new THREE.Vector3(-109.84, 5000.00, -228.22), "general-info-container", true, blackRoom, "General Information", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo (new THREE.Vector3(4000.00, 723.01, 4.34), "FSO-container", true, blackRoom, "Foreign Service Officers", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"desc-container" , true, blackRoom, "Foreign Service Specialists", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-4999.97, 742.82, 76.35), 'desc-container', true,  blackRoom, "Civil Service Officers", PANOLENS.DataImage.Info);
@@ -67,3 +67,18 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   // Set the navbar list to visible for the first room
   setNavBarListInView(blackRoom);
+
+
+var lookAtPositions = [
+  new THREE.Vector3(-109.84, 5000.00, -228.22)
+];
+
+blackRoom.addEventListener( 'enter-fade-start', function(){
+  viewer.tweenControlCenter( lookAtPositions[0], 0 );
+} );
+
+
+
+
+
+
