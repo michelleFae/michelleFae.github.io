@@ -19,7 +19,9 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   redRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/redRoom/redRoomEmpty.png');
   blueRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/blueRoom/walls/BlueRoomEmpty1.png');
 
-
+  // Recording image dimensions
+  const { edgeLength } = blackRoom;
+  radius = edgeLength / 2;
 
 
   /* MAIN - Game and quiz info spots */
@@ -32,9 +34,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(-143.87, 546.09, -5000.00), new THREE.Vector3(-143.87, 546.09, -5000.00), 1000, "Main Room", "Foreign Service Officer Room");
   linkPanoRooms (blackRoom, blueRoom, new THREE.Vector3(5000.00, 723.01, 4.34), new THREE.Vector3(5000.00, 723.01, 4.34), 1000, "Main Room", "Foreign Service Specialists Room");
 
-  // Recording image dimensions
-  const { edgeLength } = blackRoom;
-  radius = edgeLength / 2;
+
 
 
   // infospotsList.forEach(addInfoSpotFunc);
