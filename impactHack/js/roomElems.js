@@ -26,7 +26,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   /* MAIN - Game and quiz info spots */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -216.72, -38.59), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/whatsYourDiplomatQuiz.png", radius / 2.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -953.68, -83.64), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/whatsYourDiplomatQuiz.png", radius / 2.5);
 
 
   // Link Rooms
