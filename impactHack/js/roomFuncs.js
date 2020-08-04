@@ -1,7 +1,12 @@
-  function linkPanoRooms (panorama1, panorama2, vect1, vect2, size) {
+  function linkPanoRooms (panorama1, panorama2, vect1, vect2, size, room1Name, room2Name) {
     panorama1.linkWtMenuChange(panorama2, vect1, size); //img can be second param here
-      //link pano2 to main room
+    
+    //link pano2 to main room
     panorama2.linkWtMenuChange(panorama1, vect2, size);
+
+
+    linkPanoInfoSpot(vect1, true, room2Name, panorama1, true)
+    linkPanoInfoSpot(vect2, true, room1Name, panorama2, true)
   }
 
   function addToNavBar(hoverText, infospot, panoramaRoom) {
