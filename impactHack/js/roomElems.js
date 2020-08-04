@@ -31,15 +31,26 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   // infospotsList.forEach(addInfoSpotFunc);
 
+  /* Insert Info Spots */
+
+  // Main Room Items
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-62.98, -1401.99, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/question.png");
+
+  // FSO Room Items
+
+
+  // FSS Room Items
+
+  // Civil Service Room Items
+
   // Insert Info Spots
   linkPanoInfoSpotWtInfo (new THREE.Vector3(-109.84, 5000.00, -228.22), "general-info-container", true, blackRoom, "General Information", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo (new THREE.Vector3(4000.00, 723.01, 4.34), "FSO-container", true, blackRoom, "Foreign Service Officers", PANOLENS.DataImage.Info);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"desc-container" , true, blackRoom, "Foreign Service Specialists", "https://michelleFae.github.io/impactHack/assets/icons/question.png");
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"desc-container" , true, blackRoom, "Foreign Service Specialists", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-4999.97, 742.82, 76.35), 'desc-container', true,  blackRoom, "Civil Service Officers", PANOLENS.DataImage.Info);
   
 
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-62.98, -1401.99, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/question.png");
-
+  
 
   // Add Scenes
   addScenes();
