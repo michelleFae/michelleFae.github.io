@@ -19,6 +19,14 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   redRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/redRoom/redRoomEmpty.png');
   blueRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/blueRoom/walls/BlueRoomEmpty1.png');
 
+
+
+
+  /* MAIN - Game and quiz info spots */
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -216.72, -38.59), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/whatsYourDiplomatQuiz.png", radius / 2.5);
+
+
   // Link Rooms
   linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Room");
   linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(-143.87, 546.09, -5000.00), new THREE.Vector3(-143.87, 546.09, -5000.00), 1000, "Main Room", "Foreign Service Officer Room");
@@ -34,8 +42,8 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   /* Insert Info Spots */
 
   // Main Room Items
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-62.98, -1401.99, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/question.png");
-
+  
+//-62.98, -1401.99, -5000.00
   // FSO Room Items
 
 

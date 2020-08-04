@@ -35,9 +35,12 @@
     }
   }
 
-  function linkPanoInfoSpotWtInfo(vect, divContainer, isAddToNavBar, panoramaRoom, hoverText, image) {
-    // sizing s.t. further away appears smaller
-    infoSpotSize = baseScale * vect.length() / radius;
+  function linkPanoInfoSpotWtInfo(vect, divContainer, isAddToNavBar, panoramaRoom, hoverText, image, infoSpotSize=undefined ) {
+    if (infoSpotSize == undefined) {
+      // sizing s.t. further away appears smaller
+      infoSpotSize = baseScale * vect.length() / radius;
+    }
+    
     // add infospot with info that pops up in same room
     infospot2 = new PANOLENS.Infospot( infoSpotSize, image);
     infospot2.position.copy(vect);
