@@ -26,7 +26,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   /* MAIN - Game and quiz info spots */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -953.68, -83.64), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/whatsYourDiplomatQuiz.png", radius / 2.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -911.25, 20.85), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://www.dropbox.com/s/kwc2xol6p08406k/whatsYourDiplomatQuiz.png?dl=0?raw=1", radius / 2.5);
 
 
   // Link Rooms
@@ -43,7 +43,6 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   // Main Room Items
   
-//-62.98, -1401.99, -5000.00
   // FSO Room Items
 
 
