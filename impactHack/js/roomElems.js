@@ -70,7 +70,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
 
 var lookAtPositions = [
-  new THREE.Vector3(-109.84, 5000.00, -228.22)
+  new THREE.Vector3(188.35, 5000.00, 0.00)
 ];
 
 blackRoom.addEventListener( 'enter-fade-start', function(){
