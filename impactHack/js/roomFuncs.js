@@ -64,6 +64,26 @@
   }
 
 
+/* Swaps divs with click from mainDivStr+initialNum to mainDivStr+NextNum*/
+  function SwapDivsWithClick(mainDivStr, initialNum, NextNum)
+  {
+     d1 = document.getElementById(mainDivStr + initialNum);
+     d2 = document.getElementById(mainDivStr + NextNum);
+     if( d2.style.display == "none" )
+     {
+        d1.style.display = "none";
+        d2.style.display = "block";
+     }
+     else
+     {
+        d1.style.display = "block";
+        d2.style.display = "none";
+     }
+  }
+
+
+
+
   function addScenes() {
     // Add panorama scenes to viewer
     /* Add all scenes to viewer */ // todo: maybe change so can add 1 scene at a time

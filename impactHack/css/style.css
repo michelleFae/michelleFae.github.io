@@ -131,19 +131,23 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
 
 
 
-#desc-container {
+#desc-container1, #desc-container0 {
     max-width: 500px;
-    max-height: 500px;
+    max-height: 200px;
     min-width: 200px;
     min-height: 250px;
     background: #fff;
     color: #000;
     border-radius: 3px;
-    overflow: auto;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
 
-#desc-container > iframe {
+#desc-container1, #desc-container0 > text {
+  overflow-y: scroll;
+}
+
+#desc-container1, #desc-container0 > iframe {
     border: none;
     width:100%;
   }
