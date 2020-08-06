@@ -69,39 +69,184 @@
 
   <!-- black room containers -->
 
-  <div id="game-container" style="display:none">
+
+
+  <div id="game-container" class="generalQuiz" style="display:none">
       <div class="title">Digital Diplomat Go</div>
     <iframe src="https://michellefae.github.io/impactHack/quiz/diplomatGoQuiz/quiz.html" title="Digital Diplomat Go"></iframe>
   </div>
 
-    <div id="wydq-container" style="display:none">
+    <div id="wydq-container" class="generalQuiz" style="display:none">
       <div class="title">What's Your Digital Diplomat❓</div>
     <iframe src="https://michellefae.github.io/impactHack/quiz/FSOTrackQuiz/quiz.html" title="What's Your Diplomat?"></iframe>
     <div class="text"></div>
   </div>
+
+
+
+
 <div id="desc-container" style="display:none">
-  <div id="desc-container0" style="display:visible">
+  <div id="desc-container0" class="generalDialogue" style="display:visible">
       <iframe src="https://www.youtube.com/embed/D7icsuamx5E"></iframe>
       <div class="title">Yeet</div>
       <div class="text">This is a test; we can make an iframe for the quiz (a little biger obviously - but this sorta popup could be used; we can even use this for the video resources they provided.
       123
     </div>
-    <button type="button" onclick="SwapDivsWithClick('desc-container', '0', '1')">Click me!</button>
+    <button type="button" class = "previous" onclick="SwapDivsWithClick('desc-container', '0', '1')">Prev</button>
+        <button type="button" class = "next" onclick="SwapDivsWithClick('desc-container', '0', '1')">Next</button>
   </div>
 
- <div id="desc-container1" style="display:none">
+ <div id="desc-container1" class="generalDialogue" style="display:none">
       <iframe src="https://www.youtube.com/embed/D7icsuamx5E"></iframe>
       <div class="title">et</div>
       <div class="text">0.0
       123
     </div>
-    <button type="button" onclick="SwapDivsWithClick('desc-container', '1', '0')">Click me2!</button>
+        <button type="button" class = "previous" onclick="SwapDivsWithClick('desc-container', '1', '0')">Prev</button>
+        <button type="button" class = "next blue" onclick="SwapDivsWithClick('desc-container', '1', '0')">Next</button>
   </div>
 </div>
 
-  <!-- red room containers -->
-  <!-- blue room containers -->
-  <!-- white room containers -->
+
+
+
+
+  <!-- (fss) red room containers -->
+  <!-- (fso) blue room containers -->
+
+  <!-- 1. consular affairs -->
+  <div id="consular-affairs-container" style="display:none">
+      <iframe  src="https://www.youtube.com/embed/FDyMaaEkUCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="title">Consular Officers</div>
+      <div id="consular-affairs-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Hi I’m Terry - I’m a foregin service officer in Consular Affairs.</p>
+
+                <p>Consular officers facilitate adoptions, help evacuate Americans, and combat fraud to protect our borders and fight human trafficking. Consular officers touch people’s lives in important ways, often reassuring families in crisis.</p>
+          </div>
+          <button type="button" class = "next" onclick="SwapDivsWithClick('consular-affairs-', '0', '1')">Next »</button>
+      </div>
+
+     <div id="consular-affairs-1" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>Consular officers work on:</p>
+                <ul style="list-style-type:disc">
+                  <li>facilitating adoptions</li>
+                  <li>reassuring families in crisis</li>
+                  <li>Helping evacuate Americans</li>
+                  <li>combating fraud</li>
+                  <li>fighting human trafficking.</li>
+                  <li>facilitating local business, education and tourism by working closely with local officials</li>
+                  <li>keeping Washington up to date on current consular issues which might include fraud trends, visa workloads, or delicate American citizen cases involving victims of crime or child abductions</li>
+                </ul>
+            </div>
+
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('consular-affairs-', '1', '0')">« Prev</button>
+            <button type="button" class = "next blue" onclick="SwapDivsWithClick('consular-affairs-', '1', '2')">Next  »</button>
+      </div>
+      <div id="consular-affairs-2" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>Consular officers excel at:</p>
+                <ul style="list-style-type:disc">
+                  <li>picking up local customs as well as cultural, economic and political conditions</li>
+                  <li>applying knowledge of host country and U.S. immigration laws to facilitate legitimate travel to the United States</li>
+                  <li>making prompt, informed decisions that affect the lives of not only Americans abroad but also other foreign citizens</li>
+                </ul>
+                <br>
+                <p>Consular officers are supported by:</p>
+                <ul style="list-style-type:disc">
+                  <li>highly-qualified, multicultural staff</li>
+                  <li>technology that manages consular operations, improves customer service and ensures border security</li>
+                </ul>
+
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('consular-affairs-', '2', '1')">« Prev</button>
+            <button type="button" class = "next" onclick="SwapDivsWithClick('consular-affairs-', '2', '3')">Next »</button>
+      </div>
+      <div id="consular-affairs-3" class="generalDialogue" style="display:none">
+            <div class="text">
+                <p>Learn more about consular officers
+                  <a href="https://careers.state.gov/work/foreign-service/officer/career-tracks/consular/">here</a>.
+                  
+                </p>
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('consular-affairs-', '3', '2')">« Prev</button>
+             <button type="button" class = "next blue" onclick="SwapDivsWithClick('consular-affairs-', '3', '0')">Back to Start »»</button>
+      </div>
+  </div>
+
+
+
+<!-- 2. Economic affairs -->
+  <div id="economic-affairs-container" style="display:none">
+      <iframe  src="https://www.youtube.com/embed/FDyMaaEkUCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="title">Economic Officers</div>
+      <div id="economic-affairs-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Hi I’m Terry - I’m a foregin service officer in Consular Affairs.</p>
+
+                <p>Consular officers facilitate adoptions, help evacuate Americans, and combat fraud to protect our borders and fight human trafficking. Consular officers touch people’s lives in important ways, often reassuring families in crisis.</p>
+          </div>
+          <button type="button" class = "next" onclick="SwapDivsWithClick('economic-affairs-', '0', '1')">Next »</button>
+      </div>
+
+     <div id="economic-affairs-1" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>Consular officers work on:</p>
+                <ul style="list-style-type:disc">
+                  <li>facilitating adoptions</li>
+                  <li>reassuring families in crisis</li>
+                  <li>Helping evacuate Americans</li>
+                  <li>combating fraud</li>
+                  <li>fighting human trafficking.</li>
+                  <li>facilitating local business, education and tourism by working closely with local officials</li>
+                  <li>keeping Washington up to date on current consular issues which might include fraud trends, visa workloads, or delicate American citizen cases involving victims of crime or child abductions</li>
+                </ul>
+            </div>
+
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('economic-affairs-', '1', '0')">« Prev</button>
+            <button type="button" class = "next blue" onclick="SwapDivsWithClick('economic-affairs-', '1', '2')">Next  »</button>
+      </div>
+      <div id="economic-affairs-2" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>economic officers excel at:</p>
+                <ul style="list-style-type:disc">
+                  <li>picking up local customs as well as cultural, economic and political conditions</li>
+                  <li>applying knowledge of host country and U.S. immigration laws to facilitate legitimate travel to the United States</li>
+                  <li>making prompt, informed decisions that affect the lives of not only Americans abroad but also other foreign citizens</li>
+                </ul>
+                <br>
+                <p>economic officers are supported by:</p>
+                <ul style="list-style-type:disc">
+                  <li>highly-qualified, multicultural staff</li>
+                  <li>technology that manages consular operations, improves customer service and ensures border security</li>
+                </ul>
+
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('economic-affairs-', '2', '1')">« Prev</button>
+            <button type="button" class = "next" onclick="SwapDivsWithClick('economic-affairs-', '2', '3')">Next »</button>
+      </div>
+      <div id="economic-affairs-3" class="generalDialogue" style="display:none">
+            <div class="text">
+                <p>Learn more about economic officers
+                  <a href="https://careers.state.gov/work/foreign-service/officer/career-tracks/economic/">here</a>.
+                  
+                </p>
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('economic-affairs-', '3', '2')">« Prev</button>
+             <button type="button" class = "next blue" onclick="SwapDivsWithClick('economic-affairs-', '3', '0')">Back to Start »»</button>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- (cs) white room containers -->
 
 
 
