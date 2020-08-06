@@ -27,10 +27,10 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 //"https://michelleFae.github.io/impactHack/assets/icons/globe.gif"
 //5000.00, -911.25, 20.85
 
-  /* MAIN - Game and quiz info spots 256x256*/
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
+  // /* MAIN - Game and quiz info spots 256x256*/
+  // linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(91.94, -533.50, 5000.00), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
-
+ linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'fss-dim-container', true,  blackRoom, "dimensions", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
 
   // Link Rooms
   linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Room");
