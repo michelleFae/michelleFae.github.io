@@ -1,0 +1,46 @@
+text{
+        font-family:Helvetica, Arial, sans-serif;
+        font-size:11px;
+        pointer-events:none;
+        color: white;
+    }
+    #chart{
+        position:absolute;
+        width:500px;
+        height:500px;
+        top:0;
+        left:0;
+    }
+    #question{
+        position: absolute;
+        width:300px;
+        height:500px;
+        top:0;
+        left:520px;
+        background-color: black;
+        color:#ceab82;
+
+    }
+    #question h1{
+        font-size: 22px;
+        font-weight: bold;
+        font-family: "Archivo Black Regular", "ITC Avant Garde Gothic Medium", "ITC Avant Garde Gothic Book";
+        position: absolute;
+        padding: 0;
+        margin: 40px;
+        color:#ceab82;
+        top:50%;
+        -webkit-transform:translate(0,-50%);
+                transform:translate(0,-50%);
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .path{
+        color:white;
+    }
+
+    #outer-container{
+          display: flex;
+          justify-content: center;
+    }
