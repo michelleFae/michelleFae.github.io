@@ -1,9 +1,7 @@
-//Update manually according to HTML file
-const maxOptions = 5;
-
 // num questions
 const numQuestions = Object.keys(questions).length;
 const shift = 100 / numQuestions;
+const numNonOptionItems = 1; //OBJECTS IS NUMBER OF THINGS IN THE QUESTION - 1.
 
 // for keeping track of the score
 var score = {};
@@ -17,12 +15,9 @@ function initScore(results) {
   // Takes in a results object and uses its keys as attributes in a score object
 
   resultKeys = Object.keys(results);
-  console.log("resultKeys is "+ resultKeys);
   resultKeys.forEach(function (resultKey, _) {
     score[resultKey] = 0;
-    console.log("score reskey is "+ resultKey);
   });
-
 }
 
 // for setting up each of the questions
@@ -42,20 +37,16 @@ function setupQuestion() {
   qnText.innerText = qn.question;
 
 
-  var numOptions = qn.numOptions;
+  // ASSUMPTION: NUM OF OBJECTS IS NUMBER OF THINGS IN THE QUESTION - 1.
+  var numOptions = Object.keys(qn).length - numNonOptionItems;
   // updates each of the options for the current question
-  var currOptNum = 0;
-  for (; currOptNum < numOptions; currOptNum++) {
-
-
-    var option = document.getElementById("option" + currOptNum);
-    //todo: show div
-    option.style.visibility = 'visible';
+  for (var i = 0; i < numOptions; i++) {
+    var option = document.getElementById("option" + i);
     if (option == null) {
       console.log("rere");
     }
     var content = option.getElementsByClassName("content")[0];
-    var qnOption = qn["option" + currOptNum];
+    var qnOption = qn["option" + i];
     if (qnOption.type == "image") {
       var htmlStr = "<img src='" + qnOption.content + "'>";
       content.innerHTML = htmlStr;
@@ -64,13 +55,6 @@ function setupQuestion() {
       content.innerHTML = htmlStr;
     }
   }
-
-  for (; currOptNum < maxOptions; currOptNum++) {
-    //todo: hide div
-    var option = document.getElementById("option" + currOptNum);
-    option.style.visibility = 'hidden';
-  }
-  
 }
 
 // to unselect all of the options
@@ -90,31 +74,26 @@ function select(element) {
   btn.checked = true;
   var ans = $("input[name=answer]:checked").val();
   var qn = questions["question" + currentQn];
-
-  var btn = element.getElementsByTagName("input")[0];
-  btn.checked = true;
-  next();
-
+  var isRequired = qn["option" + ans].isRequired;
+  if (isRequired) {
+    alert(qn["option" + ans].requiredMsg);
+  } else {
+    var btn = element.getElementsByTagName("input")[0];
+    btn.checked = true;
+    next();
+  }
 }
 
-function increasePersonalityPoints(qn, ans, personality) {
-  // increase the score of the personality by the points gained value
-  var pointsGained = qn["option" + ans].pointsGained;
-  score[personality] += pointsGained;
-}
 // get the next questions, or display result if all questions were answered
 function next() {
   // get the current select option
   var ans = $("input[name=answer]:checked").val();
   var qn = questions["question" + currentQn];
   // get the personality type for the option selected
-  var personalityLst = qn["option" + ans].personality;
-
-  // increase points for each personality
-  for (i = 0; i < personalityLst.length; i++) {
-    increasePersonalityPoints(qn, ans, personalityLst[i])
-  }
-
+  var personality = qn["option" + ans].personality;
+  // increase the score of the personality by the points gained value
+  var pointsGained = qn["option" + ans].pointsGained;
+  score[personality] += pointsGained;
   // increase the question count by 1
   currentQn++;
   // unselect all options
@@ -199,8 +178,6 @@ function setResultpage(results, highestPersonality) {
     // take care of highest personality:
 
      for (const [i, [trait, traitScore]] of Object.entries(Object.entries(score))) {
-      console.log(i);
-      console.log(trait);
           document.getElementById("option" + i + "-title").textContent = "About " + trait;
           const optionNum = getOptionNum(traitScore);
           document.getElementById("option" + i + "-suitability").textContent = results[trait][optionNum];

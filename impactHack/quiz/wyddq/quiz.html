@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="js/questions.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/scripts.js"></script>
+    <div class="quizBackground">
+    <div class="fullpage black-bg centered">
+        <div class="container start">
+            <h1 id="questionaire-title">Which Career Track is Right for You?</h1>
+
+            <div id="questionaire-info">
+            	<p>The Foreign Service has five different career tracks: Consular Affairs, Economic Affairs, Management Affairs, Political Affairs, and Public Diplomacy. At the beginning of the hiring process, you must choose a track. We know that this can be a tough decision, so we have developed a questionnaire to help you match your interests to the career track that may be right for you.</p>
+            	<p> You will be presented with work activities from each of the five tracks (in random order), and asked to rate how interested you would be in performing each of the 51 activities. It only takes about 10 minutes to complete and your results will be tabulated into a useful chart. Please remember that this is just a guide. Trust your personal judgment, not solely the results of the questionnaire, in selecting the career track that is right for you.
+            	</p>
+            </div>
+
+            <div class="centered">
+                <div class="button" onclick="showPage(2); setupQuestion();">
+                    <p>START</p>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden">
+            <h1 id="personality-type"></h1>
+            <p> Here's a bit about your suitability for all Foreign Service Officer Tracks... </p>
+            <div id="result-info">
+            <div id="option0-items">
+                <h4 id="option0-title"> 
+                    Trait
+                </h4>
+                <h5 id="option0-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option0-bar">
+                     <div id="option0-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option0-info1> </p>
+                <p class="small-text" id=option0-info2> </p>
+            </div>
+            <br>
+            <div id="option1-items">
+                <h4 id="option1-title"> 
+                    Trait
+                </h4>
+                <h5 id="option1-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option1-bar">
+                     <div id="option1-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option1-info1> </p>
+                <p class="small-text" id=option1-info2> </p>
+            </div>
+            <br>
+            <div id="option2-items">
+                <h4 id="option2-title"> 
+                    Trait
+                </h4>
+                <h5 id="option2-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option2-bar">
+                     <div id="option2-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option2-info1> </p>
+                <p class="small-text" id=option2-info2> </p>
+            </div>
+            <br>
+            <div id="option3-items">
+                <h4 id="option3-title"> 
+                    Trait
+                </h4>
+                <h5 id="option3-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option3-bar">
+                     <div id="option3-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option3-info1> </p>
+                <p class="small-text" id=option3-info2> </p>
+            </div>
+             <div id="option4-items">
+                <h4 id="option4-title"> 
+                    Trait
+                </h4>
+                <h5 id="option4-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option4-bar">
+                     <div id="option4-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option4-info1> </p>
+                <p class="small-text" id=option4-info2> </p>
+            </div>
+        </div>
+            <br>
+            <br>
+            <div class="centered">
+                <div class="button" onclick="showPage(0); setupQuestion();">
+                    <p>RETRY</p>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden">
+            <div id="progress-bar">
+                <div id="progress">1/5</div>
+            </div>
+            <h4 id="question"></h4>
+            <div class="option" id="option0" onclick="select(this)">
+                <input type="radio" name="answer" value="0" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option1" onclick="select(this)">
+                <input type="radio" name="answer" value="1" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option2" onclick="select(this)">
+                <input type="radio" name="answer" value="2" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option3" onclick="select(this)">
+                <input type="radio" name="answer" value="3" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option4" onclick="select(this)">
+                <input type="radio" name="answer" value="4" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
