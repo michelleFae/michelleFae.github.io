@@ -33,16 +33,23 @@
 
      <!-- INFO CONTAINERS -->
     
+    <!-- Main Room -->
   <div id="wydq-container" class="generalQuiz" style="display:none">
       <div class="title">What's Your Digital Diplomat❓</div>
     <iframe src="https://michellefae.github.io/impactHack/quiz/FSOTrackQuiz/quiz.html" title="What's Your Diplomat?"></iframe>
     <div class="text"></div>
   </div>
 
+
+
+
     <div id="diplomatic-wheel-container" class="wheel" style="display:none">
       <div class="title">Wheel of Diplomatic Skills</div>
     <iframe src="https://michellefae.github.io/impactHack/wheel/index.html" title="Wheel of Diplomatic Skills"></iframe>
   </div>
+
+
+
 
   <div id="diplomatic-wheel-info" class="wheelInfo" style="display:none">
       <div class="title tanColorText">Wheel of Diplomatic Skills</div>
@@ -52,6 +59,48 @@
   <p class="blueColorText blueHighlight">Blue corresponds to Mission Driven skills</p>
   <p>So - spin the wheel and learn more about the skills of a good diplomat! Do you have these skills too?</p>
   </div>
+
+
+
+
+
+  <div id="what-is-diplomacy-info" style="display:none">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/OL3DaC6RWa0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div id="what-is-diplomacy-info0" class="generalDialogue" style="display:visible">
+      <div class="title">What is Diplomacy?</div>
+      <div class="text"> <p>The U.S. Department of State manages America’s relationships with foreign governments, international organizations, and the people of other countries. The management of all of these relationships is called diplomacy. </p>
+    </div>
+        <button type="button" class = "next" onclick="SwapDivsWithClick('what-is-diplomacy-info', '0', '1')">Next »</button>
+  </div>
+
+ <div id="what-is-diplomacy-info1" class="generalDialogue" style="display:none">
+      <div class="text">  <p>The State Department is a vital part of the U.S. Government because it:</p>
+      <ul style="list-style-type:circle">
+        <li>Represents the United States overseas and conveys U.S. policies to foreign governments and international organizations through American embassies and consulates in foreign countries and diplomatic missions;</li>
+        <li>Negotiates and concludes agreements and treaties on issues ranging from trade to nuclear weapons;</li>
+        <li>Coordinates and supports international activities of other U.S. agencies, hosts official visits, and performs other diplomatic missions;</li>
+        <li>Leads interagency coordination and manages the allocation of resources for foreign relations; and</li>
+        <li>Promotes mutual understanding between the people of the United States and the people of other countries around the world.</li>
+      </ul>
+    </div>
+        <button type="button" class = "previous" onclick="SwapDivsWithClick('what-is-diplomacy-info', '1', '0')">« Prev</button>
+        <button type="button" class = "next blue" onclick="SwapDivsWithClick('what-is-diplomacy-info', '1', '2')">Next »</button>
+  </div>
+  <div id="what-is-diplomacy-info2" class="generalDialogue" style="display:none">
+      <div class="text">   <p>As the lead U.S. foreign affairs agency, the U.S. Department of State represents the United States at more than 270 diplomatic locations around the world, including embassies, consulates, and missions to international organizations.</p>
+      <p>Want to make a positive impact in the world? Become a diplomat.</p>
+    </div>
+    <button type="button" class = "previous" onclick="SwapDivsWithClick('what-is-diplomacy-info', '2', '1')">« Prev</button>
+    <button type="button" class = "next blue" onclick="SwapDivsWithClick('what-is-diplomacy-info', '2', '0')">Back to Start »»</button>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +128,7 @@
       123
     </div>
         <button type="button" class = "previous" onclick="SwapDivsWithClick('desc-container', '1', '0')">Prev</button>
-        <button type="button" class = "next blue" onclick="SwapDivsWithClick('desc-container', '1', '0')">Next</button>
+<button type="button" class = "next" onclick="SwapDivsWithClick('economic-affairs-', '3', '0')">Back to Start »»</button>
   </div>
 </div>
 
@@ -92,6 +141,9 @@
       <div class="title">Foreign Service Specialist Dimensions</div>
     <iframe src="https://michellefae.github.io/impactHack/dimensions/dimensionFrame/indexFiles/fss.html#/" title="Dimensions of Foreign Service Specialists"></iframe>
   </div>
+
+
+
 
   <!-- (fso) blue room containers -->
     <div id="fso-dim-container" class="dimensionsFrame" style="display:none">

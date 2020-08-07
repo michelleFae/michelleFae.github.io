@@ -36,12 +36,15 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   /* Insert Info Spots */
 
   /* Main Room Items */
-  //wheel
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-31.66, 877.36, -5000.00),"diplomatic-wheel-info" , false, blackRoom, "info for wheel", PANOLENS.DataImage.Info);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-8.14, -352.10, -5000.00), 'diplomatic-wheel-container', true,  blackRoom, " Wheel of Diplomat Skills", "https://michelleFae.github.io/impactHack/assets/wheel/wheel.png" , radius / 2);
+  /* What is diplomacy */
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -3494.28, -4383.53),"what-is-diplomacy-info" , true, blackRoom, "What is diplomacy?", "https://michelleFae.github.io/impactHack/assets/misc/liberty.png", radius);
+
   //whats your diplomat
   linkPanoInfoSpotWtInfo(new THREE.Vector3(91.94, -533.50, 5000.00), 'wydq-container', true,  blackRoom, "What's Your Digital Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
 
+  //wheel
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-31.66, 877.36, -5000.00),"diplomatic-wheel-info" , false, blackRoom, "info for wheel", PANOLENS.DataImage.Info);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-8.14, -352.10, -5000.00), 'diplomatic-wheel-container', true,  blackRoom, " Wheel of Diplomat Skills", "https://michelleFae.github.io/impactHack/assets/wheel/wheel.png" , radius / 2);
   
   /* FSO Room Items (blue) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -139.13, 137.05),"fso-dim-container" , true, blueRoom, "FSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/lightBlueDims.png" , radius / 2);
@@ -50,6 +53,11 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -139.13, 137.05),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
+
+
+
+
+
 
   /* Civil Service Room Items (white) */
 
