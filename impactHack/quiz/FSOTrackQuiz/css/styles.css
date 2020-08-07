@@ -97,6 +97,8 @@ h1, h4 {
     border-radius: 5px;
     text-align: center;
     width: 100px;
+    background-color: transparent;
+    color:#ceab82;
 }
 
 .button:hover {

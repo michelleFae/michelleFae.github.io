@@ -13,6 +13,19 @@ var currentQn = 0;
 
 initScore(results);
 
+function setVisible(div2) {
+            var div2 = document.getElementById(div2);
+            if (div2) {
+
+                if (div2.style.display == 'none') {
+                    div2.style.display = 'block';
+                }
+                else {
+                    div2.style.display = 'none';
+                }
+            }
+}
+
 function initScore(results) {
   // Takes in a results object and uses its keys as attributes in a score object
 
@@ -133,6 +146,8 @@ function next() {
 
     setResultpage(results, highestPersonality);
 
+
+
     // set question count to 0 so that when the user wishes to retry, the quiz is on the right question count
     currentQn = 0;
     //reset score
@@ -228,6 +243,24 @@ function setResultpage(results, highestPersonality) {
 // page 1: result page
 // page 2: quiz
 function showPage(num) {
+  if (num == 0) {
+        //hide toggle divs on results page
+        var fsoResultDiv = document.getElementById("fso");
+        console.log ("in show page");
+        if (fsoResultDiv) {
+            fsoResultDiv.style.display = 'none';
+            console.log ("in fso results");
+        }
+        var fssResultDiv = document.getElementById("fss");
+        if (fssResultDiv) {
+            fssResultDiv.style.display = 'none';
+        }
+        var csResultDiv = document.getElementById("civil-service");
+        if (csResultDiv) {
+            csResultDiv.style.display = 'none';
+        }
+ 
+  }
   var pages = document.getElementsByClassName("container");
   pages[0].style.display = "none";
   pages[1].style.display = "none";
