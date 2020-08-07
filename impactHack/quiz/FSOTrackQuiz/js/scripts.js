@@ -30,10 +30,10 @@ function initScore(results) {
   // Takes in a results object and uses its keys as attributes in a score object
 
   resultKeys = Object.keys(results);
-  console.log("resultKeys is "+ resultKeys);
+  // console.log("resultKeys is "+ resultKeys);
   resultKeys.forEach(function (resultKey, _) {
     score[resultKey] = 0;
-    console.log("score reskey is "+ resultKey);
+    // console.log("score reskey is "+ resultKey);
   });
 
 }
@@ -49,9 +49,6 @@ function setupQuestion() {
   // get the current questions content
   var qn = questions["question" + currentQn];
   var qnText = document.getElementById("question");
-  if (qnText == null) {
-      console.log("qnText is null");
-    }
   qnText.innerText = qn.question;
 
 
@@ -64,9 +61,6 @@ function setupQuestion() {
     var option = document.getElementById("option" + currOptNum);
     //todo: show div
     option.style.visibility = 'visible';
-    if (option == null) {
-      console.log("rere");
-    }
     var content = option.getElementsByClassName("content")[0];
     var qnOption = qn["option" + currOptNum];
     if (qnOption.type == "image") {
@@ -143,8 +137,9 @@ function next() {
     const highestAttributes = findHighest(score);
     var highestScore = highestAttributes[0];
     var highestPersonality = highestAttributes[1];
+    var highestPersonalityImageLst = highestAttributes[2];
 
-    setResultpage(results, highestPersonality);
+    setResultpage(results, highestPersonality, highestPersonalityImageLst);
 
 
 
@@ -160,6 +155,7 @@ function findHighest(score) {
 
     var highestScore = -Number.MAX_VALUE;
     var highestPersonality = [];
+    var highestPersonalityImageLst = [];
 
     // todo edge case: ties
 
@@ -169,13 +165,16 @@ function findHighest(score) {
       value = score[key];
       if (highestScore == value) {
         highestPersonality.push(key);
+        highestPersonalityImageLst.push(results[key][6]); // last index is the image
       } else if (highestScore < value) {
         highestScore = value;
         highestPersonality = [key];
+        highestPersonalityImageLst = [results[key][6]];
       }
     }
-
-    return [highestScore, highestPersonality];
+    console.log("imageList is" + highestPersonalityImageLst);
+        console.log("tets is" + ["sd"]);
+    return [highestScore, highestPersonality, highestPersonalityImageLst];
 }
 
 /* Assumption - trait score is a percentage */
@@ -192,6 +191,19 @@ function getOptionNum(traitScore) {
   }
 }
 
+function addPictures(images) {
+    // Adds pictures to result page
+    for(var i = 0;i<images.length; i++){
+
+            var a = document.createElement('a');
+
+            var img = document.createElement('img');
+            img.src = images[i];
+            a.appendChild(img);
+
+            document.getElementById('myImg').appendChild(a);
+    }
+}
 function prettyWithAnd(highestPersonality) {
   /* returns a string of words in the list highestPersonality, with commas and ands. */
   /* assumes len highest personality >= 1 */
@@ -205,17 +217,18 @@ function prettyWithAnd(highestPersonality) {
   return finalStr + "and " + highestPersonality[highestPersonality.length - 1];
 }
 
-function setResultpage(results, highestPersonality) {
+function setResultpage(results, highestPersonality, highestPersonalityImgLst) {
     // get the description of the personality and update the result page
     document.getElementById("personality-type").innerText =
       "You are best suited for " + prettyWithAnd(highestPersonality) + "!"; //todo: chaneg to accomodate ties
-
+console.log("hip lst " + highestPersonalityImgLst);
+    addPictures(highestPersonalityImgLst);
 
     // take care of highest personality:
 
      for (const [i, [trait, traitScore]] of Object.entries(Object.entries(score))) {
-      console.log(i);
-      console.log(trait);
+          console.log(i);
+          console.log(trait);
           document.getElementById("option" + i + "-title").textContent = "About " + trait;
           const optionNum = getOptionNum(traitScore);
           document.getElementById("option" + i + "-suitability").textContent = results[trait][optionNum];
@@ -234,6 +247,8 @@ function setResultpage(results, highestPersonality) {
             document.getElementById("option" + i + "-info1").textContent = "";
             document.getElementById("option" + i + "-info2").textContent = "";
           }
+
+         
      }
      
 }

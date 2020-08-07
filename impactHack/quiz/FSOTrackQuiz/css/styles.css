@@ -26,6 +26,7 @@ h1, h4 {
     color: #ceab82;
 }
 
+
 .fullpage {
     height: auto;
     width: auto;
@@ -141,6 +142,14 @@ h1, h4 {
     max-height: 100%;
 }
 
+.img-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
 .small-text {
     font-size: small;
 }
@@ -161,4 +170,7 @@ h1, h4 {
     margin-bottom: -2px;
     color: white;
 }
+
+
+
 
