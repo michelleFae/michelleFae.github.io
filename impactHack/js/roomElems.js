@@ -30,13 +30,14 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   // /* MAIN - Game and quiz info spots 256x256*/
   // linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(91.94, -533.50, 5000.00), 'wydq-container', true,  blackRoom, "What's Your Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
- linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'fss-dim-container', true,  blackRoom, "dimensions", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
+ // linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'fss-dim-container', true,  blackRoom, "dimensions", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-8.14, -352.10, -5000.00), 'diplomatic-wheel-container', true,  blackRoom, "Diplomat Skills Wheel", "https://michelleFae.github.io/impactHack/assets/wheel/wheel.png" , radius / 2);
 
   // Link Rooms
   linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Room");
   linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(5000.00, -408.72, 1570.36), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Specialists Room");
   linkPanoRooms (blackRoom, blueRoom, new THREE.Vector3(5000.00, -405.41, -1679.79), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Officer Room");
-
+ linkPanoInfoSpotWtInfo(new THREE.Vector3(-31.66, 877.36, -5000.00),"diplomatic-wheel-info" , false, blackRoom, "info", PANOLENS.DataImage.Info);
 
 
 
@@ -56,8 +57,11 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   // Insert Info Spots
   //linkPanoInfoSpotWtInfo (new THREE.Vector3(-109.84, 5000.00, -228.22), "general-info-container", true, blackRoom, "General Information", PANOLENS.DataImage.Info);
   // linkPanoInfoSpotWtInfo (new THREE.Vector3(4000.00, 723.01, 4.34), "FSO-container", true, blackRoom, "Foreign Service Officers", PANOLENS.DataImage.Info);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blackRoom, "Foreign Service Specialists", PANOLENS.DataImage.Info);
   // linkPanoInfoSpotWtInfo(new THREE.Vector3(-4999.97, 742.82, 76.35), 'desc-container', true,  blackRoom, "Civil Service Officers", PANOLENS.DataImage.Info);
+
+
+
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blueRoom, "Foreign Service Specialists", PANOLENS.DataImage.Info);
   
 
   

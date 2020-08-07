@@ -149,6 +149,36 @@ iframe {
     width:100%;
   }
 
+
+.generalDialogue > iframe {
+    border: none;
+    width:100%;
+  }
+
+.wheelInfo {
+    width: 500px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+.wheel {
+    width: 500px;
+    height:700px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: visible;
+  }
+
+.wheel > iframe {
+    border: none;
+    width:100%;
+    height: 100%;
+  }
+
 .title {
   font-size: 1.5em;
   text-align: center;
@@ -194,4 +224,30 @@ button:hover {
 
 .left-align {
   text-align: left;
+}
+
+.greyColorText {
+  color:#bac2c9;
+}
+.redColorText {
+  color:#6c0d00;
+}
+.blueColorText {
+  color:#002744;
+}
+.tanColorText {
+  color:#ceab82;
+}
+.tanHighlight {
+  background-color: #ceab82;
+}
+.whiteHighlight{
+  background-color: #FFFFFF;
+}
+
+.pinkHighlight{
+  background-color: #ffe2e0;
+}
+.blueHighlight{
+  background-color: #c2defc;
 }
