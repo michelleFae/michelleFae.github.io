@@ -224,7 +224,7 @@ function setResultpage(results, highestPersonality, highestPersonalityImgLst) {
 console.log("hip lst " + highestPersonalityImgLst);
     addPictures(highestPersonalityImgLst);
 
-    // take care of highest personality:
+    // take care of other personalities
 
      for (const [i, [trait, traitScore]] of Object.entries(Object.entries(score))) {
           console.log(i);
@@ -274,6 +274,12 @@ function showPage(num) {
         if (csResultDiv) {
             csResultDiv.style.display = 'none';
         }
+
+        var myImgDiv = document.getElementById('myImg');
+        while (myImgDiv.hasChildNodes()) {
+          myImgDiv.removeChild(myImgDiv.childNodes[0]); 
+        }
+        
  
   }
   var pages = document.getElementsByClassName("container");
