@@ -48,11 +48,14 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   
   /* FSO Room Items (blue) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -139.13, 137.05),"fso-dim-container" , true, blueRoom, "FSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/lightBlueDims.png" , radius / 2);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blueRoom, "Consular Affairs Officer", PANOLENS.DataImage.Info);
+  // linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blueRoom, "Consular Affairs Officer", PANOLENS.DataImage.Info);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"fso-interactive-container" , true, blueRoom, "The FSO Simulation", PANOLENS.DataImage.Info);
 
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -139.13, 137.05),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
+
+
 
 
 
