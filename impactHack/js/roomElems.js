@@ -54,7 +54,8 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -139.13, 137.05),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
-
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"fss-interactive-container" , true, redRoom, "The FSS Simulation", PANOLENS.DataImage.Info);
+  
 
 
 
