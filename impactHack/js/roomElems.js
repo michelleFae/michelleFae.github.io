@@ -70,7 +70,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   /* Civil Service Room Items (white) */
    linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"cso-dim-container" , true, whiteRoom, "CSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/csoDims.png" , radius / 2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"cso-interactive-container" , true, whiteRoom, "In CSO Shoes","https://michelleFae.github.io/impactHack/assets/icons/csoShoes1.png", radius/2);
-  // linkPanoInfoSpotWtInfo(new THREE.Vector3(),"cso-wheel" , true, whiteRoom, "The CSO wheel", "https://michelleFae.github.io/impactHack/assets/wheel/csoWheel.png", radius/1.5);
+   linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, 721.39, 5.00),"cso-wheel" , true, whiteRoom, "The CSO wheel", "https://michelleFae.github.io/impactHack/assets/wheel/csoWheel.png", radius/1.5);
 
 
 
