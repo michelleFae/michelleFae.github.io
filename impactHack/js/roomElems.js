@@ -49,16 +49,17 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   /* FSO Room Items (blue) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fso-dim-container" , true, blueRoom, "FSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/lightBlueDims.png" , radius / 2);
   // linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blueRoom, "Consular Affairs Officer", PANOLENS.DataImage.Info);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"fso-interactive-container" , true, blueRoom, "In FSO Shoes", "https://michelleFae.github.io/impactHack/assets/icons/fsoShoes.png", radius/1.5);
-  // linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"fso-wheel" , true, blueRoom, "the FSO wheel", "https://michelleFae.github.io/impactHack/assets/icons/fsoShoes.png, radius/1.5");
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"fso-interactive-container" , true, blueRoom, "In FSO Shoes", "https://michelleFae.github.io/impactHack/assets/icons/fsoShoes.png", radius/2);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fso-wheel" , true, blueRoom, "The FSO wheel","https://michelleFae.github.io/impactHack/assets/wheel/fssWheel.png", radius/1.5);
 
 
 // 68.11, -183.40, 5000.00)
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -139.13, 137.05),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"fss-interactive-container" , true, redRoom, "The FSS Simulation", PANOLENS.DataImage.Info);
-  
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"fss-interactive-container" , true, redRoom, "The FSS Simulation","https://michelleFae.github.io/impactHack/assets/icons/fssShoes.png", radius/2);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fss-wheel" , true, redRoom, "The FSS wheel", "https://michelleFae.github.io/impactHack/assets/wheel/fsoWheel.png", radius/1.5);
+
 
 
 
@@ -67,6 +68,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
 
   /* Civil Service Room Items (white) */
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"cso-wheel" , true, whiteRoom, "The CSO wheel", "https://michelleFae.github.io/impactHack/assets/wheel/csoWheel.png", radius/1.5);
 
 
 
