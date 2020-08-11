@@ -8,8 +8,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
             oldpick = [],
             color = d3.scale.category20();//category20c()
             //randomNumbers = getRandomNumbers();
-        //http://osric.com/bingo-card-generator/?title=HTML+and+CSS+BINGO!&words=padding%2Cfont-family%2Ccolor%2Cfont-weight%2Cfont-size%2Cbackground-color%2Cnesting%2Cbottom%2Csans-serif%2Cperiod%2Cpound+sign%2C%EF%B9%A4body%EF%B9%A5%2C%EF%B9%A4ul%EF%B9%A5%2C%EF%B9%A4h1%EF%B9%A5%2Cmargin%2C%3C++%3E%2C{+}%2C%EF%B9%A4p%EF%B9%A5%2C%EF%B9%A4!DOCTYPE+html%EF%B9%A5%2C%EF%B9%A4head%EF%B9%A5%2Ccolon%2C%EF%B9%A4style%EF%B9%A5%2C.html%2CHTML%2CCSS%2CJavaScript%2Cborder&freespace=true&freespaceValue=Web+Design+Master&freespaceRandom=false&width=5&height=5&number=35#results
-        var data = [
+            var data = [
                     {"label":"LEADERSHIP",  "value":1,  "question":"Take action and make decisions using the information available. Keep the big picture in mind. Take steps to improve your team’s overall position and fill in knowledge gaps."}, // padding
                     {"label":"COMPOSURE",  "value":2,  "question":"Work with others in a professional manner and calmly deal with a range of attitudes and behaviors exhibited by counterparts, partners, and adversaries."}, //font-family
                     {"label":"ANALYSIS",  "value":3,  "question":"Study countries and research their political,economic, and cultural norms and developments. Think critically about what is going on."}, //color
@@ -111,7 +110,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
                     container.on("click", spin);
                 });
         }
-        //make arrow
+        // arrow
         svg.append("g")
             .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
             .append("path")
@@ -147,7 +146,6 @@ var padding = {top:20, right:40, bottom:0, left:0},
                 window.crypto.getRandomValues(array);
                 console.log("works");
             } else {
-                //no support for crypto, get crappy random numbers
                 for(var i=0; i < 1000; i++){
                     array[i] = Math.floor(Math.random() * 100000) + 1;
                 }
