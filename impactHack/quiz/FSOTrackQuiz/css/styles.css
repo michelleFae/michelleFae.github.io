@@ -27,6 +27,19 @@ h1, h4 {
 }
 
 
+.silver{
+    color:silver;
+} 
+.blue {
+    color:#4782ff;
+}
+.red {
+    color:#CC0033;
+}
+.gold {
+    color:#ceab82;
+}
+
 .fullpage {
     height: auto;
     width: auto;
@@ -169,6 +182,12 @@ h1, h4 {
     border-bottom: 2px solid #ceab82;
     margin-bottom: -2px;
     color: white;
+}
+.blue-bar {
+    border-bottom: 2px solid #4782ff;
+}
+.red-bar {
+    border-bottom: 2px solid #CC0033;
 }
 
 

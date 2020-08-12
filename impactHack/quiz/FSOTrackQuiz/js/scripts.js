@@ -1,6 +1,12 @@
 //Update manually according to HTML file
 const maxOptions = 5;
 
+//Index of list elem that you want to display on results page
+const resInfo1Ind = 4;
+
+//Index of list elem that you want to display on results page
+const resInfo2Ind = 5;
+
 // num questions
 const numQuestions = Object.keys(questions).length;
 const shift = 100 / numQuestions;
@@ -180,9 +186,9 @@ function findHighest(score) {
 /* Assumption - trait score is a percentage */
 function getOptionNum(traitScore) {
    
-  if (traitScore < 30) {
+  if (traitScore < 50) {
     return 0;
-  } else if (traitScore < 60) {
+  } else if (traitScore < 70) {
     return 1;
   } else if (traitScore < 80) {
     return 2;
@@ -211,17 +217,32 @@ function prettyWithAnd(highestPersonality) {
   if (highestPersonality.length == 1) {
     return highestPersonality[0];
   }
+  if (highestPersonality.length == 2) {
+    return highestPersonality[0] + " and " + highestPersonality[1]; 
+  }
   for (var i = 0; i < highestPersonality.length - 1; i++) {
     finalStr = finalStr + highestPersonality[i] + ", ";
   }
   return finalStr + "and " + highestPersonality[highestPersonality.length - 1];
 }
 
+
+function highestInfoResults(results, highestPersonality) {
+  // Gets the results string for the highest Personality traits
+   var finalStr = "";
+  for (var i = 0; i < highestPersonality.length; i++) {
+    finalStr += results[highestPersonality[i]][resInfo1Ind] + "\n\n";
+    finalStr += results[highestPersonality[i]][resInfo2Ind] + "\n\n";
+    finalStr += "\n\n";
+  }
+  return finalStr;
+}
+
 function setResultpage(results, highestPersonality, highestPersonalityImgLst) {
     // get the description of the personality and update the result page
     document.getElementById("personality-type").innerText =
       "You are best suited for " + prettyWithAnd(highestPersonality) + "!"; //todo: chaneg to accomodate ties
-console.log("hip lst " + highestPersonalityImgLst);
+    document.getElementById("myHighestTrait").innerText = highestInfoResults(results, highestPersonality);
     addPictures(highestPersonalityImgLst);
 
     // take care of other personalities
@@ -247,8 +268,6 @@ console.log("hip lst " + highestPersonalityImgLst);
             document.getElementById("option" + i + "-info1").textContent = "";
             document.getElementById("option" + i + "-info2").textContent = "";
           }
-
-         
      }
      
 }
