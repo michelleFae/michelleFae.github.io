@@ -43,7 +43,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   linkPanoInfoSpotWtInfo(new THREE.Vector3(91.94, -533.50, 5000.00), 'wydq-container', true,  blackRoom, "What's Your Digital Diplomat", "https://michelleFae.github.io/impactHack/assets/icons/digitalDiplomatGoQuestion.png", radius / 2.5);
 
   //wheel
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-31.66, 877.36, -5000.00),"diplomatic-wheel-info" , false, blackRoom, "info for wheel", PANOLENS.DataImage.Info);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(3077.13, 2147.35, -5000.00),"diplomatic-wheel-info" , false, blackRoom, "info for wheel", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-8.14, -352.10, -5000.00), 'diplomatic-wheel-container', true,  blackRoom, " Wheel of Diplomat Skills", "https://michelleFae.github.io/impactHack/assets/wheel/wheel.png" , radius / 2);
   
   /* FSO Room Items (blue) */
@@ -53,16 +53,12 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, 784.49, 103.72),"fso-wheel" , true, blueRoom, "The FSO wheel","https://michelleFae.github.io/impactHack/assets/wheel/fsoWheel.png", radius/1.5);
 
 
-// 68.11, -183.40, 5000.00)
+
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"fss-interactive-container" , true, redRoom, "In FSS Shoes","https://michelleFae.github.io/impactHack/assets/icons/fssShoes.png", radius/2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, 784.49, 103.72),"fss-wheel" , true, redRoom, "The FSS wheel", "https://michelleFae.github.io/impactHack/assets/wheel/fssWheel.png", radius/1.5);
-
-
-
-
 
 
 
