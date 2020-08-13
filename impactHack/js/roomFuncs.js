@@ -1,10 +1,10 @@
-  function linkPanoRooms (panorama1, panorama2, vect1, vect2, size, room1Name, room2Name) {
+  function linkPanoRooms (panorama1, panorama2, vect1, vect2, size, room1Name, room2Name, img1, img2) {
     linkPanoInfoSpot(vect1, true, room2Name, panorama1, true)
     linkPanoInfoSpot(vect2, true, room1Name, panorama2, true)
-    panorama1.linkWtMenuChange(panorama2, vect1, size, "https://michelleFae.github.io/impactHack/assets/icons/arrow.png"); //img can be second param here
+    panorama1.linkWtMenuChange(panorama2, vect1, size, img1); //img can be second param here
     
     //link pano2 to main room
-    panorama2.linkWtMenuChange(panorama1, vect2, size, "https://michelleFae.github.io/impactHack/assets/icons/arrow.png");
+    panorama2.linkWtMenuChange(panorama1, vect2, size, img2);
 
 
 

@@ -77,9 +77,9 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   
   // Link Rooms
-  linkPanoRooms (blackRoom, blueRoom, new THREE.Vector3(5000.00, -405.41, -1679.79), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Officer Exhibit");
-  linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(5000.00, -408.72, 1570.36), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Specialist Exhibit");
-  linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Exhibit");
+  linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(5000.00, -408.72, 1570.36), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Specialist Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrow1.png", "https://michelleFae.github.io/impactHack/assets/icons/arrow1.png");
+  linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png");
+  linkPanoRooms (blackRoom, blueRoom, new THREE.Vector3(5000.00, -405.41, -1679.79), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Officer Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png");
 
 
 
