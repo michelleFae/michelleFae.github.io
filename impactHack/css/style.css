@@ -144,6 +144,8 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
     border-radius: 3px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
 }
 
 .generalQuiz > iframe {
@@ -162,6 +164,8 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
     border-radius: 3px;
     overflow: visible;
     -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
 }
 
 .dimensionsFrame > iframe {
@@ -183,6 +187,8 @@ iframe {
     border-radius: 3px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
   }
 
 .generalDialogue {
@@ -212,6 +218,8 @@ iframe {
     border-radius: 3px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
   }
 
 .wheel {
@@ -221,6 +229,8 @@ iframe {
     color: #FFF;
     border-radius: 3px;
     overflow-y: visible;
+    border: tan;
+border-style: double;
   }
 
 .wheel > iframe {

@@ -11,7 +11,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
             var data = [
                     {"label":"LEADERSHIP",  "value":1,  "question":"Take action and make decisions using the information available. Keep the big picture in mind. Take steps to improve your team’s overall position and fill in knowledge gaps."}, // padding
                     {"label":"COMPOSURE",  "value":2,  "question":"Work with others in a professional manner and calmly deal with a range of attitudes and behaviors exhibited by counterparts, partners, and adversaries."}, //font-family
-                    {"label":"ANALYSIS",  "value":3,  "question":"Study countries and research their political,economic, and cultural norms and developments. Think critically about what is going on."}, //color
+                    {"label":"ANALYSIS",  "value":3,  "question":"Study countries and research their political, economic, and cultural norms and developments. Think critically about what is going on."}, //color
                     {"label":"MANAGEMENT",  "value":4,  "question":"Use the skills and strengths of your team members. Know what tools and resources you and your team have to help you meet your country’s goals and agenda."}, //font-weight
                     {"label":"AWARENESS",  "value":5,  "question":"Respect different cultures and customs. Recognize when situations and circumstances are changing and adapt to meet that change. Be aware of things you do not know or understand."}, //font-size
                     {"label":"INNOVATION",  "value":6,  "question":"Observe current conditions and practices and offer creative improvements, solutions and methods to better carry out the mission."}, //background-color
