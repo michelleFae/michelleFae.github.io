@@ -45,7 +45,14 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   //wheel
   linkPanoInfoSpotWtInfo(new THREE.Vector3(3077.13, 2147.35, -5000.00),"diplomatic-wheel-info" , false, blackRoom, "info for wheel", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-8.14, -352.10, -5000.00), 'diplomatic-wheel-container', true,  blackRoom, " Wheel of Diplomat Skills", "https://michelleFae.github.io/impactHack/assets/wheel/wheel.png" , radius / 2);
-  
+ 
+  //Share on social media
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -4579.36, 4987.46), 'share-container', true,  blackRoom, "Share the Digital Love", "https://michelleFae.github.io/impactHack/assets/icons/shareIcon.png", radius / 3);
+//5000.00, -431.44, -4953.42
+
+
+
+
   /* FSO Room Items (blue) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fso-dim-container" , true, blueRoom, "FSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/lightBlueDims.png" , radius / 2);
   // linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blueRoom, "Consular Affairs Officer", PANOLENS.DataImage.Info);

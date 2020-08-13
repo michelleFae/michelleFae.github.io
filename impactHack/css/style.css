@@ -21,8 +21,6 @@ html, body {
   overflow-y: auto;
   background-color: rgba(28,28,28,0.9);
   background-image: linear-gradient(180deg,#bac2c9, #bac2c9, #ffe6e3);
-  /*linear-gradient(-70deg, #bac2c9, #bac2c9, #ceab82);*/
-  /*linear-gradient(-70deg, #002744, #bac2c9, #bac2c9, #6c0d00 )*/
 }
 
 .container .right {
@@ -88,7 +86,51 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
     width: 100%;
   }
 }
+/* sharing icons */
+/* container */
 
+#share {
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* buttons */
+
+#share a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 20%;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.75;
+    transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+    opacity: 1;
+}
+
+/* icons */
+
+#share i {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+   
+    background-image: url("https://image.flaticon.com/icons/svg/124/124010.svg");
+}
+
+.twitter {
+     background-image: url("https://image.flaticon.com/icons/svg/733/733579.svg");
+}
 
 /* Infospot popups */
 
@@ -134,6 +176,14 @@ iframe {
     height: 100%;
   }
 
+.shareDiv {
+    width: 300px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 
 .generalDialogue {
     width: 500px;
@@ -220,6 +270,11 @@ button:hover {
 
 .blue {
   background-color: #002744;
+  color: white;
+}
+
+.gold {
+  background-color: #ceab82;
   color: white;
 }
 
