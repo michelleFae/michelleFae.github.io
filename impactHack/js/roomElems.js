@@ -47,9 +47,7 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-8.14, -352.10, -5000.00), 'diplomatic-wheel-container', true,  blackRoom, " Wheel of Diplomat Skills", "https://michelleFae.github.io/impactHack/assets/wheel/wheel.png" , radius / 2);
  
   //Share on social media
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -4579.36, 4987.46), 'share-container', true,  blackRoom, "Share the Digital Love", "https://michelleFae.github.io/impactHack/assets/icons/shareIcon.png", radius / 3);
-//5000.00, -431.44, -4953.42
-
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -431.44, -4953.42), 'share-container', true,  blackRoom, "Share the Digital Love", "https://michelleFae.github.io/impactHack/assets/icons/shareIcon.png", radius / 3);
 
 
 
