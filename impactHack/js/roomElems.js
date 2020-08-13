@@ -24,15 +24,6 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   radius = edgeLength / 2;
 
 
-//"https://michelleFae.github.io/impactHack/assets/icons/globe.gif"
-//5000.00, -911.25, 20.85
-
-  // /* MAIN - Game and quiz info spots 256x256*/
-  // linkPanoInfoSpotWtInfo(new THREE.Vector3(-95.41, -832.33, -5000.00), 'game-container', true,  blackRoom, "Digital Diplomat Go", "https://michelleFae.github.io/impactHack/assets/icons/wydq.png" , radius / 2.5);
- 
-  
-  // infospotsList.forEach(addInfoSpotFunc);
-
   /* Insert Info Spots */
 
   /* Main Room Items */
@@ -64,7 +55,6 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
   linkPanoInfoSpotWtInfo(new THREE.Vector3(2548.13, -1483.93, 5000.00),"public-diplomacy-container" , true, blueRoom, "Public Diplomacy Officers", "https://michelleFae.github.io/impactHack/assets/officers/fso_pd.png", radius/0.8);
 
 
-//2548.13, -1483.93, 5000.00
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
