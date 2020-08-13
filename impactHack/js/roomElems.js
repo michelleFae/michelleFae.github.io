@@ -53,35 +53,57 @@ var parameters, viewer, radius, button, position, infospot, timerId, easingItem,
 
   /* FSO Room Items (blue) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fso-dim-container" , true, blueRoom, "FSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/lightBlueDims.png" , radius / 2);
-  // linkPanoInfoSpotWtInfo(new THREE.Vector3(-143.87, 546.09, -5000.00),"consular-affairs-container" , true, blueRoom, "Consular Affairs Officer", PANOLENS.DataImage.Info);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"fso-interactive-container" , true, blueRoom, "In FSO Shoes", "https://michelleFae.github.io/impactHack/assets/icons/fsoShoes.png", radius/2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, 784.49, 103.72),"fso-wheel" , true, blueRoom, "The FSO wheel","https://michelleFae.github.io/impactHack/assets/wheel/fsoWheel.png", radius/1.5);
 
+  // Diplomats
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -1961.48, 3770.59),"consular-affairs-container" , true, blueRoom, "Consular Officers", "https://michelleFae.github.io/impactHack/assets/officers/fso_consular.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1725.68, 4881.38),"economic-affairs-container" , true, blueRoom, "Economic Officers", "https://michelleFae.github.io/impactHack/assets/officers/fso_econ.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1737.50, -4799.07),"management-container" , true, blueRoom, "Management Officers", "https://michelleFae.github.io/impactHack/assets/officers/fso_management.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(4193.59, -1720.01, -5000.00),"political-affairs-container" , true, blueRoom, "Political Affairs Officers", "https://michelleFae.github.io/impactHack/assets/officers/fso_political.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(2548.13, -1483.93, 5000.00),"public-diplomacy-container" , true, blueRoom, "Public Diplomacy Officers", "https://michelleFae.github.io/impactHack/assets/officers/fso_pd.png", radius/0.8);
 
 
+//2548.13, -1483.93, 5000.00
 
   /* FSS Room Items (red) */
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"fss-dim-container" , true, redRoom, "FSS Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/redPinkDims.png" , radius / 2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"fss-interactive-container" , true, redRoom, "In FSS Shoes","https://michelleFae.github.io/impactHack/assets/icons/fssShoes.png", radius/2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, 784.49, 103.72),"fss-wheel" , true, redRoom, "The FSS wheel", "https://michelleFae.github.io/impactHack/assets/wheel/fssWheel.png", radius/1.5);
 
+  // Diplomats
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -1961.48, 3770.59),"medical-and-health-specialist-container" , true, redRoom, "Medical and Health Specialists", "https://michelleFae.github.io/impactHack/assets/officers/fss_med.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1725.68, 4881.38),"information-technology-specialist-container" , true, redRoom, "Information Technology Specialists", "https://michelleFae.github.io/impactHack/assets/officers/fss_it.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1737.50, -4799.07),"engineering-specialist-container" , true, redRoom, "Engineering Specialists", "https://michelleFae.github.io/impactHack/assets/officers/fss_eng.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(4193.59, -1720.01, -5000.00),"international-programs-and-english-language-container" , true, redRoom, "International Programs and English Language Speicalists", "https://michelleFae.github.io/impactHack/assets/officers/fss_lang.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-2314.64, -1758.32, -5000.00),"law-enforcement-and-security-specialists-container" , true, redRoom, "Law Enforcement and Security Specialists", "https://michelleFae.github.io/impactHack/assets/officers/fss_security.png", radius/0.8);
+
+
+
 
 
 
   /* Civil Service Room Items (white) */
-   linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"cso-dim-container" , true, whiteRoom, "CSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/csoDims.png" , radius / 2);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-103.73, -463.00, -5000.00),"cso-dim-container" , true, whiteRoom, "CSO Dimensions", "https://michelleFae.github.io/impactHack/assets/icons/dimensionIcons/csoDims.png" , radius / 2);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(68.11, -183.40, 5000.00),"cso-interactive-container" , true, whiteRoom, "In CSO Shoes","https://michelleFae.github.io/impactHack/assets/icons/csoShoes1.png", radius/2);
-   linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, 721.39, 5.00),"cso-wheel" , true, whiteRoom, "The CSO wheel", "https://michelleFae.github.io/impactHack/assets/wheel/csoWheel.png", radius/1.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, 721.39, 5.00),"cso-wheel" , true, whiteRoom, "The CSO wheel", "https://michelleFae.github.io/impactHack/assets/wheel/csoWheel.png", radius/1.5);
+  
+  // Diplomats
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -1961.48, 3770.59),"foreign-affairs-container" , true, whiteRoom, "Foreign Affairs Officers", "https://michelleFae.github.io/impactHack/assets/officers/cso_fa.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1725.68, 4881.38),"intelligence-series-officer-container" , true, whiteRoom, "Intelligence Series Officers", "https://michelleFae.github.io/impactHack/assets/officers/cso_intelligence.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1737.50, -4799.07),"information-technology-management-container" , true, whiteRoom, "Information Technology Management Officers", "https://michelleFae.github.io/impactHack/assets/officers/cso_it.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(4193.59, -1720.01, -5000.00),"public-affairs-container" , true, whiteRoom, "Public Affairs Officers", "https://michelleFae.github.io/impactHack/assets/officers/cso_public.png", radius/0.8);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-2314.64, -1758.32, -5000.00),"language-specialists-container" , true, whiteRoom, "Language Specialists", "https://michelleFae.github.io/impactHack/assets/officers/cso_lang.png", radius/0.8);
 
 
 
   
   // Link Rooms
-  linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(5000.00, -408.72, 1570.36), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Specialist Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrow1.png", "https://michelleFae.github.io/impactHack/assets/icons/arrow1.png");
-  linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png");
-  linkPanoRooms (blackRoom, blueRoom, new THREE.Vector3(5000.00, -405.41, -1679.79), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Officer Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png", "https://michelleFae.github.io/impactHack/assets/icons/arrow.png");
-
-
+  linkPanoRooms (blackRoom, blueRoom, new THREE.Vector3(5000.00, -405.41, -1679.79), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Officer Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrows/arrow1.png", "https://michelleFae.github.io/impactHack/assets/icons/arrows/arrow.png");
+  linkPanoRooms (blackRoom, redRoom, new THREE.Vector3(5000.00, -408.72, 1570.36), new THREE.Vector3(5000.00, -911.25, 20.85), 1000, "Main Room", "Foreign Service Specialist Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrows/arrow4.png", "https://michelleFae.github.io/impactHack/assets/icons/arrows/arrow5.png");
+  linkPanoRooms (blackRoom, whiteRoom, new THREE.Vector3(-5000.00, -877.80, 5.84), new THREE.Vector3(-5000.00, -877.80, 5.84), 1000, "Main Room", "Civil Service Officer Exhibit", "https://michelleFae.github.io/impactHack/assets/icons/arrows/arrow2.png", "https://michelleFae.github.io/impactHack/assets/icons/arrows/arrow3.png");
+  
+ 
 
   
 
