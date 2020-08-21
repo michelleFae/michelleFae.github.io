@@ -14,7 +14,7 @@
   };
 
   // Init rooms
-  blackRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/impactHack/assets/cubeWalls/blueRoom/blueRoomFull.png');
+  blackRoom = new PANOLENS.ImagePanorama('https://michelleFae.github.io/puzzWhaleHunt/assets/cubeWalls/blueRoom/blueRoomFull.png');
   
   // Recording image dimensions
   const { edgeLength } = blackRoom;
