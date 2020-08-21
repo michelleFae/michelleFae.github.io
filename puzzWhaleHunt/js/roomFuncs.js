@@ -89,7 +89,7 @@
 
     //viewer config: https://pchen66.github.io/Panolens/docs/index.html
     viewer = new PANOLENS.Viewer( { output: 'console', container: document.querySelector( '#pcontainer' ), autoHideInfospot: false, cameraFov: 90} );
-    viewer.add(blackRoom, whiteRoom,redRoom, blueRoom); //todo: MANUALLY ADD NEW SCENES HERE
+    viewer.add(blackRoom); //todo: MANUALLY ADD NEW SCENES HERE
     viewer.renderer.sortObjects = true;
     
   }
