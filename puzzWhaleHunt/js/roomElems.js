@@ -27,7 +27,7 @@
 
   // whales
   linkPanoInfoSpotWtInfo(new THREE.Vector3(3773.74, -2566.62, 3191.61),"photo-container" , true, blackRoom, "Task #0: Photo Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/jacqueline_whale.png", radius/1.5);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(-3487.52, -3785.40, 5000.00),"fullstop-container" , true, blackRoom, "Task #1: Find the Fullstop", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/prakash_whale.png", radius/1.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-3487.52, -3785.40, 5000.00),"fullstop-container" , true, blackRoom, "Task #1: Mini Puzzle Madness", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/prakash_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1737.50, -4799.07),"officer-whale-container" , true, blackRoom, "Task #2: Where's that officer's whale?", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/valerie_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(4193.59, -1720.01, -5000.00),"puzzle-container" , true, blackRoom, "Task #3: Puzzle Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/mantej_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -2545.66, -1022.77),"scramble-container" , true, blackRoom, "Task #4: Unscramble!", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/chi_whale.png", radius/1.5);
