@@ -29,11 +29,11 @@
   // linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -431.44, -4953.42), 'share-container', true,  blackRoom, "Share the Digital Love", "https://michelleFae.github.io/impactHack/assets/icons/shareIcon.png", radius / 3);
 
   // whales
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -1961.48, 3770.59),"photo-container" , true, blackRoom, "Task #0: Photo Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/jacqueline_whale.png", radius/1.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(3773.74, -2566.62, 3191.61),"photo-container" , true, blackRoom, "Task #0: Photo Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/jacqueline_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-3487.52, -3785.40, 5000.00),"fullstop-container" , true, blackRoom, "Task #1: Find the Fullstop", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/prakash_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -1737.50, -4799.07),"officer-whale-container" , true, blackRoom, "Task #2: Where's that officer's whale?", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/valerie_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(4193.59, -1720.01, -5000.00),"puzzle-container" , true, blackRoom, "Task #3: Puzzle Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/mantej_whale.png", radius/1.5);
-  linkPanoInfoSpotWtInfo(new THREE.Vector3(31.81, -3833.63, 5000.00),"scramble-container" , true, blackRoom, "Task #4: Unscramble!", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/chi_whale.png", radius/1.5);
+  linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -2545.66, -1022.77),"scramble-container" , true, blackRoom, "Task #4: Unscramble!", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/chi_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-94.43, -4232.44, -5000.00),"done-container" , true, blackRoom, "DONE: Enter the Final Secret Word", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/tim_whale.png", radius/1.5);
  
 
@@ -47,9 +47,9 @@
   setNavBarListInView(blackRoom);
 
 
-/* Set Intro vector - so the user sees ceiling on entrance into room */
+/* Set Intro vector - so the user sees wall on entrance into room */
 var lookAtPositions = [
-  new THREE.Vector3(188.35, 5000.00, 0.00)
+  new THREE.Vector3(5000.00, 722.62, -81.86)
 ];
 
 blackRoom.addEventListener( 'enter-fade-start', function(){
