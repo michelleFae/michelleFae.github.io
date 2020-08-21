@@ -24,9 +24,6 @@
   /* Insert Info Spots */
 
   /* Main Room Items */
-  
-  //Share on social media
-  // linkPanoInfoSpotWtInfo(new THREE.Vector3(5000.00, -431.44, -4953.42), 'share-container', true,  blackRoom, "Share the Digital Love", "https://michelleFae.github.io/impactHack/assets/icons/shareIcon.png", radius / 3);
 
   // whales
   linkPanoInfoSpotWtInfo(new THREE.Vector3(3773.74, -2566.62, 3191.61),"photo-container" , true, blackRoom, "Task #0: Photo Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/jacqueline_whale.png", radius/1.5);
@@ -35,7 +32,6 @@
   linkPanoInfoSpotWtInfo(new THREE.Vector3(4193.59, -1720.01, -5000.00),"puzzle-container" , true, blackRoom, "Task #3: Puzzle Challenge", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/mantej_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-5000.00, -2545.66, -1022.77),"scramble-container" , true, blackRoom, "Task #4: Unscramble!", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/chi_whale.png", radius/1.5);
   linkPanoInfoSpotWtInfo(new THREE.Vector3(-94.43, -4232.44, -5000.00),"done-container" , true, blackRoom, "DONE: Enter the Final Secret Word", "https://michelleFae.github.io/puzzWhaleHunt/assets/officers/tim_whale.png", radius/1.5);
- 
 
   // Add Scenes
   addScenes();
