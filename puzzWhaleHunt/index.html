@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>UPE PuzzleWhaleHunt</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <span class="left mdl-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <span class="mdl-layout-title">It's puzzWhaleHunt time!</span>
+        </header>
+        <ul class="mdl-list">
+          <li class="mdl-list__item template">
+            <span class="mdl-list__item-primary-content">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"></button>
+            </span>
+          </li>
+        </ul>
+      </span>
+      <span id="pcontainer" class="right"></span>
+    </div>
+
+    <script src="js/three/three.min.js"></script>
+    <script src="js/panolens/panolens.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+     <!-- INFO CONTAINERS -->
+
+
+
+  <!-- DIALOGUES  -->
+
+    <!-- Task #0: Photo Challenge - pubz -->
+  <div id="photo-container" style="display:none">
+      <div class="title">Task #0: Photo Challenge</div>
+      <div id="photo-whale-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Hi I’m Jacqueline! Along with Brandon and Chirasree, I am a publicity officer. The publicity committee - or pubz for short - makes sure that all UPE's events are well advertised. We create amazing designs for UPE merch and also handle UPE's newsletter and social media accounts.</p>
+                <p>For this task, take a picture of everyone in your team (via zoom is fine). In the picture, everyone should be wearing or holding at least one blue item! It doesn't need to be the same blue item.</p>
+                <p>You could be wearing a blue cap or holding a blue mug - as long as it's clearly visible in the picture, the photo will be a valid submission.</p>
+          </div>
+          <button type="button" class = "next blue" onclick="SwapDivsWithClick('photo-whale-', '0', '1')">Next »</button>
+      </div>
+
+     <div id="photo-whale-1" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>Submit your group photo <a href="https://forms.gle/5Y1tfjkUUSqYU6Kc9">here</a>.</p>
+                <p>For this task, EVERYONE on the team should submit the form. You can upload the same picture or a different one, as long as everyone is wearing/holding something blue.</p> 
+                <p>In addition to filling in the form, ONE person should upload the picture on the #candidates channel in the UPE slack.</p>
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('photo-whale-', '1', '0')">« Prev</button>
+      </div>
+  </div>
+
+
+<!-- Task #1 : Dot Challenge - indrel -->
+  <div id="fullstop-container" style="display:none">
+      <div class="title">Task #1: Find the Fullstop</div>
+      <div id="fullstop-whale-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Whale hello! My name is Prakash! I am an Industrial Relations (Indrel) officer - just like Stella, Brian, and Jason are. Indrel fortifies UPE's bond with companies through organizing company events and collecting funding.</p>
+                <p>Indrel planned to send a company an email with only commas. However, we think we mistyped and added in one fullstop in the email by mistake. Can you help spot the index of the fullstop? <a href="https://docs.google.com/document/d/1ZHSj6MYFeDc_2ORBGcf_kd30ly3Gk8RHNvNzwcERa1A/edit?usp=sharing">Here is the doc with our email.</a></p> 
+          </div>
+          <button type="button" class = "next blue" onclick="SwapDivsWithClick('fullstop-whale-', '0', '1')">Next »</button>
+      </div>
+     <div id="fullstop-whale-1" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>Here's a quick suggestion - code up a small program to help locate the fullstop - it might just be better than manual counting! Don't count spaces in your index count.</a>.</p>
+                
+                <p>Once you do get the index number, how do you get the secret character at position 1? Take the index number mod 100. From this new number, subtract 6. Then look up the decimal value of the corresponding character in <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin">this unicode table</a>. For example, if the index is 399, we take 399 mod 100, which gives us 99. Then, we subtract 6 from it, giving us 93. 93 corresponds to the character ']', which we would then record as the character in the 1st position in our final secret code.</p>
+                <p>Good luck!</p>
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('fullstop-whale-', '1', '0')">« Prev</button>
+      </div>
+  </div>
+
+ <!-- Task #2: Officer Challenge - outreach -->
+  <div id="officer-whale-container" style="display:none">
+      <div class="title">Task #2: Where's that officer's whale?</div>
+      <div id="officer-whale-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Hello I’m Valerie. Along with Kathy and Alan, I am part of the Outreach team. We organize events between UPE and other orgs as well as alumni.</p>
+                <p>My task for you is quite simple - name the officer that has a red car in his/her/their whale emoji on slack.</p>
+                <p>The secret final word's 2nd character is lowercase version of the 1st index character in this officer's name. For example, if the officer's name is Sajal, the 1st character in Sajal is a lowercase 'a'. So the 2nd character in the final secret word is 'a'.</p> 
+                <p>Good luck!</p>
+          </div>
+      </div>
+  </div>
+
+
+
+
+ <!-- Task #3: Puzzle Challenge - profdev -->
+  <div id="puzzle-container" style="display:none">
+      <div class="title">Task #3: Puzzle Challenge</div>
+      <div id="puzzle-whale-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Hi I’m Mantej! Along with Eric and Chase, I am part of UPE's profdev officer board. Profdev helps the cs community with mock interviews, resume critiques, and other professional services.</p>
+                <p>I find puzzles quite intriguing. So, for this task, you and your team should solve <a href="https://jigex.com/pDXP">this</a> puzzle.</p>
+                <p>The puzzle can be solved in multiplayer mode. Once one team member clicks the link, click the people icon to launch multiplayer mode. Please do not change the number of pieces.</p> 
+          </div>
+          <button type="button" class = "next blue" onclick="SwapDivsWithClick('puzzle-whale-', '0', '1')">Next »</button>
+      </div>
+
+
+     <div id="puzzle-whale-1" class="generalDialogue" style="display:none">
+            <div class="text left-align">
+                <p>Once you are done with the puzzle, screenshot the completed puzzle and upload it <a href="https://forms.gle/DrMByYx92HR7vcS66">here</a>.</p>
+                
+                <p>Only one person needs too submit this form. Good luck my whales!</p>
+            </div>
+            <button type="button" class = "previous" onclick="SwapDivsWithClick('puzzle-whale-', '1', '0')">« Prev</button>
+      </div>
+  </div>
+
+
+ <!-- Task #4: Unscramble Challenge - social -->
+  <div id="scramble-container" style="display:none">
+      <div class="title">Task #4: Unscramble!</div>
+      <div id="scramble-whale-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Heya - I’m Chi! I am a social officer - just like Xinyun and Elicia. The social committee helps plan fun social events for UPE's candidates - such as game night and cooking night!</p>
+                <p>My task for you is quick and simple - unscramble the following jumbled up sentence: "huhlotag hsit si yomlst a ivtluar smreeets, ti is a aesreulp to vhea oyu sa a dictdnaae ni peu"</p>
+                <p>Sumbit your answer using <a href="https://forms.gle/SxSZtg77zyf6iThL7">this google form</a> to get the last letter in the secret final word!</p> 
+                <p> Once you have all the letters combined, please post the final secret word on the #general channel on slack.</p>
+          </div>
+      </div>
+  </div>
+  
+
+
+ <!-- Final -->
+  <div id="done-container" style="display:none">
+      <div class="title">DONE: Enter the Final Secret Word</div>
+      <div id="done-whale-0" class="generalDialogue" style="display:visible">
+          <div class="text">
+                <p>Hey there - I’m Tim! I am on the exec board along with Ankit, Michelle, Debbie, and Won. Exec ensures that all UPE committees function properly. Exec also deals with both the internal and external logistics of UPE as a whole.</p>
+                <p>My task for you is quick and simple - unscramble the following jumbled up sentence: "huhlotag hsit si yomlst a ivtluar smreeets, ti is a aesreulp to vhea oyu sa a dictdnaae ni peu"</p>
+                <p>Sumbit your answer using <a href="https://forms.gle/FqWfB6kzqSQT16B26">this google form</a> to get the last letter in the secret final word!</p> 
+                <p>Once you have all the letters combined, submit the final secret word here.</p>
+                <p>After you submit the secret word, get one team member to post "DONE" in the #general channel on slack. Do NOT post the secret word in slack or you will be disqualified.</p>
+                <p>Looking forward to seeing you solve this puzzWhaleHunt!</p>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- end of containers -->
+
+    <script src="js/roomFuncs.js"></script>	
+    <script src="js/roomElems.js"></script>	
+
+
+
+
+  </body>
+</html>
