@@ -162,11 +162,12 @@
                 }
                 
             </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script>
                 $(window).on("load resize scroll", function() {
                   $(".bg-static").each(function() {
                     var windowTop = $(window).scrollTop();
-                    var elementTop = $(this).offset().top;
+                    var elementTop = $(this).offset().top; // offset from the top is used to determine position
                     var leftPosition = windowTop - elementTop;
                       $(this)
                         .find(".bg-move")

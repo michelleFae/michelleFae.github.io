@@ -166,8 +166,6 @@
         <div class="icon">
             <div class="arrow"></div>
         </div>
-        
-
         <script>
             //arrow
             const $icon = document.querySelector('.icon');
@@ -186,73 +184,12 @@
             	    iterations: Infinity
                 }
             );
-           
-
-           	// moving box
-            jQuery(document).ready(
-			  function() {
-
-			    var $w = $(window);
-			    // var $d = $('#oh');
-			    var $y = $('#yeah');
-			    // var $c = $('#commom');
-			    // var $b = $('#baby');
-
-			    var lastScrollTop = $w.scrollTop();
-
-			    var _x = 0;
-			    var _y = 0;
-
-			    $(window).scroll(function(event) {
-			      var st = $w.scrollTop();
-
-			      _x = st;
-			      _y = st;
-
-			      lastScrollTop = st;
-			      
-			      // $d.css('right', _x);
-			      // $d.css('bottom', _y);
-			      
-			      $y.css('left', _x);
-			      $y.css('top', _y);
-			      
-			      //-----------
-			      var $myElement = $('#second-container'),
-			        canUserSeeIt = inViewport($myElement);
-			        
-			        
-			        if(canUserSeeIt){
-			          // $c.css({'right': _y});
-			          // $b.css({'left': _x});
-			        }
-			    });
-			    
-			    //check if el is visible in viewport
-			    function inViewport($ele) {
-			      var lBound = $(window).scrollTop(),
-			        uBound = lBound + $(window).height(),
-			        top = $ele.offset().top,
-			        bottom = top + $ele.outerHeight(true);
-
-			      return (top > lBound && top < uBound) ||
-			        (bottom > lBound && bottom < uBound) ||
-			        (lBound >= top && lBound <= bottom) ||
-			        (uBound >= top && uBound <= bottom);
-			    }
-			  });
-			            
+            
+            
+            
             
         </script>
-
-
-
-
-
         <div id="main">
-        	        <div class="moving_container">
-         <div id="yeah" class="demo-dot" style="position: absolute; top: 0; left: 0; background: black; width:100px; height: 100px;"></div>
-</div>
             <h1>About Me</h1>
             <br>
             <br>
@@ -268,9 +205,7 @@
         and also alliterations, apparently!</p>
 
 
-
-
-
+        
                 <br>
                 <br>
                 <span title="Good Job! :) " style="color:blue">(hover here if you were able to spot BOTH the alliterations!)</span>
