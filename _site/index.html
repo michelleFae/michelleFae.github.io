@@ -43,90 +43,90 @@
                 /* generates a new bubble at coordinate (X,Y), of size SIZE, of color COLOR." */
                 function newBubble(x, y, size, color)
                 {
-                	var bubble = document.createElement("DIV");
-                	bubble.setAttribute('class', 'bubble');
-                	bubble.style = "background-color : " + color + ";";
-                	bubble.bubbleSize = size;
-                	bubble.style.height = bubble.bubbleSize * 2 + "px";
-                	bubble.style.width = bubble.bubbleSize * 2 + "px";
-                	bubble.time = d;
-                	bubble.velocity = [];
-                	bubble.velocity.x = 0;
-                	bubble.velocity.y = 0;
-                	bubble.position = [];
-                	bubble.position.x = x;
-                	bubble.position.y = y;
-                	bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-                	bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
-                	
-                	// attach the bubble to the div so it is seen
-                	brd.appendChild(bubble);
-                	bubbles.push(bubble);
-                	return bubble;
+                    var bubble = document.createElement("DIV");
+                    bubble.setAttribute('class', 'bubble');
+                    bubble.style = "background-color : " + color + ";";
+                    bubble.bubbleSize = size;
+                    bubble.style.height = bubble.bubbleSize * 2 + "px";
+                    bubble.style.width = bubble.bubbleSize * 2 + "px";
+                    bubble.time = d;
+                    bubble.velocity = [];
+                    bubble.velocity.x = 0;
+                    bubble.velocity.y = 0;
+                    bubble.position = [];
+                    bubble.position.x = x;
+                    bubble.position.y = y;
+                    bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+                    bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';                
+                    
+                    // attach the bubble to the div so it is seen
+                    brd.appendChild(bubble);
+                    bubbles.push(bubble);
+                    return bubble;
                 }
                 
                 var msedwn = false;
                 
                 document.onmousedown = function(e) {
-                	msedwn = true;
+                    msedwn = true;
                 }
                 
                 document.onmouseup = function(e) {
-                	msedwn = false;
+                    msedwn = false;
                 }
                 
                 document.onmousemove = function(e) {
-                	if(msedwn)
-                		generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
+                    if(msedwn)
+                        generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
                 }
                 
                 document.ontouchmove = function(e) {
-                	generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
+                    generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
                 }
                 
                 /* chooses bubble color and size  randomly */
                 function generateBubbles(x, y)
                 {
                 
-                	var size = Math.random() * (maxbub - minbub ) + minbub;
+                    var size = Math.random() * (maxbub - minbub ) + minbub;
                 
-                	var size = minbub + (maxbub - minbub) * Math.random();
+                    var size = minbub + (maxbub - minbub) * Math.random();
                 
-                	var digits = '0123456789ABCDEF';
-                	var color = '#';
-                	for (var i = 0; i < 4; i++) {
-                		color += digits[Math.floor(Math.random() * 16)];
-                	}
-                	color += 'FF'
+                    var digits = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 4; i++) {
+                        color += digits[Math.floor(Math.random() * 16)];
+                    }
+                    color += 'FF'
                 
-                	newBubble(x, y + 900, size, color);
+                    newBubble(x, y + 900, size, color);
                 }
                 
                 function bubblePushAround(deltaTime)
                 {
-                	for(i = 0; i < bubbles.length; i++)
-                	{
-                		for(j = i + 1; j < bubbles.length; j++)
-                		{
-                			var bubbleOne = bubbles[i];
-                			var bubbleTwo = bubbles[j];
-                			var Dx = bubbleOne.position.x - bubbleTwo.position.x;
-                			var Dy = bubbleOne.position.y - bubbleTwo.position.y;
-                			var D2 = Dx * Dx + Dy * Dy;
-                			var R12 = bubbleOne.bubbleSize * bubbleOne.bubbleSize;
-                			var R22 = bubbleTwo.bubbleSize * bubbleTwo.bubbleSize;
-                			if(D2 < R12 + R22)
-                			{
-                				var D = Math.sqrt(D2);
-                				var F1 = (D2 - (R12 + R22)) * R22;
-                				var F2 = (D2 - (R12 + R22)) * R12;
-                				bubbleOne.velocity.x -= F1 * p * Dx / D * deltaTime;
-                				bubbleOne.velocity.y += F1 * p * Dy / D * deltaTime;
-                				bubbleTwo.velocity.x += F2 * p * Dx / D * deltaTime;
-                				bubbleTwo.velocity.y -= F2 * p * Dy / D * deltaTime;
-                			}
-                		}
-                	}
+                    for(i = 0; i < bubbles.length; i++)
+                    {
+                        for(j = i + 1; j < bubbles.length; j++)
+                        {
+                            var bubbleOne = bubbles[i];
+                            var bubbleTwo = bubbles[j];
+                            var Dx = bubbleOne.position.x - bubbleTwo.position.x;
+                            var Dy = bubbleOne.position.y - bubbleTwo.position.y;
+                            var D2 = Dx * Dx + Dy * Dy;
+                            var R12 = bubbleOne.bubbleSize * bubbleOne.bubbleSize;
+                            var R22 = bubbleTwo.bubbleSize * bubbleTwo.bubbleSize;
+                            if(D2 < R12 + R22)
+                            {
+                                var D = Math.sqrt(D2);
+                                var F1 = (D2 - (R12 + R22)) * R22;
+                                var F2 = (D2 - (R12 + R22)) * R12;
+                                bubbleOne.velocity.x -= F1 * p * Dx / D * deltaTime;
+                                bubbleOne.velocity.y += F1 * p * Dy / D * deltaTime;
+                                bubbleTwo.velocity.x += F2 * p * Dx / D * deltaTime;
+                                bubbleTwo.velocity.y -= F2 * p * Dy / D * deltaTime;
+                            }
+                        }
+                    }
                 }
                 
                 var before = Date.now();
@@ -134,31 +134,31 @@
                 
                 function frame()
                 {
-                	var current = Date.now();
-                	var deltaTime = current - before;
-                	before = current;
-                	bubblePushAround(deltaTime);
-                	for(i in bubbles)
-                	{
-                		var bubble = bubbles[i];
-                		bubble.time -= deltaTime;
-                		if(bubble.time > 0)
-                		{
-                			bubble.velocity.y += f * deltaTime;
-                			bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
-                			bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
-                			bubble.position.x += bubble.velocity.x * deltaTime;
-                			bubble.position.y -= bubble.velocity.y * deltaTime;
-                			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-                			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
-                			bubble.style.opacity = o * (bubble.time / d);
-                		}
-                		else
-                		{
-                			bubble.parentNode.removeChild(bubble);
-                			bubbles.splice(i, 1);
-                		}
-                	}
+                    var current = Date.now();
+                    var deltaTime = current - before;
+                    before = current;
+                    bubblePushAround(deltaTime);
+                    for(i in bubbles)
+                    {
+                        var bubble = bubbles[i];
+                        bubble.time -= deltaTime;
+                        if(bubble.time > 0)
+                        {
+                            bubble.velocity.y += f * deltaTime;
+                            bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
+                            bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
+                            bubble.position.x += bubble.velocity.x * deltaTime;
+                            bubble.position.y -= bubble.velocity.y * deltaTime;
+                            bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+                            bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
+                            bubble.style.opacity = o * (bubble.time / d);
+                        }
+                        else
+                        {
+                            bubble.parentNode.removeChild(bubble);
+                            bubbles.splice(i, 1);
+                        }
+                    }
                 }
                 
             </script>
@@ -166,30 +166,93 @@
         <div class="icon">
             <div class="arrow"></div>
         </div>
+        
+
         <script>
             //arrow
             const $icon = document.querySelector('.icon');
             const $arrow = document.querySelector('.arrow');
             
             $arrow.animate([
-            	    {top: '20px'},
-            	    {top: '70px'},
-            	    {top: '0px'},
-            	    {top: '40px'},
-            	    {top: '20px'},
-            	    {top: '0px'},
-            	    {top: '20px'}],
+                    {top: '20px'},
+                    {top: '70px'},
+                    {top: '0px'},
+                    {top: '40px'},
+                    {top: '20px'},
+                    {top: '0px'},
+                    {top: '20px'}],
                 {
-            	    duration: 2000,
-            	    iterations: Infinity
+                    duration: 2000,
+                    iterations: Infinity
                 }
             );
-            
-            
-            
+           
+
+            // moving box
+            jQuery(document).ready(
+              function() {
+
+                var $w = $(window);
+                // var $d = $('#oh');
+                var $y = $('#yeah');
+                // var $c = $('#commom');
+                // var $b = $('#baby');
+
+                var lastScrollTop = $w.scrollTop();
+
+                var _x = 0;
+                var _y = 0;
+
+                $(window).scroll(function(event) {
+                  var st = $w.scrollTop();
+
+                  _x = st;
+                  _y = st;
+
+                  lastScrollTop = st;
+                  
+                  // $d.css('right', _x);
+                  // $d.css('bottom', _y);
+                  
+                  $y.css('left', _x);
+                  $y.css('top', _y);
+                  
+                  //-----------
+                  var $myElement = $('#second-container'),
+                    canUserSeeIt = inViewport($myElement);
+                    
+                    
+                    if(canUserSeeIt){
+                      // $c.css({'right': _y});
+                      // $b.css({'left': _x});
+                    }
+                });
+                
+                //check if el is visible in viewport
+                function inViewport($ele) {
+                  var lBound = $(window).scrollTop(),
+                    uBound = lBound + $(window).height(),
+                    top = $ele.offset().top,
+                    bottom = top + $ele.outerHeight(true);
+
+                  return (top > lBound && top < uBound) ||
+                    (bottom > lBound && bottom < uBound) ||
+                    (lBound >= top && lBound <= bottom) ||
+                    (uBound >= top && uBound <= bottom);
+                }
+              });
+                        
             
         </script>
+
+
+
+
+
         <div id="main">
+                    <div class="moving_container">
+         <div id="yeah" class="demo-dot" style="position: absolute; top: 0; left: 0; background: black; width:100px; height: 100px;"></div>
+</div>
             <h1>About Me</h1>
             <br>
             <br>
@@ -203,6 +266,11 @@
         at UC Berkeley!</p>
         <br><p>I love poetry, puzzles, programming, and playing the piano ... 
         and also alliterations, apparently!</p>
+
+
+
+
+
                 <br>
                 <br>
                 <span title="Good Job! :) " style="color:blue">(hover here if you were able to spot BOTH the alliterations!)</span>
@@ -210,7 +278,7 @@
                 <br> 
                 <h2> Discussion:</h2>
                 <br>Time: Wednesdays & Fridays ~ 9:30 am - 11:00 am
-                <br>Location: Wheeler 220	
+                <br>Location: Wheeler 220   
                 <br>
                 <br> 
                 <h2> Lab: </h2>
