@@ -13,14 +13,14 @@ position: static;
 
 
 #main{
-  
-  /*background: #edf7ff;*/
+	
+	/*background: #edf7ff;*/
   width: 75%;
 
   background-color: #edf7ff; /* For browsers that do not support gradients */
   background-image: linear-gradient(rgb(237, 247, 255,0), rgb(192, 231, 250,0.5),rgb(150, 221, 255,1)); 
-  margin:70px auto ;
-  border: dotted 15px #8CC0EF;
+	margin:70px auto ;
+	border: dotted 15px #8CC0EF;
   position: static;
 
 }
@@ -79,10 +79,10 @@ position: static;
 
 /** headers */
 h1{
-  text-align: center;
-  font-family: Gill Sans Extrabold, sans-serif;
-  font:small-caps bold 64px/1 sans-serif;
-  color: #8CC0EF;
+	text-align: center;
+	font-family: Gill Sans Extrabold, sans-serif;
+	font:small-caps bold 64px/1 sans-serif;
+	color: #8CC0EF;
 
 }
 
@@ -326,12 +326,6 @@ img.profile:hover{
 }
 
 
-.moving_container{
-  position: relative;
-  width: 100%;
-  height: 400px;
-}
-
 
 /** text */
 
@@ -348,7 +342,37 @@ img.profile:hover{
 }
 
 .blueLink {
-  color: #8CC0EF;
+	color: #8CC0EF;
   text-align: justify;
 
+}
+
+
+
+
+
+.section {
+  position: relative;
+  max-width: 920px;
+  min-height: 75vh;
+  padding: 40px;
+  margin: auto;
+  background-color: #48c9b0;
+  color: #ffffff;
+}
+.section.bg-static {
+  background-color: #85c1e9;
+  background-image: url("https://www.dropbox.com/s/v4u0mpzfplgjxaq/img-blog-background-move-scrolling-bg.png?raw=1");
+  background-size: cover;
+  background-position: center;
+}
+.section .bg-move {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  width: 100%;
+  background-image: url("https://www.dropbox.com/s/isdqow2394y3t35/img-blog-background-move-scrolling-boat.png?raw=1");
+  background-size: cover;
+  background-position: center;
 }

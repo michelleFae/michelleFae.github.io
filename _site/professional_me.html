@@ -162,41 +162,46 @@
                 }
                 
             </script>
+            <script>
+                $(window).on("load resize scroll", function() {
+                  $(".bg-static").each(function() {
+                    var windowTop = $(window).scrollTop();
+                    var elementTop = $(this).offset().top;
+                    var leftPosition = windowTop - elementTop;
+                      $(this)
+                        .find(".bg-move")
+                        .css({ left: leftPosition });
+                  });
+                });
+
+            </script>
+
         </html>
         <div class="icon">
             <div class="arrow"></div>
         </div>
-        <script>
-            //arrow
-            const $icon = document.querySelector('.icon');
-            const $arrow = document.querySelector('.arrow');
-            
-            $arrow.animate([
-            	    {top: '20px'},
-            	    {top: '70px'},
-            	    {top: '0px'},
-            	    {top: '40px'},
-            	    {top: '20px'},
-            	    {top: '0px'},
-            	    {top: '20px'}],
-                {
-            	    duration: 2000,
-            	    iterations: Infinity
-                }
-            );
-            
-            
-            
-            
-        </script>
+
+       
         <div id="main">
-            <h1>About Me</h1>
+            <h1>About Me - Professionally</h1>
             <br>
             <br>
-            <img src="images/profile2.png"
-                alt="A picture of Michelle" class ="profileImage"
-                onmouseover="this.src='images/logo5.png';"
-                onmouseout="this.src='images/profile2.png';">
+            
+            <div class="section bg-static">
+                <div class="bg-move"></div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
             <br>
             <div style = "position:relative; text-align: center;">
                 <p>Hello!! I'm Michelle - a fourth-year Computer Science major 
