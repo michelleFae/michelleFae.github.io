@@ -326,6 +326,12 @@ img.profile:hover{
 }
 
 
+.moving_container{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
 
 /** text */
 
