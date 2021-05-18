@@ -594,19 +594,9 @@ img.profile:hover{
 
 
 
+
+
 @media screen and (max-device-width: 801px) {
-  .parallax {
-    display:none;
-  }
-  .arrow{
-    visibility:hidden;
-  }
-  .icon{
-    visibility: hidden;
-  }
-
-
-
 
 .section {
   position: relative;
@@ -624,7 +614,7 @@ img.profile:hover{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 30vh;
+  min-height: 30vh;
 /*  width: 30vh;*/
 
 /*  height: 20%;
@@ -636,6 +626,7 @@ img.profile:hover{
   bottom: -500;
   right: auto;
   width: 100%;
+  max-height: 30vh;
   background-image: url("images/tagline.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -645,4 +636,30 @@ img.profile:hover{
 
 
 
+}
+
+
+@media screen and (max-device-width: 1340px) {
+  .parallax {
+    display:none;
+  }
+  .arrow{
+    visibility:hidden;
+  }
+  .icon{
+    visibility: hidden;
+  }
+
+  .section .bg-move {
+  position: absolute;
+  top:0 ;
+   left: 0;
+    bottom: -800;
+  width: 100%;
+  max-height: 30vh;
+  background-image: url("images/tagline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
 }
