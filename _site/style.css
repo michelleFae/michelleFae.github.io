@@ -249,7 +249,7 @@ img.profile:hover{
   
 
   /* The image used */
-  background-image: url("images/index.png");
+  background-image: url("images/blue_index.png");
   /* Set a specific height */
   min-height: 90vh;
    
@@ -261,17 +261,6 @@ img.profile:hover{
   background-size: cover;
 }
 
-@media screen and (max-device-width: 991px) {
-  .parallax {
-    display:none;
-  }
-  .arrow{
-    visibility:hidden;
-  }
-  .icon{
-    visibility: hidden;
-  }
-}
 
 /** bubble on mouse click */
 .bubble {
@@ -361,18 +350,97 @@ img.profile:hover{
   color: #ffffff;
 }
 .section.bg-static {
-  background-color: #85c1e9;
-  background-image: url("https://www.dropbox.com/s/v4u0mpzfplgjxaq/img-blog-background-move-scrolling-bg.png?raw=1");
-  background-size: cover;
+  background-color: #85c1e900;
+  background-image: url("images/me_full_bottom.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
+/*  height: 30vh;
+  width: 30vh;*/
+
+/*  height: 20%;
+  width: 50%;*/
 }
 .section .bg-move {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: -600;
   right: auto;
   width: 100%;
-  background-image: url("https://www.dropbox.com/s/isdqow2394y3t35/img-blog-background-move-scrolling-boat.png?raw=1");
-  background-size: cover;
+  background-image: url("images/tagline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
+}
+
+
+.button {
+  background-color: #333333;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+
+
+
+
+@media screen and (max-device-width: 801px) {
+  .parallax {
+    display:none;
+  }
+  .arrow{
+    visibility:hidden;
+  }
+  .icon{
+    visibility: hidden;
+  }
+
+
+
+
+.section {
+  position: relative;
+  max-width: 920px;
+  min-height: 75vh;
+  padding: 0px;
+  margin: auto;
+  background-color: #48c9b0;
+  color: #ffffff;
+}
+
+  .section.bg-static {
+  background-color: #85c1e900;
+  background-image: url("images/me_full_bottom.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 30vh;
+/*  width: 30vh;*/
+
+/*  height: 20%;
+  width: 50%;*/
+}
+.section .bg-move {
+  position: absolute;
+  top: 0;
+  bottom: -500;
+  right: auto;
+  width: 100%;
+  background-image: url("images/tagline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+
+
 }
