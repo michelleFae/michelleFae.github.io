@@ -249,7 +249,7 @@ img.profile:hover{
   
 
   /* The image used */
-  background-image: url("images/index.png");
+  background-image: url("images/blue_index.png");
   /* Set a specific height */
   min-height: 90vh;
    
@@ -261,17 +261,6 @@ img.profile:hover{
   background-size: cover;
 }
 
-@media screen and (max-device-width: 991px) {
-  .parallax {
-    display:none;
-  }
-  .arrow{
-    visibility:hidden;
-  }
-  .icon{
-    visibility: hidden;
-  }
-}
 
 /** bubble on mouse click */
 .bubble {
@@ -326,12 +315,6 @@ img.profile:hover{
 }
 
 
-.moving_container{
-  position: relative;
-  width: 100%;
-  height: 400px;
-}
-
 
 /** text */
 
@@ -350,5 +333,114 @@ img.profile:hover{
 .blueLink {
 	color: #8CC0EF;
   text-align: justify;
+
+}
+
+
+
+
+
+.section {
+  position: relative;
+  max-width: 920px;
+  min-height: 75vh;
+  padding: 40px;
+  margin: auto;
+  background-color: #48c9b0;
+  color: #ffffff;
+}
+.section.bg-static {
+  background-color: #85c1e900;
+  background-image: url("images/me_full_bottom.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+/*  height: 30vh;
+  width: 30vh;*/
+
+/*  height: 20%;
+  width: 50%;*/
+}
+.section .bg-move {
+  position: absolute;
+  top: 0;
+  bottom: -600;
+  right: auto;
+  width: 100%;
+  background-image: url("images/tagline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+.button {
+  background-color: #333333;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+
+
+
+
+@media screen and (max-device-width: 801px) {
+  .parallax {
+    display:none;
+  }
+  .arrow{
+    visibility:hidden;
+  }
+  .icon{
+    visibility: hidden;
+  }
+
+
+
+
+.section {
+  position: relative;
+  max-width: 920px;
+  min-height: 75vh;
+  padding: 0px;
+  margin: auto;
+  background-color: #48c9b0;
+  color: #ffffff;
+}
+
+  .section.bg-static {
+  background-color: #85c1e900;
+  background-image: url("images/me_full_bottom.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 30vh;
+/*  width: 30vh;*/
+
+/*  height: 20%;
+  width: 50%;*/
+}
+.section .bg-move {
+  position: absolute;
+  top: 0;
+  bottom: -500;
+  right: auto;
+  width: 100%;
+  background-image: url("images/tagline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+
 
 }
