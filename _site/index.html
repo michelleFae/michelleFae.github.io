@@ -1,4 +1,7 @@
 <html>
+
+    <!-- for menu bar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <head>
         <title> Michelle Fae D'Souza </title>
         <link href="style.css" type="text/css" rel="stylesheet">
@@ -6,163 +9,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="topnav">
+        <div class="topnav" id="myTopnav">
             <a class=active href="./index">Home</a>
             <a href="./cs61a">CS 61A</a>
             <a  href="./projects"> Projects </a>
             <a href="./feedback">Feedback</a>
-            <div style="float: right;">
-                <a href="https://www.linkedin.com/in/michelle-fae-d-souza-6216b5116/" title="linkedIn"><img src="images/linkedIn.png" alt="linkedin" height="20px"></a>
+           <!--  <div id="socialMedia" style="float: right;"> -->
+                <a href="https://www.linkedin.com/in/michellefae/" title="linkedIn"><img src="images/linkedIn.png" alt="linkedin" height="20px"></a>
                 <a href="https://github.com/michelleFae" title="Github"><img src="images/git.png" alt="Github" height="20px"></a>
-            </div>
+            <!-- </div> -->
+
+            <a href="javascript:void(0);" class="icon_nav" onclick="navFunc()">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        function navFunc() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+
+         <script>
+
+
+
+                $(window).on("load resize scroll", function() {
+                  
+                if($(window).width() >= 1040){
+                  $(".bg-static").each(function() {
+                    var windowTop = $(window).scrollTop();
+                    var elementTop = $(this).offset().top; // offset from the top is used to determine position
+                    var leftPosition = windowTop - elementTop;
+                      $(this)
+                        .find(".bg-move")
+                        .css({ left: leftPosition });
+                  });
+                }});
+
+            </script>
+
+
         <div class="parallax"></div>
         <html>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script>
-                /* bubbles */
-                var brd = document.createElement("DIV");
-                document.body.insertBefore(brd, document.getElementById("main"));
-                
-                /* keeps track of all existing bubbles on screen */
-                bubbles = [];
-                
-                /* bubble variables to determine bubble interaction pyhsics." */
-                const d = 5000;
-                const o = 0.7; 
-                const r = 0.001;
-                const f = 0.0025;
-                const p = 0.00000001;
-                /* radius of smallest bubble. */ 
-                const minbub = 10;
-                /* radius of biggest bubble. */ 
-                const maxbub = 50;
-                /* offset of bubble from cursor. */ 
-                const cursorXOffset = 5;
-                const cursorYOffset = 0;
-                
-                /* generates a new bubble at coordinate (X,Y), of size SIZE, of color COLOR." */
-                function newBubble(x, y, size, color)
-                {
-                    var bubble = document.createElement("DIV");
-                    bubble.setAttribute('class', 'bubble');
-                    bubble.style = "background-color : " + color + ";";
-                    bubble.bubbleSize = size;
-                    bubble.style.height = bubble.bubbleSize * 2 + "px";
-                    bubble.style.width = bubble.bubbleSize * 2 + "px";
-                    bubble.time = d;
-                    bubble.velocity = [];
-                    bubble.velocity.x = 0;
-                    bubble.velocity.y = 0;
-                    bubble.position = [];
-                    bubble.position.x = x;
-                    bubble.position.y = y;
-                    bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-                    bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';                
-                    
-                    // attach the bubble to the div so it is seen
-                    brd.appendChild(bubble);
-                    bubbles.push(bubble);
-                    return bubble;
-                }
-                
-                var msedwn = false;
-                
-                document.onmousedown = function(e) {
-                    msedwn = true;
-                }
-                
-                document.onmouseup = function(e) {
-                    msedwn = false;
-                }
-                
-                document.onmousemove = function(e) {
-                    if(msedwn)
-                        generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
-                }
-                
-                document.ontouchmove = function(e) {
-                    generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
-                }
-                
-                /* chooses bubble color and size  randomly */
-                function generateBubbles(x, y)
-                {
-                
-                    var size = Math.random() * (maxbub - minbub ) + minbub;
-                
-                    var size = minbub + (maxbub - minbub) * Math.random();
-                
-                    var digits = '0123456789ABCDEF';
-                    var color = '#';
-                    for (var i = 0; i < 4; i++) {
-                        color += digits[Math.floor(Math.random() * 16)];
-                    }
-                    color += 'FF'
-                
-                    newBubble(x, y + 900, size, color);
-                }
-                
-                function bubblePushAround(deltaTime)
-                {
-                    for(i = 0; i < bubbles.length; i++)
-                    {
-                        for(j = i + 1; j < bubbles.length; j++)
-                        {
-                            var bubbleOne = bubbles[i];
-                            var bubbleTwo = bubbles[j];
-                            var Dx = bubbleOne.position.x - bubbleTwo.position.x;
-                            var Dy = bubbleOne.position.y - bubbleTwo.position.y;
-                            var D2 = Dx * Dx + Dy * Dy;
-                            var R12 = bubbleOne.bubbleSize * bubbleOne.bubbleSize;
-                            var R22 = bubbleTwo.bubbleSize * bubbleTwo.bubbleSize;
-                            if(D2 < R12 + R22)
-                            {
-                                var D = Math.sqrt(D2);
-                                var F1 = (D2 - (R12 + R22)) * R22;
-                                var F2 = (D2 - (R12 + R22)) * R12;
-                                bubbleOne.velocity.x -= F1 * p * Dx / D * deltaTime;
-                                bubbleOne.velocity.y += F1 * p * Dy / D * deltaTime;
-                                bubbleTwo.velocity.x += F2 * p * Dx / D * deltaTime;
-                                bubbleTwo.velocity.y -= F2 * p * Dy / D * deltaTime;
-                            }
-                        }
-                    }
-                }
-                
-                var before = Date.now();
-                var id = setInterval(frame, 5);
-                
-                function frame()
-                {
-                    var current = Date.now();
-                    var deltaTime = current - before;
-                    before = current;
-                    bubblePushAround(deltaTime);
-                    for(i in bubbles)
-                    {
-                        var bubble = bubbles[i];
-                        bubble.time -= deltaTime;
-                        if(bubble.time > 0)
-                        {
-                            bubble.velocity.y += f * deltaTime;
-                            bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
-                            bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
-                            bubble.position.x += bubble.velocity.x * deltaTime;
-                            bubble.position.y -= bubble.velocity.y * deltaTime;
-                            bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
-                            bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
-                            bubble.style.opacity = o * (bubble.time / d);
-                        }
-                        else
-                        {
-                            bubble.parentNode.removeChild(bubble);
-                            bubbles.splice(i, 1);
-                        }
-                    }
-                }
-                
-            </script>
+         <script type="text/javascript" src="scripts/index_script.js"></script>
+
         </html>
         <div class="icon">
             <div class="arrow"></div>
@@ -196,32 +95,14 @@
             
         </script>
            
-            <script>
-
-
-
-                $(window).on("load resize scroll", function() {
-                  
-                if($(window).width() >= 1040){
-                  $(".bg-static").each(function() {
-                    var windowTop = $(window).scrollTop();
-                    var elementTop = $(this).offset().top; // offset from the top is used to determine position
-                    var leftPosition = windowTop - elementTop;
-                      $(this)
-                        .find(".bg-move")
-                        .css({ left: leftPosition });
-                  });
-                }});
-
-            </script>
+           
 
         </html>
 
        
         <div id="main">
             <h1>You found her!</h1>
-            <br>
-            <br>
+ 
             
             <div class="section bg-static">
                 <div class="bg-move"></div>
