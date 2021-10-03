@@ -41,7 +41,7 @@
 
                 $(window).on("load resize scroll", function() {
                   
-                if($(window).width() >= 1040){
+                if($(window).width() > 778){
                   $(".bg-static").each(function() {
                     var windowTop = $(window).scrollTop();
                     var elementTop = $(this).offset().top; // offset from the top is used to determine position
