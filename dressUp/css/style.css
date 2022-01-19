@@ -1,0 +1,219 @@
+/* containers */
+
+#container{
+    position: absolute;
+    margin:auto;
+    width: 50%;
+    height :80%;
+
+   background-color: aqua;
+   background-repeat: no-repeat;
+   min-width: 430px;
+   min-height: 330px;
+}
+
+#code-container{
+    position: relative;
+    background: rgba(0, 0, 0, 1);
+    margin:auto;
+    width: 50%;
+    height :100%;
+    right: -100%; 
+    min-width: 430px;
+    min-height: 330px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 80%;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+
+#container .person ~ div {
+    background-repeat: no-repeat;
+    position:absolute;
+    width: 90%;
+    height: 100%;
+    background-size: contain;
+    background-position: center bottom;
+  }
+
+/* Person elements */
+
+#skin{
+  background-image: url("../images/skins/skin4.png");
+}
+
+#eyeBack{
+  background-image: url("../images/eyes/eyeback.png");
+}
+
+#eyeIris{
+  background-image: url("../images/eyes/eyefront.png");
+}
+
+
+#eyeClosed{
+  -webkit-animation: eyeblink 2s infinite alternate;
+}
+
+#top{
+
+  background-image: url("../images/tops/fluffDress.png");
+
+}
+
+
+/* Code elements */
+
+.languageHeader {
+    position: relative; 
+    z-index:1;
+    width:480px;
+    border:0px;
+    font-weight: 800;
+}
+
+.comment {
+    position: relative; 
+    z-index:1;
+    width:480px;
+    border:0px;
+    color:palevioletred;
+    font-weight: 450;
+}
+
+.bold {
+    position: relative; 
+    z-index:1;
+    width:480px;
+    border:0px;
+    color:whitesmoke;
+    font-weight: 600;
+}
+
+
+textarea {
+    resize: none; 
+    background-color: transparent; 
+    border: 0px;
+    position: relative; 
+    z-index:1;
+    width:480px;
+    border:0px;
+    color:dimgray;
+    font-weight: 300;
+    outline: none;
+    box-shadow: none;
+}
+
+
+.codeInput {
+    position: absolute; 
+    z-index:2;
+    width:480px;
+    border:0px;
+    font-weight: 800;
+    outline: transparent;
+    
+    
+}
+
+.pythonInput {
+    color:pink;
+    -webkit-animation:colorchangepink 20s infinite alternate;
+}
+
+.python {
+    color: palevioletred;
+}
+
+.border-highlight{
+  border:2px dashed white;  
+  padding:0.03em 0.25em;
+}
+
+.pythonBorder {
+  -webkit-animation:bordercolorchangepink 2s infinite alternate;
+
+}
+
+
+@-webkit-keyframes eyeblink{
+  0% {
+    background-image: url("../images/eyes/eyesclosed.png");
+  }
+  
+  20% {
+    
+    background-image: none;
+  }
+}
+
+@-webkit-keyframes bordercolorchangepink{
+  0% {
+    border:2px dashed rgb(109, 42, 63);
+  }
+  
+  20% {
+    
+    border:2px dotted pink;
+  }
+  
+  40% {
+    
+    border:2px dashed plum;
+  }
+  
+  60% {
+    
+    border:2px dotted #f83d9a;
+  }
+  
+  80% {
+    
+    border:2px dashed rgb(201, 132, 170);
+
+  }
+  
+  100% {
+    
+    border:2px dotted rgb(192, 100, 100);
+  }
+}
+
+
+
+@-webkit-keyframes colorchangepink {
+    0% {
+      
+      color: rgb(109, 42, 63);
+    }
+    
+    20% {
+      
+      color: pink;
+    }
+    
+    40% {
+      
+      color: plum;
+    }
+    
+    60% {
+      
+      color: #f83d9a;
+    }
+    
+    80% {
+      
+      color: rgb(201, 132, 170);
+
+    }
+    
+    100% {
+      
+      color: rgb(192, 100, 100);
+    }
+}
+
+
