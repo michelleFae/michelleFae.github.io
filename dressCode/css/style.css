@@ -1,3 +1,13 @@
+
+.top{top:0}
+.middle{top:50%;margin-top:-10px;/*half of the .box height*/}
+.bottom{bottom:0}
+
+.left{left:0;}
+.center{left:50%;margin-left:-10px;/*half of the .box width*/}
+.right{right:0;}
+
+
 /* containers */
 
 #container{
@@ -14,33 +24,64 @@
 
 #code-container{
     position: relative;
-    background: rgba(0, 0, 0, 1);
-    margin:auto;
-    width: 50%;
+    background: #000000;
     height :100%;
     right: -100%; 
-    min-width: 430px;
+    min-width: 590px;
     min-height: 330px;
     box-sizing: border-box;
     padding: 10px;
-    font-size: 80%;
+    font-size: 25px;
     font-family: "Lucida Console", "Courier New", monospace;
+    overflow-y: auto;
 
 }
 
-#container .person ~ div {
+
+
+#container2 .person ~ div {
     background-repeat: no-repeat;
     position:absolute;
     width: 90%;
     height: 100%;
+    min-width: 90%;
+    min-height: 100%;
     background-size: contain;
     background-position: center bottom;
   }
 
 /* Person elements */
 
+#hairFront{
+  background-image: url("../images/hair/group0/0f.png");
+}
+
+#hairBack{
+  background-image: url("../images/hair/group0/1b.png");
+}
+
+
 #skin{
   background-image: url("../images/skins/skin4.png");
+}
+
+#mouthBack{
+  background-image: url("../images/lips/openmouthback.png");
+}
+
+#lips{
+  background-image: url("../images/lips/openlips.png");
+  filter: invert(75%) sepia(45%) saturate(7253%) hue-rotate(316deg) brightness(91%) contrast(94%);
+  /* -webkit-animation: movemouth 3s infinite alternate; */
+  
+}
+
+#eyebrows{
+  background-image: url("../images/eyebrows/eyebrows.png");
+}
+
+#nose{
+  background-image: url("../images/nose/nose.png");
 }
 
 #eyeBack{
@@ -56,19 +97,27 @@
   -webkit-animation: eyeblink 2s infinite alternate;
 }
 
-#top{
+#topClothes{
 
   background-image: url("../images/tops/fluffDress.png");
+  flex-direction: row ;
 
 }
 
+
+.flexbox{
+  display: flex; 
+}
+
+.twentyfour {
+  height: 24px;
+}
 
 /* Code elements */
 
 .languageHeader {
     position: relative; 
     z-index:1;
-    width:480px;
     border:0px;
     font-weight: 800;
 }
@@ -76,7 +125,6 @@
 .comment {
     position: relative; 
     z-index:1;
-    width:480px;
     border:0px;
     color:palevioletred;
     font-weight: 450;
@@ -85,10 +133,10 @@
 .bold {
     position: relative; 
     z-index:1;
-    width:480px;
     border:0px;
     color:whitesmoke;
     font-weight: 600;
+    min-height: 26px;
 }
 
 
@@ -98,24 +146,29 @@ textarea {
     border: 0px;
     position: relative; 
     z-index:1;
-    width:480px;
     border:0px;
     color:dimgray;
     font-weight: 300;
     outline: none;
     box-shadow: none;
+    width: 580px;
+    font-size: 25px;
 }
 
 
 .codeInput {
-    position: absolute; 
+    /* position: absolute;  */
+    background-color: transparent;
     z-index:2;
-    width:480px;
     border:0px;
     font-weight: 800;
     outline: transparent;
-    
-    
+    font-size: 25px;
+    height: 15px;
+}
+
+.smallerHeight {
+  height: 90%;
 }
 
 .pythonInput {
@@ -137,6 +190,34 @@ textarea {
 
 }
 
+@-webkit-keyframes movemouth{
+  0% {
+    background-image: url("../images/lips/openlips.png");
+  }
+  
+  1% {
+    
+    background-image: url("../images/lips/closedlips.png");
+  }
+
+  2% {
+    background-image: url("../images/lips/openlips.png");
+  }
+  
+  80% {
+    
+    background-image: url("../images/lips/openlips.png");
+  }
+    
+  95% {
+    
+    background-image: url("../images/lips/closedlips.png");
+  }
+  98% {
+    
+    background-image: url("../images/lips/openlips.png");
+  }
+}
 
 @-webkit-keyframes eyeblink{
   0% {

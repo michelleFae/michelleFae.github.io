@@ -1,0 +1,146 @@
+<html>
+   <head> 
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <title>Dress Code</title>
+<body>
+    <svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display:none;">
+        <defs>
+          <filter id="marker-shape">
+            <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+          </filter>
+        </defs>
+      </svg>
+
+
+    <input type="color" name="colorPicker"
+      value="#e66465">
+  
+    <label for="head">Colour Picker</label>
+
+    <div id="container">
+            <div id="container2">
+ 
+                <div class="person" id="backAccessory"></div>
+                <div class="person" id="hairBack"></div> 
+                <div class="person" id="skin"></div>
+                <div class="person" id="eyebrows"></div>
+                <div class="person" id="nose"></div>
+                <div class="person" id="eyeBack"></div>
+                <div class="person" id="eyeIris"></div>
+                <div class="person" id="eyeClosed"></div>
+                <div class="person" id="mouthBack"></div>
+                <div class="person" id="lips"></div>
+                <div class="person" id="shoes"></div> 
+                <div class="person" id="bottom"></div>   
+                <div class="person" id="topClothes"></div>
+                <div class="person" id="hairFront"></div>
+                <div class="person" id="frontAccessory"> </div>
+                   
+              </div>
+                
+
+                <div id="code-container">
+                    
+                    <div class="languageHeader python">### Python Code ###</div>
+                    <br>
+                    <!-- Basic Character traits -->
+                    <div class="comment python"># Basic Character Design</div>
+                    <textarea readonly rows=2>Person clara = Person()</textarea> 
+                    <div class="comment python"># Choose an integer from 0 to 8 for Clara's skin tone</div>
+                    <div class="flexbox twentyfour"> 
+                      <div class="bold" style="width: 280px;">clara.skin.color = </div>
+                      <div id="skinInput" class="codeInput pythonInput " contenteditable="true" ><span class="border-highlight pythonBorder"># Enter Number Here</span></div> 
+                    </div>
+                    <br>
+                    
+                    <div class="comment python"># Copy the values for R, G, and B, from the color picker on the top right.</div>
+                    
+                    <div class="flexbox twentyfour"> 
+                      <div class="bold" style="width: 167px;">clara.eye.color = rgb( </div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputR" value=0 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;">,</div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputG" value=0 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;">,</div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputB" value=0 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;"> )</div>
+                    </div> 
+                    
+                    <div class="flexbox twentyfour"> 
+                      <div class="bold" style="width: 167px;">clara.lip.color = rgb( </div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputR" value=227 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;">,</div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputG" value=93 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;">,</div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputB" value=106 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;"> )</div> 
+                    </div> 
+
+                    <br>
+                    <div class="comment python"># All of the hair is stored in a linked list.</div>
+                    <textarea readonly rows=2>hair_linked_list = HairLinkedList()</textarea>
+                    <div class="comment python"># hair_linked_list.head will give you the first element (also called a "node") in the linked list.</div>
+                    <textarea readonly rows=2>current_node = hair_linked_list.head</textarea>
+                    
+                    <div class="comment python"># A node has a value and a next node.</div>
+                    <div class="comment python"># We loop through the linked list using a for loop.</div>
+                    <div class="comment python"># .next() will give us the next node in the linked list. </div>
+                    <div class="comment python"># Specify how many times you would like to loop through the for loop. </div>
+                    <div class="comment python"># For example, entering 0 will not loop through the loop and will give us the first element in the linked list. </div>
+                    <div class="comment python"># Entering 1 will call next one time and give us the second element in the linked list. </div>
+                    <div class="comment python"># Number of elements in the linked list is currently __. </div>
+
+                    <div class="flexbox twentyfour"> 
+                      <div class="bold" style="width: 110px;">for( i=0, i &lt; </div>
+                      <span class="border-highlight pythonBorder"><input maxlength=2 id="hairInput" value=2 class="codeInput pythonInput smallerHeight" style="width:3ch;"></span>
+                      <div class="bold" style=" width: 100px;">, i++ ) {</div>
+                    </div> 
+
+                    <div class="bold" style=" width: 420px;">&nbsp;&nbsp;&nbsp;&nbsp;current_node = current_node.next()</div>
+                    <div class="bold" style=" width: 10px;">}</div>
+
+                    <div class="bold" style=" width: 260px;">clara.hair = current_node.value()</div>
+
+
+                    <div class="flexbox twentyfour"> 
+                      <div class="bold" style="width: 167px;">clara.hair.color = rgb( </div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputR" value=227 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;">,</div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputG" value=93 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;">,</div>
+                      <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputB" value=106 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
+                      <div class="bold" style=" width: 10px;"> )</div> 
+                    </div> 
+
+                   
+
+                
+
+                   
+                  
+<!--                     
+                    <div class="pythonBold" style="position:absolute; z-index:1; top:1px; width:270px; border:0px;">type here:</div>
+                    <div class="pythonNormal" style="top:1px;">type here:</div>
+                    -->
+
+                    
+               
+            </div>
+        
+        </div>
+        
+
+    </div>
+    
+
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/filter.js"></script>
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/face.js"></script>
+    <script type="text/javascript" src="scripts/hair.js"></script>
+    
+    </body>
+
+</html>

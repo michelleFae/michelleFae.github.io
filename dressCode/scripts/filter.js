@@ -285,8 +285,8 @@ function getFilter(rgb, numRuns=0) {
     const solver = new Solver(color);
     const result = solver.solve();
 
-    if (result.loss > 8 && numRuns < 3) {
+    if (result.loss > 3 && numRuns < 10) {
       return getFilter(rgb, ++numRuns);
     }
-    return result.filter;
+    return "brightness(0) saturate(100%)" + result.filter;
 }
