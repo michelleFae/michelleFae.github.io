@@ -19,11 +19,14 @@
   
     <label for="head">Colour Picker</label>
 
+    
+
     <div id="container">
             <div id="container2">
  
                 <div class="person" id="backAccessory"></div>
                 <div class="person" id="hairBack"></div> 
+                <div class="person" id="hairBackHighlight"></div>
                 <div class="person" id="skin"></div>
                 <div class="person" id="eyebrows"></div>
                 <div class="person" id="nose"></div>
@@ -32,92 +35,299 @@
                 <div class="person" id="eyeClosed"></div>
                 <div class="person" id="mouthBack"></div>
                 <div class="person" id="lips"></div>
-                <div class="person" id="shoes"></div> 
-                <div class="person" id="bottom"></div>   
-                <div class="person" id="topClothes"></div>
+                <div class="person" id="socks"></div> 
+                <div class="person" id="shoe1"></div> 
+                <div class="person" id="shoe2"></div> 
+                <div class="person" id="top1"></div>
+                <div class="person" id="top2"></div>
+                <div class="person" id="bottom1"></div>
+                <div class="person" id="bottom2"></div>
                 <div class="person" id="hairFront"></div>
-                <div class="person" id="frontAccessory"> </div>
+                <div class="person" id="hairFrontHighlight"></div>
+                <div class="person" id="frontAccessory"></div>
                    
               </div>
                 
 
                 <div id="code-container">
                     
-                    <div class="languageHeader python">### Python Code ###</div>
-                    <br>
                     <!-- Basic Character traits -->
-                    <div class="comment python"># Basic Character Design</div>
-                    <textarea readonly rows=2>Person clara = Person()</textarea> 
-                    <div class="comment python"># Choose an integer from 0 to 8 for Clara's skin tone</div>
-                    <div class="flexbox twentyfour"> 
-                      <div class="bold" style="width: 280px;">clara.skin.color = </div>
-                      <div id="skinInput" class="codeInput pythonInput " contenteditable="true" ><span class="border-highlight pythonBorder"># Enter Number Here</span></div> 
+                    <div class="divs">
+                      <div class="panel pythonCodeButtonPanel">
+                        <div class="languageHeader python">### Python Code ###</div>
+                        <br>
+                        <div class="comment python"># Basic Character Design</div>
+                        <textarea readonly rows=2>Person clara = Person()</textarea> 
+                        <div class="comment python"># Choose an integer from 0 to 8 for Clara's skin tone</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 280px;">clara.skin.color = </div>
+                          <div id="skinInput" class="codeInput pythonInput " contenteditable="true" ><span class="border-highlight pythonBorder"># Enter Number Here</span></div> 
+                        </div>
+                        <br>
+                        
+                        <div class="comment python"># Copy the values for R, G, and B, from the color picker on the top right.</div>
+                        
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 340px;">clara.eye.color = rgb( </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputR" value=0 class="codeInput pythonInput " style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputG" value=0 class="codeInput pythonInput " style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputB" value=0 class="codeInput pythonInput " style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div>
+                        </div> 
+                        
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 340px;">clara.lip.color = rgb( </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputR" value=227 class="codeInput pythonInput " style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputG" value=93 class="codeInput pythonInput " style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputB" value=106 class="codeInput pythonInput " style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div> 
+
+                        <br>
+
+                      </div>
+                      <div class="panel pythonCodeButtonPanel">
+                        <div class="languageHeader python">### Python Code ###</div>
+                        <br>
+                        <div class="comment python"># All of the hair is stored in a linked list.</div>
+                        <textarea readonly rows=2>hair_linked_list = HairLinkedList()</textarea>
+                        <div class="comment python"># hair_linked_list.head will give you the first element (also called a "node") in the linked list.</div>
+                        <textarea readonly rows=2>current_node = hair_linked_list.head</textarea>
+                        
+                        <div class="comment python">''' A node has a value and a next node.</div>
+                        <div class="comment python">&nbsp;&nbsp;We loop through the linked list using a for loop.</div>
+                        <div class="comment python">&nbsp;&nbsp;.next() will give us the next node in the linked list. </div>
+                        <div class="comment python">&nbsp;&nbsp;Specify how many times you would like to loop through the for loop. </div>
+                        <div class="comment python">&nbsp;&nbsp;Number of elements in the linked list is currently __. </div>
+                        <div class="comment python">&nbsp;&nbsp;For example, entering 0 will not loop through the loop and will give us the first element in the linked list. </div>
+                        <div class="comment python">&nbsp;&nbsp;Entering 1 will call next one time and give us the second element in the linked list. '''</div>
+                        
+                        <textarea readonly rows=1>for i in range(***):</textarea> 
+                        
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 180px;">&nbsp;&nbsp;&nbsp;&nbsp;if i == </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=2 id="hairInput" value=0 class="codeInput pythonInput" style="width:3ch;"></span>
+                          <div class="bold" style=" width: 10px;">:</div>
+                        </div> 
+                        <textarea readonly rows=1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;&nbsp;&nbsp;current_node = current_node.next()</textarea>
+                        
+                        <textarea readonly rows=1>clara.hair = current_node.value()</textarea> 
+
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 350px;">clara.hair.color = rgb( </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputR" value=0 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputG" value=0 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputB" value=0 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div>
+
+                        <br>
+
+                        <div class="comment python"># Enter true if you want hairhighlights, or false if you don't. true and false are called "booleans".</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 590px;">clara.hair.highlight.front.is_visible = </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=5 id="hairFrontHighlightInput" value=false class="codeInput pythonInput" style="width:6ch;"></span>
+                        </div>
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 590px;">clara.hair.highlight.back.is_visible = </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=5 id="hairBackHighlightInput" value=false class="codeInput pythonInput" style="width:6ch;"></span>
+                        </div>
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 500px;">clara.hair.highlight.color = rgb( </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="hairHighlightInputR" value=251 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="hairHighlightInputG" value=232 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="hairHighlightInputB" value=175 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div>
+                        <br>
+
+                      </div>
+
+                      <div class="panel pythonCodeButtonPanel">
+                        <div class="languageHeader python">### Python Code ###</div>
+                        <br>
+                        <div class="comment python"># Create a list of tops.</div>
+                        <textarea readonly rows=1>top_list = List()</textarea> 
+                        <textarea readonly rows=1>top_list = populateList(top_list)</textarea> 
+                        <br>
+                        <div class="comment python"># Since this is a list, and not a linked list, we can directly index into it:</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 320px;">clara.top = top_list[ </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top1Input" value=0 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> ]</div> 
+                        </div>
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 350px;">clara.top.color1 = rgb( </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top1InputR" value=183 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top1InputG" value=160 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top1InputB" value=207 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div>
+
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 350px;">clara.top.color2 = rgb( </div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top2InputR" value=91 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top2InputG" value=223 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight pythonBorder"><input maxlength=3 id="top2InputB" value=255 class="codeInput pythonInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div>
+                        <br>
+
+                      </div>
+
+
+                      <div class="panel javaCodeButtonPanel">
+                        <div class="languageHeader java">/* Java Code */</div>
+                        <br>
+                        <div class="comment java">// import the ArrayList class</div>
+                        <textarea readonly rows=2>import java.util.ArrayList;</textarea>
+                        <br>
+                        <div class="comment java">// Create an ArrayList of bottoms.</div>
+                        <textarea readonly rows=3>ArrayList&#60;Bottom&#62; bottomlist = new ArrayList&#60;Bottom&#62;();</textarea> 
+
+                        <div class="comment java">// Python's list and Java's list are implemented in a similar way, so we can directly index into it.</div>
+                        <div class="comment java">// However, instead of python's [], we use .get().</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 455px;">clara.bottom = bottomList.get(</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom1Input" value=102 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">)</div> 
+                        </div>
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 395px;">clara.bottom.color1 = rgb( </div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom1InputR" value=183 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom1InputG" value=160 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom1InputB" value=207 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div>
+
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 395px;">clara.bottom.color2 = rgb( </div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom2InputR" value=91 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom2InputG" value=223 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="bottom2InputB" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;"> )</div> 
+                        </div>
+                        <br>
+
+                      </div>
+                      <div class="panel javaCodeButtonPanel">
+                        <div class="languageHeader java">/* Java Code */</div>
+                        <br>
+
+                        <div class="comment java">// This is an enum. It can only take the values of NONE, SHORT, MEDIUM, LONG.</div>
+                        <textarea readonly rows=1>enum Socks {</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;NONE,</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;SHORT,</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;MEDIUM,</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;LONG</textarea>
+                        <textarea readonly rows=2>}</textarea>
+
+                        <div class="comment java">// The longer the socks, the warmer you'll be. Which socks would you like?</div>
+                        <div class="comment java">// Make sure to use CAPTIAL LETTERS for your enum!</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 302px;">Socks socks = Socks.</div>
+                          <span class="border-highlight javaBorder"><input maxlength=6 id="socksInput" value="NONE" class="codeInput javaInput" style="width:8ch;"></span>
+                          <div class="bold" style="width: 10px;">;</div>
+                        </div>
+
+                        <textarea readonly rows=2>clara.socks = socks;</textarea>
+
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 425px;">clara.socks.color = new RGB(</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="socksInputR" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="socksInputG" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="socksInputB" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">);</div> 
+                        </div>
+                        <br>
+                      </div>
+                      <div class="panel javaCodeButtonPanel">
+                        <div class="languageHeader java">/* Java Code */</div>
+                        <br>
+                        <div class="comment java">// import the LinkedList class</div>
+                        <textarea readonly rows=2>import java.util.LinkedList;</textarea>
+                        <br>
+
+                        <div class="comment java">// Create a linked list for shoes</div>
+                        <textarea readonly rows=2>Deque&#60;Shoes&#62; shoesLinkedList =</textarea>
+                        <textarea readonly rows=2>&nbsp;&nbsp;new LinkedList&#60;Shoes&#62;();</textarea>
+                        <br>
+
+                        <div class="comment java">// This is just like python's linked list, so we loop through each node.</div>
+                        <textarea readonly rows=1>int i=0;</textarea> 
+                        <textarea readonly rows=1>for ( Shoes shoes: shoesLinkedList ){</textarea> 
+                        
+                        <div class="comment java">&nbsp;&nbsp;&nbsp;&nbsp;// Select which node number you want to stop at.</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;if ( i == </div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe1Input" value=2 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 30px;">){</div>
+                        </div>
+                        <textarea readonly rows=1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clara.shoes = shoes;</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;&nbsp;&nbsp;}</textarea>
+                        <textarea readonly rows=1>&nbsp;&nbsp;&nbsp;&nbsp;i++;</textarea> 
+                        <textarea readonly rows=2>}</textarea>
+
+
+                        <br>
+                        <div class="comment java">// Change shoe color.</div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 425px;">clara.shoes.color = new RGB( </div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe1InputR" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe1InputG" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe1InputB" value=255 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">);</div> 
+                        </div>
+
+                        <div class="bold" style="width: 475px;">clara.shoes.outline.color = </div>
+                        <div class="flexbox twentyfour"> 
+                          <div class="bold" style="width: 155px;">&nbsp;&nbsp;new RGB( </div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe2InputR" value=0 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe2InputG" value=0 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">,</div>
+                          <span class="border-highlight javaBorder"><input maxlength=3 id="shoe2InputB" value=0 class="codeInput javaInput" style="width:4ch;"></span>
+                          <div class="bold" style=" width: 10px;">);</div> 
+                        </div>
+                        <br>
+                      </div>
+
+
                     </div>
-                    <br>
+
+                    <button class="button pythonCodeButton" id="prevButton">Prev</button>
+                    <button class="button pythonCodeButton" id="nextButton">Next</button>
                     
-                    <div class="comment python"># Copy the values for R, G, and B, from the color picker on the top right.</div>
                     
-                    <div class="flexbox twentyfour"> 
-                      <div class="bold" style="width: 167px;">clara.eye.color = rgb( </div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputR" value=0 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;">,</div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputG" value=0 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;">,</div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="eyeInputB" value=0 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;"> )</div>
-                    </div> 
-                    
-                    <div class="flexbox twentyfour"> 
-                      <div class="bold" style="width: 167px;">clara.lip.color = rgb( </div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputR" value=227 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;">,</div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputG" value=93 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;">,</div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="lipInputB" value=106 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;"> )</div> 
-                    </div> 
-
-                    <br>
-                    <div class="comment python"># All of the hair is stored in a linked list.</div>
-                    <textarea readonly rows=2>hair_linked_list = HairLinkedList()</textarea>
-                    <div class="comment python"># hair_linked_list.head will give you the first element (also called a "node") in the linked list.</div>
-                    <textarea readonly rows=2>current_node = hair_linked_list.head</textarea>
-                    
-                    <div class="comment python"># A node has a value and a next node.</div>
-                    <div class="comment python"># We loop through the linked list using a for loop.</div>
-                    <div class="comment python"># .next() will give us the next node in the linked list. </div>
-                    <div class="comment python"># Specify how many times you would like to loop through the for loop. </div>
-                    <div class="comment python"># For example, entering 0 will not loop through the loop and will give us the first element in the linked list. </div>
-                    <div class="comment python"># Entering 1 will call next one time and give us the second element in the linked list. </div>
-                    <div class="comment python"># Number of elements in the linked list is currently __. </div>
-
-                    <div class="flexbox twentyfour"> 
-                      <div class="bold" style="width: 110px;">for( i=0, i &lt; </div>
-                      <span class="border-highlight pythonBorder"><input maxlength=2 id="hairInput" value=2 class="codeInput pythonInput smallerHeight" style="width:3ch;"></span>
-                      <div class="bold" style=" width: 100px;">, i++ ) {</div>
-                    </div> 
-
-                    <div class="bold" style=" width: 420px;">&nbsp;&nbsp;&nbsp;&nbsp;current_node = current_node.next()</div>
-                    <div class="bold" style=" width: 10px;">}</div>
-
-                    <div class="bold" style=" width: 260px;">clara.hair = current_node.value()</div>
-
-
-                    <div class="flexbox twentyfour"> 
-                      <div class="bold" style="width: 167px;">clara.hair.color = rgb( </div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputR" value=227 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;">,</div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputG" value=93 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;">,</div>
-                      <span class="border-highlight pythonBorder"><input maxlength=3 id="hairInputB" value=106 class="codeInput pythonInput smallerHeight" style="width:4ch;"></span>
-                      <div class="bold" style=" width: 10px;"> )</div> 
-                    </div> 
-
-                   
-
-                
-
-                   
                   
 <!--                     
                     <div class="pythonBold" style="position:absolute; z-index:1; top:1px; width:270px; border:0px;">type here:</div>
@@ -136,10 +346,13 @@
 
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/layout.js"></script>
     <script type="text/javascript" src="scripts/filter.js"></script>
     <script type="text/javascript" src="scripts/utils.js"></script>
     <script type="text/javascript" src="scripts/face.js"></script>
     <script type="text/javascript" src="scripts/hair.js"></script>
+    <script type="text/javascript" src="scripts/dress.js"></script>
+    <script type="text/javascript" src="scripts/socksShoes.js"></script>
     
     </body>
 

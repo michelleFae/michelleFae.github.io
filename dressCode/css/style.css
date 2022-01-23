@@ -7,6 +7,77 @@
 .center{left:50%;margin-left:-10px;/*half of the .box width*/}
 .right{right:0;}
 
+.panel {
+  display: none;
+}
+
+.button {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition-duration: 0.4s;
+
+}
+
+.pythonCodeButton {
+  box-shadow: #e1adff 0 -12px 6px inset;
+  background-color:pink;
+  -webkit-animation:backgroundcolorchangepink 20s infinite alternate;
+
+}
+
+.pythonCodeButton:hover {
+  background-color: #af4c86;
+}
+
+.javaCodeButton {
+  box-shadow: #adc3ff 0 -12px 6px inset;
+  background-color:rgb(192, 237, 255);
+  -webkit-animation:backgroundcolorchangeblue 20s infinite alternate;
+
+}
+
+.javaCodeButton:hover {
+  background-color: #4c5eaf;
+}
+
+.button:hover {
+  box-shadow: #FF6314 0 -6px 8px inset;
+  transform: scale(1.125);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: white;
+}
+
+.button:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
 
 /* containers */
 
@@ -27,7 +98,7 @@
     background: #000000;
     height :100%;
     right: -100%; 
-    min-width: 590px;
+    min-width: 790px;
     min-height: 330px;
     box-sizing: border-box;
     padding: 10px;
@@ -57,9 +128,20 @@
 }
 
 #hairBack{
-  background-image: url("../images/hair/group0/1b.png");
+  background-image: url("../images/hair/group0/0b.png");
 }
 
+#hairFrontHighlight{
+  background-image: url("../images/hair/group0/highlight/0f.png");
+  filter: invert(87%) sepia(50%) saturate(308%) hue-rotate(330deg) brightness(103%) contrast(97%);
+  visibility: hidden;
+}
+
+#hairBackHighlight{
+  background-image: url("../images/hair/group0/highlight/0b.png");
+  filter: invert(87%) sepia(50%) saturate(308%) hue-rotate(330deg) brightness(103%) contrast(97%);
+  visibility: hidden;
+}
 
 #skin{
   background-image: url("../images/skins/skin4.png");
@@ -97,12 +179,41 @@
   -webkit-animation: eyeblink 2s infinite alternate;
 }
 
-#topClothes{
-
-  background-image: url("../images/tops/fluffDress.png");
-  flex-direction: row ;
-
+#top1{
+  background-image: url("../images/tops/group0/0b.png");
+  filter: brightness(0) saturate(100%) invert(66%) sepia(13%) saturate(723%) hue-rotate(227deg) brightness(102%) contrast(83%);
 }
+
+#top2{
+  background-image: url("../images/tops/group0/0f.png");
+  filter: brightness(0) saturate(100%) invert(77%) sepia(32%) saturate(948%) hue-rotate(158deg) brightness(99%) contrast(105%);
+}
+
+#bottom1{
+  background-image: url("../images/bottoms/group2/2b.png");
+  filter: brightness(0) saturate(100%) invert(66%) sepia(13%) saturate(723%) hue-rotate(227deg) brightness(102%) contrast(83%);
+}
+
+#bottom2{
+  background-image: url("../images/bottoms/group2/8f.png");
+  filter: brightness(0) saturate(100%) invert(77%) sepia(32%) saturate(948%) hue-rotate(158deg) brightness(99%) contrast(105%);
+}
+
+#socks{
+  background-image: url("../images/socks/group0/NONE.png");
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(291deg) brightness(104%) contrast(102%);
+}
+
+#shoe1{
+  background-image: url("../images/shoes/group0/2b.png");
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(291deg) brightness(104%) contrast(102%);
+}
+
+#shoe2{
+  background-image: url("../images/shoes/group0/0f.png");
+  filter: brightness(0) saturate(100%);
+}
+
 
 
 .flexbox{
@@ -137,6 +248,7 @@
     color:whitesmoke;
     font-weight: 600;
     min-height: 26px;
+    font-size: 25px;
 }
 
 
@@ -151,7 +263,7 @@ textarea {
     font-weight: 300;
     outline: none;
     box-shadow: none;
-    width: 580px;
+    width: 780px;
     font-size: 25px;
 }
 
@@ -164,11 +276,16 @@ textarea {
     font-weight: 800;
     outline: transparent;
     font-size: 25px;
-    height: 15px;
+    height: 20px;
 }
 
 .smallerHeight {
   height: 90%;
+}
+
+.javaInput {
+  color:rgb(168, 206, 255);
+  -webkit-animation:colorchangeblue 20s infinite alternate;
 }
 
 .pythonInput {
@@ -180,6 +297,10 @@ textarea {
     color: palevioletred;
 }
 
+.java {
+  color: rgb(107, 198, 226);
+}
+
 .border-highlight{
   border:2px dashed white;  
   padding:0.03em 0.25em;
@@ -187,7 +308,10 @@ textarea {
 
 .pythonBorder {
   -webkit-animation:bordercolorchangepink 2s infinite alternate;
+}
 
+.javaBorder {
+  -webkit-animation:bordercolorchangeblue 2s infinite alternate;
 }
 
 @-webkit-keyframes movemouth{
@@ -263,6 +387,103 @@ textarea {
 }
 
 
+@-webkit-keyframes bordercolorchangeblue{
+  0% {
+    border:2px dashed rgb(42, 60, 109);
+  }
+  
+  20% {
+    
+    border:2px dotted rgb(192, 227, 255);
+  }
+  
+  40% {
+    
+    border:2px dashed rgb(85, 130, 228);
+  }
+  
+  60% {
+    
+    border:2px dotted #3dd3f8;
+  }
+  
+  80% {
+    
+    border:2px dashed rgb(132, 196, 201);
+
+  }
+  
+  100% {
+    
+    border:2px dotted rgb(100, 109, 192);
+  }
+}
+
+
+@-webkit-keyframes backgroundcolorchangepink{
+  0% {
+    background-color:rgb(109, 42, 63);
+  }
+  
+  20% {
+    
+    background-color:pink;
+  }
+  
+  40% {
+    
+    background-color:plum;
+  }
+  
+  60% {
+    
+    background-color:#f83d9a;
+  }
+  
+  80% {
+    
+    background-color:rgb(201, 132, 170);
+
+  }
+  
+  100% {
+    
+    background-color:rgb(192, 100, 100);
+  }
+}
+
+
+@-webkit-keyframes backgroundcolorchangeblue{
+  0% {
+    background-color:rgb(42, 60, 109);
+  }
+  
+  20% {
+    
+    background-color:rgb(192, 227, 255);
+  }
+  
+  40% {
+    
+    background-color:rgb(85, 130, 228);
+  }
+  
+  60% {
+    
+    background-color:#3dd3f8;
+  }
+  
+  80% {
+    
+    background-color:rgb(132, 196, 201);
+
+  }
+  
+  100% {
+    
+    background-color:rgb(100, 109, 192);
+  }
+}
 
 @-webkit-keyframes colorchangepink {
     0% {
@@ -298,3 +519,34 @@ textarea {
 }
 
 
+@-webkit-keyframes colorchangeblue{
+  0% {
+    color:rgb(42, 60, 109);
+  }
+  
+  20% {
+    
+    color:rgb(192, 227, 255);
+  }
+  
+  40% {
+    
+    color:rgb(85, 130, 228);
+  }
+  
+  60% {
+    
+    color:#3dd3f8;
+  }
+  
+  80% {
+    
+    color:rgb(132, 196, 201);
+
+  }
+  
+  100% {
+    
+    color:rgb(100, 109, 192);
+  }
+}

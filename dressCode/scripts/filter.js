@@ -280,13 +280,13 @@ class Solver {
 
 
 // rgb is a list of len 3
-function getFilter(rgb, numRuns=0) {
+function getFilter(rgb, prependBlack=true, numRuns=0) {
     const color = new Color(rgb[0], rgb[1], rgb[2]);
     const solver = new Solver(color);
     const result = solver.solve();
-
     if (result.loss > 3 && numRuns < 10) {
       return getFilter(rgb, ++numRuns);
     }
-    return "brightness(0) saturate(100%)" + result.filter;
+
+    return (prependBlack? "brightness(0) saturate(100%)":"") + result.filter;
 }
