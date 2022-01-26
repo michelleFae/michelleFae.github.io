@@ -11,6 +11,12 @@
   display: none;
 }
 
+html {background-color: black}
+
+label {
+  color: #FFFFFF;
+}
+
 .button {
   appearance: none;
   background-color: #FFFFFF;
@@ -84,20 +90,24 @@
 #container{
     position: absolute;
     margin:auto;
-    width: 50%;
-    height :80%;
+    width: 100vw;
+    height: 100vh;
 
-   background-color: aqua;
+   background-color: black;
    background-repeat: no-repeat;
    min-width: 430px;
    min-height: 330px;
 }
 
+#container2{
+  position: absolute;
+ background-repeat: no-repeat;
+}
+
 #code-container{
     position: relative;
     background: #000000;
-    height :100%;
-    right: -100%; 
+   
     min-width: 790px;
     min-height: 330px;
     box-sizing: border-box;
@@ -113,15 +123,60 @@
 #container2 .person ~ div {
     background-repeat: no-repeat;
     position:absolute;
-    width: 90%;
-    height: 100%;
-    min-width: 90%;
-    min-height: 100%;
+    width: 50vw;
+    height: 50vw;
     background-size: contain;
-    background-position: center bottom;
+    object-fit: fill;
+  }
+  @media (orientation:landscape) {
+
+    
+    .container2 {
+      width: 50vw;
+      height :100vh;
+    }
+ 
+    #code-container {
+      width: 50vw;
+      height :100vh;
+      right: -50%; 
+    }
+
+    #container2 .person ~ div {
+      width: 50vw;
+      height :100vh;
+    }
   }
 
+
+  @media (orientation:portrait) {
+    
+    #container{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container2 {
+      width: 100vw;
+      height :50vh;
+    }
+ 
+    #code-container {
+      width: 100vw;
+      height :50vh;
+      right: 0%;
+      bottom: -50%;
+    }
+
+    #container2 .person ~ div {
+      width: 100vw;
+      height :50vh;
+      background-position: center;
+    }
+ 
+ }
 /* Person elements */
+
 
 #hairFront{
   background-image: url("../images/hair/group0/0f.png");

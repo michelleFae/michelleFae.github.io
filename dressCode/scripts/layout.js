@@ -2,6 +2,16 @@
 let currentVisiblePanel = 0;
 let panels;
 
+let backgrounds = {
+  danceclass: {"s": 2},
+  gym: {"s": 2},
+  beach: {"s": 2},
+  snowday: {"s": 2},
+  pool: {"s": 2},
+  moviePremiere:{"s": 2},
+
+  
+}
 
 
 $(document).ready(function() {
@@ -45,6 +55,12 @@ $(document).ready(function() {
   
   document.getElementById("nextButton").addEventListener("click", nextPanel);
   document.getElementById("prevButton").addEventListener("click", prevPanel);
+
+  console.log(backgrounds);
+  backgroundKeys = Object.keys(backgrounds);
+  const background = backgroundKeys[Math.floor(Math.random() * backgroundKeys.length)];
+
+  document.getElementById("background").style.backgroundImage = `url(images/gifbackgrounds/${background}.gif)`;
 
   });
 
