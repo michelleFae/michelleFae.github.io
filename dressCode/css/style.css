@@ -66,6 +66,29 @@ label {
   background-color: #4c5eaf;
 }
 
+.cssCodeButton {
+  box-shadow: #36523f 0 -12px 6px inset;
+  background-color:rgb(217, 255, 192);
+  -webkit-animation:backgroundcolorchangegreen 20s infinite alternate;
+
+}
+
+.cssCodeButton:hover {
+  background-color: #60af4c;
+}
+
+
+.htmlCodeButton {
+  box-shadow: #9c760c 0 -12px 6px inset;
+  background-color:rgb(253, 232, 42);
+  -webkit-animation:backgroundcolorchangeyellow 20s infinite alternate;
+
+}
+
+.htmlCodeButton:hover {
+  background-color: #e6bb47;
+}
+
 .button:hover {
   box-shadow: #FF6314 0 -6px 8px inset;
   transform: scale(1.125);
@@ -270,6 +293,15 @@ label {
 }
 
 
+#coat1{
+  background-image: url("../images/coats/group0/0b.png");
+
+}
+
+#coat2{
+  background-image: url("../images/coats/group0/0f.png");
+}
+
 
 .flexbox{
   display: flex; 
@@ -338,6 +370,11 @@ textarea {
   height: 90%;
 }
 
+.htmlInput {
+  color:rgb(255, 242, 169);
+  -webkit-animation:colorchangeyellow 20s infinite alternate;
+}
+
 .javaInput {
   color:rgb(168, 206, 255);
   -webkit-animation:colorchangeblue 20s infinite alternate;
@@ -348,12 +385,25 @@ textarea {
     -webkit-animation:colorchangepink 20s infinite alternate;
 }
 
+.cssInput {
+  color:rgb(192, 255, 195);
+  -webkit-animation:colorchangegreen 20s infinite alternate;
+}
+
 .python {
     color: palevioletred;
 }
 
 .java {
   color: rgb(107, 198, 226);
+}
+
+.css {
+  color: rgb(131, 226, 107);
+}
+
+.html {
+  color: rgb(224, 181, 87);
 }
 
 .border-highlight{
@@ -367,6 +417,14 @@ textarea {
 
 .javaBorder {
   -webkit-animation:bordercolorchangeblue 2s infinite alternate;
+}
+
+.cssBorder {
+  -webkit-animation:bordercolorchangegreen 2s infinite alternate;
+}
+
+.htmlBorder {
+  -webkit-animation:bordercolorchangeyellow 2s infinite alternate;
 }
 
 @-webkit-keyframes movemouth{
@@ -475,6 +533,71 @@ textarea {
 }
 
 
+@-webkit-keyframes bordercolorchangeyellow{
+  0% {
+    border:2px dashed rgb(131, 118, 47);
+  }
+  
+  20% {
+    
+    border:2px dotted rgb(255, 238, 192);
+  }
+  
+  40% {
+    
+    border:2px dashed rgb(241, 203, 79);
+  }
+  
+  60% {
+    
+    border:2px dotted #f8ec3d;
+  }
+  
+  80% {
+    
+    border:2px dashed rgb(201, 196, 132);
+
+  }
+  
+  100% {
+    
+    border:2px dotted rgb(192, 178, 100);
+  }
+}
+
+
+@-webkit-keyframes bordercolorchangegreen{
+  0% {
+    border:2px dashed rgb(74, 131, 47);
+  }
+  
+  20% {
+    
+    border:2px dotted rgb(205, 255, 192);
+  }
+  
+  40% {
+    
+    border:2px dashed rgb(79, 241, 87);
+  }
+  
+  60% {
+    
+    border:2px dotted #3df8a1;
+  }
+  
+  80% {
+    
+    border:2px dashed rgb(157, 201, 132);
+
+  }
+  
+  100% {
+    
+    border:2px dotted rgb(137, 192, 100);
+  }
+}
+
 @-webkit-keyframes backgroundcolorchangepink{
   0% {
     background-color:rgb(109, 42, 63);
@@ -504,6 +627,38 @@ textarea {
   100% {
     
     background-color:rgb(192, 100, 100);
+  }
+}
+
+@-webkit-keyframes backgroundcolorchangegreen{
+  0% {
+    background-color: rgb(74, 131, 47);
+  }
+  
+  20% {
+    
+    background-color:rgb(205, 255, 192);
+  }
+  
+  40% {
+
+    background-color: rgb(79, 241, 87);
+  }
+  
+  60% {
+    
+    background-color: #3df8a1;
+  }
+  
+  80% {
+    
+    background-color:rgb(157, 201, 132);
+
+  }
+  
+  100% {
+    
+    background-color:rgb(137, 192, 100);
   }
 }
 
@@ -537,6 +692,39 @@ textarea {
   100% {
     
     background-color:rgb(100, 109, 192);
+  }
+}
+
+
+@-webkit-keyframes backgroundcolorchangeyellow{
+  0% {
+    background-color: rgb(131, 118, 47);
+  }
+  
+  20% {
+    
+    background-color: rgb(255, 238, 192);
+  }
+  
+  40% {
+    
+    background-color: rgb(241, 203, 79);
+  }
+  
+  60% {
+    
+    background-color: #f8ec3d;
+  }
+  
+  80% {
+    
+    background-color: rgb(201, 196, 132);
+
+  }
+  
+  100% {
+    
+    background-color: rgb(192, 178, 100);
   }
 }
 
@@ -604,4 +792,108 @@ textarea {
     
     color:rgb(100, 109, 192);
   }
+}
+
+
+@-webkit-keyframes colorchangeyellow {
+  0% {
+    color: rgb(131, 118, 47);
+  }
+  
+  20% {
+    
+    color: rgb(255, 238, 192);
+  }
+  
+  40% {
+    
+    color: rgb(241, 203, 79);
+  }
+  
+  60% {
+    
+    color: #f8ec3d;
+  }
+  
+  80% {
+    
+    color: rgb(201, 196, 132);
+
+  }
+  
+  100% {
+    
+    color: rgb(192, 178, 100);
+  }
+}
+
+
+@-webkit-keyframes colorchangegreen {
+  0% {
+    color: rgb(74, 131, 47);
+  }
+  
+  20% {
+    
+    color:rgb(205, 255, 192);
+  }
+  
+  40% {
+
+    color: rgb(79, 241, 87);
+  }
+  
+  60% {
+    
+    color: #3df8a1;
+  }
+  
+  80% {
+    
+    color:rgb(157, 201, 132);
+
+  }
+  
+  100% {
+    
+    color:rgb(137, 192, 100);
+  }
+}
+
+/* Auto complete */
+
+* { box-sizing: border-box; }
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(50, 124, 66);
+  border-bottom: 1px solid #d4d4d4;
+  color: #ffffff;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #739c52;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(68, 255, 30) !important;
+  color: #ffffff;
 }

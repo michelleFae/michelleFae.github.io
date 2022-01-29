@@ -9,6 +9,11 @@ let backgrounds = {
   snowday: {"s": 2},
   pool: {"s": 2},
   moviePremiere:{"s": 2},
+  bobaCafe:{"s": 2},
+  joggingTrack:{"s": 2},
+  classPhoto:{"s": 2},
+  pjParty:{"s": 2},
+  hackathon:{"s": 2},
 
   
 }
@@ -61,6 +66,9 @@ $(document).ready(function() {
   const background = backgroundKeys[Math.floor(Math.random() * backgroundKeys.length)];
 
   document.getElementById("background").style.backgroundImage = `url(images/gifbackgrounds/${background}.gif)`;
+
+
+  autocomplete(document.getElementById("CoatInput"), Object.keys(coatsDict), "coatChanged");
 
   });
 

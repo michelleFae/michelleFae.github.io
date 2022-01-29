@@ -1,6 +1,6 @@
-const locations = {
-    "beach": {"warm": -3, "style":1, "formal":-2, "comfort":1, "swimwear":3, "hiking": 2, "schoolwear":2}
-};
+// const locations = {
+//     "beach": {"warm": -3, "style":1, "formal":-2, "comfort":1, "swimwear":3, "hiking": 2, "schoolwear":2}
+// };
 
 //f, b
 const topData = [[19, 2], [28, 6]];
