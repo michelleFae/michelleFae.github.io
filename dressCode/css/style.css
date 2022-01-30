@@ -66,6 +66,17 @@ label {
   background-color: #4c5eaf;
 }
 
+.javascriptCodeButton {
+  box-shadow: #311a0a 0 -12px 6px inset;
+  background-color:rgb(255, 220, 192);
+  -webkit-animation:backgroundcolorchangeorange 20s infinite alternate;
+
+}
+
+.javascriptCodeButton:hover {
+  background-color: rgb(238, 127, 0);
+}
+
 .cssCodeButton {
   box-shadow: #36523f 0 -12px 6px inset;
   background-color:rgb(217, 255, 192);
@@ -293,22 +304,63 @@ label {
 }
 
 
+#accessory11{
+  display: none;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(13%) saturate(723%) hue-rotate(227deg) brightness(102%) contrast(83%);
+}
+
+#accessory12{
+  display: none;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(291deg) brightness(104%) contrast(102%);
+}
+
+#accessory21{
+  display: none;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(13%) saturate(723%) hue-rotate(227deg) brightness(102%) contrast(83%);
+}
+
+#accessory22{
+  display: none;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(291deg) brightness(104%) contrast(102%);
+}
+#accessory31{
+  display: none;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(13%) saturate(723%) hue-rotate(227deg) brightness(102%) contrast(83%);
+}
+
+#accessory32{
+  display: none;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(291deg) brightness(104%) contrast(102%);
+}
+
+
+
+
 #coat1{
   background-image: url("../images/coats/group0/0b.png");
+  display: none;
 
 }
 
 #coat2{
   background-image: url("../images/coats/group0/0f.png");
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(291deg) brightness(104%) contrast(102%);
+  display: none;
 }
 
 
 .flexbox{
-  display: flex; 
+  display: flex;
 }
 
 .twentyfour {
   height: 24px;
+}
+
+.scrollableDropDown {
+  overflow:scroll; 
+  height:400px;
+  overflow-y: scroll
 }
 
 /* Code elements */
@@ -380,6 +432,12 @@ textarea {
   -webkit-animation:colorchangeblue 20s infinite alternate;
 }
 
+
+.javascriptInput {
+  color:rgb(255, 197, 130);
+  -webkit-animation:colorchangeorange 20s infinite alternate;
+}
+
 .pythonInput {
     color:pink;
     -webkit-animation:colorchangepink 20s infinite alternate;
@@ -396,6 +454,10 @@ textarea {
 
 .java {
   color: rgb(107, 198, 226);
+}
+
+.javascript {
+  color: rgb(238, 127, 0);
 }
 
 .css {
@@ -417,6 +479,10 @@ textarea {
 
 .javaBorder {
   -webkit-animation:bordercolorchangeblue 2s infinite alternate;
+}
+
+.javascriptBorder {
+  -webkit-animation:bordercolorchangeorange 2s infinite alternate;
 }
 
 .cssBorder {
@@ -598,6 +664,72 @@ textarea {
   }
 }
 
+@-webkit-keyframes bordercolorchangeorange{
+  0% {
+    border:2px dashed rgb(131, 88, 47);
+  }
+  
+  20% {
+    
+    border:2px dotted rgb(255, 222, 192);
+  }
+  
+  40% {
+    
+    border:2px dashed rgb(241, 176, 79);
+  }
+  
+  60% {
+    
+    border:2px dotted #f8a73d;
+  }
+  
+  80% {
+    
+    border:2px dashed rgb(201, 169, 132);
+
+  }
+  
+  100% {
+    
+    border:2px dotted #f18900;
+  }
+}
+
+
+
+@-webkit-keyframes backgroundcolorchangeorange{
+  0% {
+    background-color: rgb(131, 88, 47);
+  }
+  
+  20% {
+    
+    background-color: rgb(255, 222, 192);
+  }
+  
+  40% {
+    
+    background-color: rgb(241, 176, 79);
+  }
+  
+  60% {
+    
+    background-color: #f8a73d;
+  }
+  
+  80% {
+    
+    background-color:rgb(201, 169, 132);
+
+  }
+  
+  100% {
+    
+    background-color:#f18900;
+  }
+}
+
 @-webkit-keyframes backgroundcolorchangepink{
   0% {
     background-color:rgb(109, 42, 63);
@@ -727,6 +859,9 @@ textarea {
     background-color: rgb(192, 178, 100);
   }
 }
+
+
+
 
 @-webkit-keyframes colorchangepink {
     0% {
@@ -860,6 +995,39 @@ textarea {
   }
 }
 
+
+@-webkit-keyframes colorchangeorange {
+  0% {
+    color: rgb(131, 88, 47);
+  }
+  
+  20% {
+    
+    color:rgb(255, 222, 192);
+  }
+  
+  40% {
+    
+    color:rgb(241, 176, 79);
+  }
+  
+  60% {
+    
+    color:#f8a73d;
+  }
+  
+  80% {
+    
+    color: rgb(201, 169, 132);
+
+  }
+  
+  100% {
+    
+    color:#f18900;
+  }
+}
+
 /* Auto complete */
 
 * { box-sizing: border-box; }
@@ -894,6 +1062,6 @@ textarea {
 }
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
-  background-color: rgb(68, 255, 30) !important;
+  background-color: rgb(172, 252, 156) !important;
   color: #ffffff;
 }

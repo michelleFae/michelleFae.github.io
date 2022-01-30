@@ -50,7 +50,12 @@
                 <div class="person" id="coat2"></div>
                 <div class="person" id="hairFront"></div>
                 <div class="person" id="hairFrontHighlight"></div>
-                <div class="person" id="frontAccessory"></div>
+                <div class="person" id="accessory11"></div>
+                <div class="person" id="accessory12"></div>
+                <div class="person" id="accessory21"></div>
+                <div class="person" id="accessory22"></div>
+                <div class="person" id="accessory31"></div>
+                <div class="person" id="accessory32"></div>
 
                    
               </div>
@@ -353,20 +358,178 @@
                         <div class="comment css">/* CSS Code */</div>
                         <textarea readonly rows=1>#coat{</textarea>
                           <textarea readonly rows=1>&nbsp;&nbsp;position: relative;</textarea>
-                          <div class="comment css">/* Choose a coat */</div>
+                          <div class="comment css">&nbsp;&nbsp;/* Choose a coat (e.g. type L and click an option) */</div>
                           <div class="flexbox twentyfour"> 
                           <div class="bold" style=" width: 300px;">&nbsp;&nbsp;background-image:</div>
                           <div class="autocomplete">
-                            <span class="border-highlight cssBorder"><input id="CoatInput" class="codeInput cssInput" type="text"></span>
+                            <span class="border-highlight cssBorder"><input id="CoatInput" class="codeInput cssInput dropdownInput" type="text" style="width:35ch;"></span>
                           </div>
+
                           <div class="bold" style=" width: 10px;">;</div>
                           </div>
+                          <br>
 
-                          
+                          <div class="comment css">&nbsp;&nbsp;/* Choose Colors for the coat */</div>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 213px;">&nbsp;&nbsp;color1: rgb( </div>
+                            <span class="border-highlight cssBorder"><input maxlength=3 id="coat1InputR" value=0 class="codeInput cssInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight cssBorder"><input maxlength=3 id="coat1InputG" value=0 class="codeInput cssInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight cssBorder"><input maxlength=3 id="coat1InputB" value=0 class="codeInput cssInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 213px;">&nbsp;&nbsp;color2: rgb( </div>
+                            <span class="border-highlight cssBorder"><input maxlength=3 id="coat2InputR" value=0 class="codeInput cssInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight cssBorder"><input maxlength=3 id="coat2InputG" value=0 class="codeInput cssInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight cssBorder"><input maxlength=3 id="coat2InputB" value=0 class="codeInput cssInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
 
                         <textarea readonly rows=1>}</textarea>
+                        <br>
+                      </div>
+
+                      <div class="panel javascriptCodeButtonPanel">
+                        <div class="comment javascript">/* Javascript Code */</div>
+
+                        <textarea readonly rows=2>import getAccessoryMap from "myutils";</textarea>
+
+                        <div class="comment javascript">// A hashmap is used for storing key & value pairs </div>
+                        <div class="comment javascript">// This is a hashmap of accessories. The key is the item name and the value is the location of the image.</div>
+                        <textarea readonly rows=2>const accessoryMap = getAccessoryMap();</textarea>
+
+                        <textarea readonly rows=3>const accessory1 = document.getElementById('accessory1');</textarea>
+                        <textarea readonly rows=3>const accessory2 = document.getElementById('accessory2');</textarea>
+                        <textarea readonly rows=3>const accessory3 = document.getElementById('accessory3');</textarea>
+                        <br>
+
+                        <div class="comment javascript">// Use the hashmap to choose a maximum of 3 accessories.</div>
+
+                        <div class="comment javascript">// Remember you can set the display to none or block.</div>
+
                         
 
+                     
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style=" width: 400px;">accessory1.style.display =</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=5 id="isAccessory1Input" value=none class="codeInput javascriptInput" style="width:6ch;"></span>
+                            <div class="bold" style=" width: 10px;">;</div>
+                          </div>
+                          <br>
+
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style=" width: 400px;">accessory2.style.display =</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=5 id="isAccessory2Input" value=none class="codeInput javascriptInput" style="width:6ch;"></span>
+                            <div class="bold" style=" width: 10px;">;</div>
+                          </div>
+                          <br>
+
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style=" width: 400px;">accessory3.style.display =</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=5 id="isAccessory3Input" value=none class="codeInput javascriptInput" style="width:6ch;"></span>
+                            <div class="bold" style=" width: 10px;">;</div>
+                          </div>
+                          <br>
+                  
+
+                          <div class="bold" style=" width: 580px;">accessory1.style.backgroundImage =</div>
+                          <div class="flexbox twentyfour"> 
+                            &nbsp;&nbsp;
+                            <div class="bold" style=" width: 210px;">accessoryMap["</div>
+                          <div class="autocomplete">
+                            <span class="border-highlight javascriptBorder"><input id="accessoryInput1" class="codeInput javascriptInput dropdownInput" type="text" style="width:35ch;"></span>
+                          </div>
+                          <div class="bold" style=" width: 20px;">"];</div>
+                          </div>
+                          <br>
+                          
+                          <div class="bold" style=" width: 580px;">accessory2.style.backgroundImage =</div>
+                          <div class="flexbox twentyfour"> 
+                            &nbsp;&nbsp;
+                            <div class="bold" style=" width: 210px;">accessoryMap["</div>
+                          <div class="autocomplete">
+                            <span class="border-highlight javascriptBorder"><input id="accessoryInput2" class="codeInput javascriptInput dropdownInput" type="text" style="width:35ch;"></span>
+                          </div>
+                          <div class="bold" style=" width: 20px;">"];</div>
+                          </div>
+                          <br>
+
+                          <div class="bold" style=" width: 580px;">accessory3.style.backgroundImage =</div>
+                          <div class="flexbox twentyfour"> 
+                            &nbsp;&nbsp;
+                            <div class="bold" style=" width: 210px;">accessoryMap["</div>
+                          <div class="autocomplete">
+                            <span class="border-highlight javascriptBorder"><input id="accessoryInput3" class="codeInput javascriptInput dropdownInput" type="text" style="width:35ch;"></span>
+                          </div>
+                          <div class="bold" style=" width: 20px;">"];</div>
+                          </div>
+                          <br>
+
+                          <div class="comment javascript">/* Choose Colors for Accessories */</div>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 455px;">accessory1.style.color1 = rgb( </div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory11InputR" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory11InputG" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory11InputB" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 455px;">accessory1.style.color2 = rgb( </div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory12InputR" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory12InputG" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory12InputB" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <br>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 455px;">accessory2.style.color1 = rgb( </div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory21InputR" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory21InputG" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory21InputB" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 455px;">accessory2.style.color2 = rgb( </div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory22InputR" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory22InputG" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory22InputB" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <br>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 455px;">accessory3.style.color1 = rgb( </div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory31InputR" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory31InputG" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory31InputB" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <div class="flexbox twentyfour"> 
+                            <div class="bold" style="width: 455px;">accessory3.style.color2 = rgb( </div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory32InputR" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory32InputG" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 10px;">,</div>
+                            <span class="border-highlight javascriptBorder"><input maxlength=3 id="accessory32InputB" value=0 class="codeInput javascriptInput" style="width:4ch;"></span>
+                            <div class="bold" style=" width: 20px;"> );</div> 
+                          </div>
+                          <br>
+                        
+                        
+                        <br>
                       </div>
                     </div>
 
@@ -399,6 +562,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/autocomplete.js"></script>
     <script type="text/javascript" src="scripts/coatAutocomplete.js"></script>
+    <script type="text/javascript" src="scripts/accessoryAutocomplete.js"></script>
     <script type="text/javascript" src="scripts/layout.js"></script>
     <script type="text/javascript" src="scripts/filter.js"></script>
     <script type="text/javascript" src="scripts/utils.js"></script>
@@ -408,6 +572,7 @@
     <script type="text/javascript" src="scripts/dress.js"></script>
     <script type="text/javascript" src="scripts/socksShoes.js"></script>
     <script type="text/javascript" src="scripts/coat.js"></script>
+    <script type="text/javascript" src="scripts/accessories.js"></script>
     
     </body>
 

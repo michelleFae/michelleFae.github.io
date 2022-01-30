@@ -1,26 +1,27 @@
 
-
-function autocomplete(inp, arr, triggerFunc) {
+let currentFocus;
+function autocomplete(inp, arr, triggerFunc, doNotCloseClass) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
     /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
+    $(inp).bind('click input', function(e) {
+        console.log("hi");
+        let a, b, i, val = this.value;
         /*close any already open lists of autocompleted values*/
         closeAllLists();
-        if (!val) { return false;}
         currentFocus = -1;
+        
         /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
         a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
+        a.setAttribute("class", `autocomplete-items scrollableDropDown ${doNotCloseClass}`);
         /*append the DIV element as a child of the autocomplete container:*/
         this.parentNode.appendChild(a);
-        /*for each item in the array...*/
+
         for (i = 0; i < arr.length; i++) {
           /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          if (val=="" || arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            console.log("heyyy");
             /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
             /*make the matching letters bold:*/
@@ -75,6 +76,7 @@ function autocomplete(inp, arr, triggerFunc) {
       if (currentFocus < 0) currentFocus = (x.length - 1);
       /*add class "autocomplete-active":*/
       x[currentFocus].classList.add("autocomplete-active");
+      x[currentFocus].classList.add("scrollableDropDown");
     }
     function removeActive(x) {
       /*a function to remove the "active" class from all autocomplete items:*/
@@ -82,18 +84,30 @@ function autocomplete(inp, arr, triggerFunc) {
         x[i].classList.remove("autocomplete-active");
       }
     }
-    function closeAllLists(elmnt) {
+    function closeAllLists(elmnt, doNotCloseClass=null) {
       /*close all autocomplete lists in the document,
       except the one passed as an argument:*/
+      console.log("closeAllLists");
       var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
+      if (!doNotCloseClass || !doNotCloseClass.contains(classList)) {
+        for (var i = 0; i < x.length; i++) {
+          if (elmnt != x[i] && elmnt != inp) {
+             x[i].parentNode.removeChild(x[i]);
+           }
+        }
+
       }
-    }
-  }
+      
+  };
+
   /*execute a function when someone clicks in the document:*/
   document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
+    console.log(e.target.classList);
+
+    if (!e.target.classList || e.target.classList.contains("dropdownInput") ) {
+      return;
+    } 
+    console.log("EventListenerCloseAllLis");
+    closeAllLists(e.target);
   });
   }

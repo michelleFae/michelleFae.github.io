@@ -69,6 +69,9 @@ $(document).ready(function() {
 
 
   autocomplete(document.getElementById("CoatInput"), Object.keys(coatsDict), "coatChanged");
+  autocomplete(document.getElementById("accessoryInput1"), Object.keys(accessoryDict), "accessory1Changed");
+  autocomplete(document.getElementById("accessoryInput2"), Object.keys(accessoryDict), "accessory2Changed");
+  autocomplete(document.getElementById("accessoryInput3"), Object.keys(accessoryDict), "accessory3Changed");
 
   });
 
