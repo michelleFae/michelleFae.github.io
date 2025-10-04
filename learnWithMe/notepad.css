@@ -1,0 +1,112 @@
+/* Notepad-inspired blue blog theme */
+body {
+    background: linear-gradient(135deg, #b3d8f7 0%, #eaf4fb 100%);
+    font-family: 'Segoe UI', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Subtle paper texture */
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+#notepad {
+    max-width: 700px;
+    margin: 48px auto 48px auto;
+    background: #f7fbffcc;
+    border: 2.5px solid #4a90e2;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(74, 144, 226, 0.18), 0 1.5px 0 #7bb1e0 inset;
+    padding: 40px 40px 56px 64px;
+    position: relative;
+    overflow: hidden;
+    /* Lined paper effect */
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent 38px, #d0e6f7 39px);
+}
+
+#notepad:before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(to bottom, #4a90e2 0%, #7bb1e0 100%);
+    border-radius: 3px;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe Print', 'Comic Sans MS', cursive, sans-serif;
+    color: #2566a8;
+    position: relative;
+    z-index: 2;
+}
+
+#notepad h1 {
+    background: #e3f0fc;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 2px 8px #b3d8f7cc;
+    padding: 0.5em 1em;
+    margin-bottom: 1.5em;
+    display: inline-block;
+    border-left: 8px solid #4a90e2;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    animation: stickyNote 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes stickyNote {
+    0% { transform: scale(0.8) rotate(-3deg); opacity: 0; }
+    60% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+ul, ol {
+    margin-left: 1.5em;
+}
+
+a {
+    color: #2566a8;
+    text-decoration: underline wavy #7bb1e0;
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+    border-radius: 4px;
+    padding: 1px 3px;
+    position: relative;
+    z-index: 2;
+}
+a:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #4a90e2 60%, #7bb1e0 100%);
+    box-shadow: 0 2px 8px #b3d8f7cc;
+    text-decoration: none;
+}
+
+#blog-index ul {
+    list-style: disc inside;
+    padding-left: 0;
+    margin-top: 1.5em;
+    z-index: 2;
+    position: relative;
+}
+
+#blog-content {
+    margin-top: 2em;
+    z-index: 2;
+    position: relative;
+}
+
+/* Paper edge shadow */
+#notepad:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    background: linear-gradient(to left, #b3d8f7 0%, transparent 100%);
+    opacity: 0.3;
+    pointer-events: none;
+    border-radius: 0 18px 18px 0;
+    z-index: 1;
+}
