@@ -1,3 +1,20 @@
+#notepad #blog-content {
+    overflow-x: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+}
+
+#notepad #blog-content img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1em auto !important;
+    box-sizing: border-box !important;
+    object-fit: contain !important;
+    overflow: visible !important;
+}
 /* Notepad-inspired blue blog theme */
 body {
     background: linear-gradient(135deg, #b3d8f7 0%, #eaf4fb 100%);
@@ -9,6 +26,27 @@ body {
     background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
 
+
+#notepad #blog-content img, #notepad img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1em auto !important;
+    box-sizing: border-box !important;
+    object-fit: contain !important;
+    overflow: visible !important;
+}
+
+#notepad #blog-content {
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+#notepad {
+  box-sizing: border-box;
+}
+
 #notepad {
     max-width: 700px;
     margin: 48px auto 48px auto;
@@ -18,7 +56,7 @@ body {
     box-shadow: 0 8px 32px 0 rgba(74, 144, 226, 0.18), 0 1.5px 0 #7bb1e0 inset;
     padding: 40px 40px 56px 64px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* Lined paper effect */
     background-image: repeating-linear-gradient(to bottom, transparent, transparent 38px, #d0e6f7 39px);
 }

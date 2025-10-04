@@ -30,7 +30,14 @@ async function loadMarkdown(filename) {
         { name: 'forest', main: '#228b22', light: '#eaffea', dark: '#145214', accent: '#b2ffb2', text: '#1a3a1a', h1bg: '#e0ffe0', line: '#228b22', anim: 'leaves' },
         { name: 'plum', main: '#8e4585', light: '#f3eaff', dark: '#4b2c4a', accent: '#dab6ff', text: '#2d1a2d', h1bg: '#f8eaff', line: '#8e4585', anim: 'sparkle' }
     ];
-    const theme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
+    // Find the post entry for this filename
+    const postEntry = posts.find(p => p.file === filename);
+    let theme;
+    if (postEntry && postEntry.theme) {
+        theme = colorThemes.find(t => t.name === postEntry.theme) || colorThemes[Math.floor(Math.random() * colorThemes.length)];
+    } else {
+        theme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
+    }
     console.log('Theme selected:', theme);
     document.querySelectorAll('.theme-anim-overlay').forEach(el => el.remove());
     // DEBUG: Log theme and animation
@@ -56,30 +63,34 @@ async function loadMarkdown(filename) {
             html = window.marked(md);
         }
     }
-    // Replace first <h1> with colored h1 and background
-    html = html.replace(
-        /<h1>(.*?)<\/h1>/i,
-        `<h1 style="color: ${theme.main}; background: ${theme.h1bg}; border-radius: 8px; box-shadow: 0 2px 8px ${theme.accent}cc; padding: 0.5em 1em; margin-bottom: 1.5em; display: inline-block; border-left: 8px solid ${theme.main}; font-size: 2.2em; letter-spacing: 1px;">$1</h1>`
-    );
+    // Replace first <h1> with colored h1 and background, and set text color for readability
+        html = html.replace(
+            /<h1>(.*?)<\/h1>/i,
+            `<h1 style="color: ${theme.text}; background: ${theme.h1bg}; border-radius: 8px; box-shadow: 0 2px 8px ${theme.accent}cc; padding: 0.5em 1em; margin-bottom: 1.5em; display: inline-block; border-left: 8px solid ${theme.main}; font-size: 2.2em; letter-spacing: 1px;">$1<\/h1>`
+        );
     // Add back button on its own line
-    const backBtn = `<div style=\"margin-bottom:1.5em;\"><button id=\"back-btn\" style=\"padding:0.5em 1.2em;background:${theme.light};border:2px solid ${theme.main};border-radius:8px;color:${theme.dark};font-size:1em;cursor:pointer;box-shadow:0 2px 8px ${theme.accent}cc;\">← Back to Blog Index</button></div>`;
+        const backBtn = `<div style=\"margin-bottom:1.5em;\"><button id=\"back-btn\" style=\"padding:0.5em 1.2em;background:${theme.light};border:2px solid ${theme.main};border-radius:8px;color:${theme.text};font-size:1em;cursor:pointer;box-shadow:0 2px 8px ${theme.accent}cc;\">← Back to Blog Index</button></div>`;
     document.getElementById('blog-content').innerHTML = backBtn + html;
     document.getElementById('back-btn').onclick = function() {
         window.location.search = '';
     };
     // Hide the main header when viewing a post
     document.querySelector('#notepad h1').style.display = 'none';
-    // Apply theme to notepad background and accents
+    // Apply theme to notepad background, text, and accents
     const notepad = document.getElementById('notepad');
     notepad.style.background = theme.light;
     notepad.style.borderColor = theme.main;
     notepad.style.boxShadow = `0 8px 32px 0 ${theme.accent}33, 0 1.5px 0 ${theme.accent} inset`;
+    notepad.style.color = theme.text;
     // Lined paper effect with accent
     notepad.style.backgroundImage = `repeating-linear-gradient(to bottom, transparent, transparent 38px, ${theme.accent} 39px)`;
     // Paper edge shadow
     notepad.style.setProperty('--paper-edge', theme.accent);
     // Change body background to a soft gradient of the theme
     document.body.style.background = `linear-gradient(135deg, ${theme.main} 0%, ${theme.light} 100%)`;
+    // Set text color for blog content
+    const blogContent = document.getElementById('blog-content');
+    blogContent.style.color = theme.text;
     // Change the notepad left bar (vertical line) using inline style
     let notepadBar = document.querySelector('#notepad-bar');
     if (!notepadBar) {
@@ -96,11 +107,12 @@ async function loadMarkdown(filename) {
     }
     notepadBar.style.background = `linear-gradient(to bottom, ${theme.line} 0%, ${theme.accent} 100%)`;
     notepadBar.style.opacity = '0.7';
-    // Change all links in the post to theme color
+    // Change all links in the post to be readable and themed
     document.querySelectorAll('#blog-content a').forEach(a => {
-        a.style.color = theme.main;
-        a.onmouseover = () => { a.style.background = theme.accent; a.style.color = theme.text; };
-        a.onmouseout = () => { a.style.background = ''; a.style.color = theme.main; };
+        a.style.color = theme.text;
+        a.style.textDecorationColor = theme.accent;
+        a.onmouseover = () => { a.style.background = theme.accent; a.style.color = theme.main; };
+        a.onmouseout = () => { a.style.background = ''; a.style.color = theme.text; };
     });
 
     // Add animation overlays for each theme
@@ -360,9 +372,10 @@ async function loadMarkdown(filename) {
     }
 }
 
+// ADD MORE BLOG POSTS HERE // TODO
 // List all .md files in the learnWithMe directory (static list for now)
 const posts = [
-    { file: 'example-post.md', title: 'Example Blog Post' }
+    { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow' }
     // Add more posts here as you add .md files
 ];
 
