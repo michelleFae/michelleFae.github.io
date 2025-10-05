@@ -28,7 +28,7 @@ Spark is a powerful distributed computing engine designed for big data processin
 ---
 
 ![Spark Architecture Diagram](images/spark_architecture.png)
-<sub>Figure: Spark cluster architecture (add your image here)</sub>
+<sub>Figure: Spark cluster architecture, Michelle's version</sub>
 
 ## Typical Workflow
 

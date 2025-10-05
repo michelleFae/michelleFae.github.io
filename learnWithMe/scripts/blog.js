@@ -434,6 +434,7 @@ async function loadMarkdown(filename) {
 // ADD MORE BLOG POSTS HERE // TODO
 // List all .md files in the learnWithMe directory (static list for now)
 const posts = [
+    { file: 'spark.md', title: 'Spark', theme: 'orange', tags: ['Technologies'] },
     { file: 'spark-how-it-works.md', title: 'How Spark Works', theme: 'orange', tags: ['Technologies'] },
     { file: 'spark-functions.md', title: 'Spark Functions', theme: 'orange', tags: ['Technologies'] },
     { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow', tags: ['AI'] }
@@ -456,7 +457,11 @@ function renderIndex() {
             + '</div>';
     }
     // Filter posts by selected tag
-    const filteredPosts = selectedTag ? posts.filter(post => (post.tags||[]).includes(selectedTag)) : posts;
+    let filteredPosts = selectedTag ? posts.filter(post => (post.tags||[]).includes(selectedTag)) : posts;
+    // Hide Spark subpages from main landing page unless filtering by tag
+    if (!selectedTag) {
+        filteredPosts = filteredPosts.filter(post => post.file !== 'spark-how-it-works.md' && post.file !== 'spark-functions.md');
+    }
     const list = filteredPosts.map(post => `<li><a href="?post=${encodeURIComponent(post.file)}">${post.title}</a></li>`).join('');
     document.getElementById('blog-index').innerHTML = tagFilterHtml + `<ul>${list}</ul>`;
     // Add event listeners for tag filter buttons
