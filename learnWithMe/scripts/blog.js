@@ -28,7 +28,9 @@ async function loadMarkdown(filename) {
         { name: 'sky', main: '#87ceeb', light: '#e0f7ff', dark: '#4682b4', accent: '#b2eaff', text: '#1a3a4a', h1bg: '#e0f7ff', line: '#87ceeb', anim: 'waves' },
         { name: 'coral', main: '#ff7f50', light: '#ffeae0', dark: '#b25a3a', accent: '#ffd6cc', text: '#4a2c1a', h1bg: '#fff0e6', line: '#ff7f50', anim: 'fireworks' },
         { name: 'forest', main: '#228b22', light: '#eaffea', dark: '#145214', accent: '#b2ffb2', text: '#1a3a1a', h1bg: '#e0ffe0', line: '#228b22', anim: 'leaves' },
-        { name: 'plum', main: '#8e4585', light: '#f3eaff', dark: '#4b2c4a', accent: '#dab6ff', text: '#2d1a2d', h1bg: '#f8eaff', line: '#8e4585', anim: 'sparkle' }
+    { name: 'plum', main: '#8e4585', light: '#f3eaff', dark: '#4b2c4a', accent: '#dab6ff', text: '#2d1a2d', h1bg: '#f8eaff', line: '#8e4585', anim: 'sparkle' },
+    // Rainbow theme
+    { name: 'rainbow', main: '#ff5e62', light: '#fffbe0', dark: '#4a148c', accent: '#f9d423', text: '#222', h1bg: '#fffbe0', line: '#ff5e62', anim: 'rainbow' }
     ];
     // Find the post entry for this filename
     const postEntry = posts.find(p => p.file === filename);
@@ -63,16 +65,35 @@ async function loadMarkdown(filename) {
             html = window.marked(md);
         }
     }
-    // Replace first <h1> with colored h1 and background, and set text color for readability
-        html = html.replace(
-            /<h1>(.*?)<\/h1>/i,
-            `<h1 style="color: ${theme.text}; background: ${theme.h1bg}; border-radius: 8px; box-shadow: 0 2px 8px ${theme.accent}cc; padding: 0.5em 1em; margin-bottom: 1.5em; display: inline-block; border-left: 8px solid ${theme.main}; font-size: 2.2em; letter-spacing: 1px;">$1<\/h1>`
-        );
+    // Add animation toggle button and back button at the top
+    const animToggleBtn = `<button id="anim-toggle-btn" style="margin-bottom:1em;padding:0.4em 1em;background:${theme.light};border:2px solid ${theme.main};border-radius:8px;color:${theme.text};font-size:0.95em;cursor:pointer;box-shadow:0 2px 8px ${theme.accent}cc;float:right;">Disable Animation</button>`;
+    // Add tags as pill badges if present
+    let tagsHtml = '';
+    if (postEntry && Array.isArray(postEntry.tags) && postEntry.tags.length > 0) {
+        tagsHtml = `<div style="margin-bottom:1em;">` + postEntry.tags.map(tag => `<span style="display:inline-block;background:${theme.accent};color:${theme.text};border-radius:12px;padding:0.2em 0.9em;font-size:0.93em;margin-right:0.5em;margin-bottom:0.2em;box-shadow:0 1px 4px ${theme.main}33;">${tag}</span>`).join('') + `</div>`;
+    }
+    // Replace first <h1> with colored h1 and background, and set text color for readability, and show tags below title
+    html = html.replace(
+        /<h1>(.*?)<\/h1>/i,
+        animToggleBtn + `<h1 style="color: ${theme.text}; background: ${theme.h1bg}; border-radius: 8px; box-shadow: 0 2px 8px ${theme.accent}cc; padding: 0.5em 1em; margin-bottom: 1.5em; display: inline-block; border-left: 8px solid ${theme.main}; font-size: 2.2em; letter-spacing: 1px;">$1<\/h1>` + tagsHtml
+    );
     // Add back button on its own line
-        const backBtn = `<div style=\"margin-bottom:1.5em;\"><button id=\"back-btn\" style=\"padding:0.5em 1.2em;background:${theme.light};border:2px solid ${theme.main};border-radius:8px;color:${theme.text};font-size:1em;cursor:pointer;box-shadow:0 2px 8px ${theme.accent}cc;\">← Back to Blog Index</button></div>`;
+    const backBtn = `<div style=\"margin-bottom:1.5em;clear:both;\"><button id=\"back-btn\" style=\"padding:0.5em 1.2em;background:${theme.light};border:2px solid ${theme.main};border-radius:8px;color:${theme.text};font-size:1em;cursor:pointer;box-shadow:0 2px 8px ${theme.accent}cc;\">← Back to Blog Index</button></div>`;
     document.getElementById('blog-content').innerHTML = backBtn + html;
     document.getElementById('back-btn').onclick = function() {
         window.location.search = '';
+    };
+    // Animation toggle logic
+    let animEnabled = true;
+    const animToggle = document.getElementById('anim-toggle-btn');
+    animToggle.onclick = function() {
+        animEnabled = !animEnabled;
+        if (!animEnabled) {
+            document.querySelectorAll('.theme-anim-overlay').forEach(el => el.remove());
+            animToggle.textContent = 'Enable Animation';
+        } else {
+            loadMarkdown(filename); // reload to re-apply animation
+        }
     };
     // Hide the main header when viewing a post
     document.querySelector('#notepad h1').style.display = 'none';
@@ -117,6 +138,44 @@ async function loadMarkdown(filename) {
 
     // Add animation overlays for each theme
     switch (theme.anim) {
+                case 'rainbow':
+                        console.log('Adding rainbow animation overlay');
+                        // Create a rainbow SVG arc and animate it across the page
+                        const rainbowDiv = document.createElement('div');
+                        rainbowDiv.className = 'theme-anim-overlay';
+                        rainbowDiv.style.position = 'fixed';
+                        rainbowDiv.style.left = 0;
+                        rainbowDiv.style.top = '20vh';
+                        rainbowDiv.style.width = '100vw';
+                        rainbowDiv.style.height = '220px';
+                        rainbowDiv.style.pointerEvents = 'none';
+                        rainbowDiv.style.zIndex = 2147483647;
+                        rainbowDiv.innerHTML = `
+                                <svg width="100%" height="220" viewBox="0 0 1000 220" style="overflow:visible;">
+                                    <defs>
+                                        <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#ff5e62"/>
+                                            <stop offset="16%" stop-color="#ff9966"/>
+                                            <stop offset="33%" stop-color="#f9d423"/>
+                                            <stop offset="50%" stop-color="#a8e063"/>
+                                            <stop offset="66%" stop-color="#43cea2"/>
+                                            <stop offset="83%" stop-color="#1976d2"/>
+                                            <stop offset="100%" stop-color="#9d50bb"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M 50 200 Q 500 0 950 200" stroke="url(#rainbow-gradient)" stroke-width="32" fill="none"/>
+                                    <path d="M 100 200 Q 500 60 900 200" stroke="url(#rainbow-gradient)" stroke-width="18" fill="none" opacity="0.7"/>
+                                    <path d="M 150 200 Q 500 120 850 200" stroke="url(#rainbow-gradient)" stroke-width="8" fill="none" opacity="0.5"/>
+                                </svg>
+                        `;
+                        rainbowDiv.style.animation = 'rainbow-move 6s linear infinite alternate';
+                        document.body.appendChild(rainbowDiv);
+                        // Add keyframes for rainbow movement
+                        const styleRainbow = document.createElement('style');
+                        styleRainbow.className = 'theme-anim-overlay';
+                        styleRainbow.innerHTML = `@keyframes rainbow-move { 0% { top: 20vh; } 100% { top: 5vh; } }`;
+                        document.head.appendChild(styleRainbow);
+                        break;
         case 'snow':
             console.log('Adding snow animation overlays');
             for (let i = 0; i < 60; i++) {
@@ -375,13 +434,45 @@ async function loadMarkdown(filename) {
 // ADD MORE BLOG POSTS HERE // TODO
 // List all .md files in the learnWithMe directory (static list for now)
 const posts = [
-    { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow' }
+    { file: 'spark-how-it-works.md', title: 'How Spark Works', theme: 'orange', tags: ['Technologies'] },
+    { file: 'spark-functions.md', title: 'Spark Functions', theme: 'orange', tags: ['Technologies'] },
+    { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow', tags: ['AI'] }
     // Add more posts here as you add .md files
 ];
 
+// Tag filter state
+let selectedTag = null;
+
 function renderIndex() {
-    const list = posts.map(post => `<li><a href="?post=${encodeURIComponent(post.file)}">${post.title}</a></li>`).join('');
-    document.getElementById('blog-index').innerHTML = `<ul>${list}</ul>`;
+    // Collect all unique tags
+    const allTags = Array.from(new Set(posts.flatMap(post => post.tags || [])));
+    // Tag filter UI
+    let tagFilterHtml = '';
+    if (allTags.length > 0) {
+        tagFilterHtml = '<div style="margin-bottom:1em;">'
+            + '<span style="font-weight:bold;margin-right:0.7em;">Filter by tag:</span>'
+            + allTags.map(tag => `<button class="tag-filter-btn" data-tag="${tag}" style="display:inline-block;background:${selectedTag===tag?'#ffd700': '#eee'};color:#333;border-radius:12px;padding:0.2em 0.9em;font-size:0.93em;margin-right:0.5em;margin-bottom:0.2em;border:1px solid #bbb;cursor:pointer;">${tag}</button>`).join('')
+            + (selectedTag ? `<button id="clear-tag-filter" style="margin-left:1em;padding:0.2em 0.9em;border-radius:12px;background:#eee;color:#333;border:1px solid #bbb;cursor:pointer;">Clear</button>` : '')
+            + '</div>';
+    }
+    // Filter posts by selected tag
+    const filteredPosts = selectedTag ? posts.filter(post => (post.tags||[]).includes(selectedTag)) : posts;
+    const list = filteredPosts.map(post => `<li><a href="?post=${encodeURIComponent(post.file)}">${post.title}</a></li>`).join('');
+    document.getElementById('blog-index').innerHTML = tagFilterHtml + `<ul>${list}</ul>`;
+    // Add event listeners for tag filter buttons
+    document.querySelectorAll('.tag-filter-btn').forEach(btn => {
+        btn.onclick = function() {
+            selectedTag = this.getAttribute('data-tag');
+            renderIndex();
+        };
+    });
+    const clearBtn = document.getElementById('clear-tag-filter');
+    if (clearBtn) {
+        clearBtn.onclick = function() {
+            selectedTag = null;
+            renderIndex();
+        };
+    }
 }
 
 function main() {
@@ -397,18 +488,18 @@ function main() {
         renderIndex();
         // Show the main header when on index
         document.querySelector('#notepad h1').style.display = '';
-    // Reset notepad and body background to default blue theme
-    const notepad = document.getElementById('notepad');
-    notepad.style.background = '';
-    notepad.style.borderColor = '';
-    notepad.style.boxShadow = '';
-    notepad.style.backgroundImage = '';
-    document.body.style.background = '';
-    // Remove the custom notepad bar if present
-    const notepadBar = document.getElementById('notepad-bar');
-    if (notepadBar) notepadBar.remove();
-    // Remove any animation overlays
-    document.querySelectorAll('.theme-anim-overlay').forEach(el => el.remove());
+        // Reset notepad and body background to default blue theme
+        const notepad = document.getElementById('notepad');
+        notepad.style.background = '';
+        notepad.style.borderColor = '';
+        notepad.style.boxShadow = '';
+        notepad.style.backgroundImage = '';
+        document.body.style.background = '';
+        // Remove the custom notepad bar if present
+        const notepadBar = document.getElementById('notepad-bar');
+        if (notepadBar) notepadBar.remove();
+        // Remove any animation overlays
+        document.querySelectorAll('.theme-anim-overlay').forEach(el => el.remove());
     }
 }
 
