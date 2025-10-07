@@ -6,5 +6,6 @@ Welcome to the Spark blog hub! Here you'll find posts about Apache Spark, a powe
 
 - [How Spark Works](?post=spark-how-it-works.md)
 - [Spark Functions](?post=spark-functions.md)
+- [Cluster Managers: Pros & Cons](?post=spark-cluster-managers.md)
 
-Explore the posts above to learn more about Spark's architecture and its most useful functions.
+Explore the posts above to learn more about Spark's architecture, cluster management, and its most useful functions.
