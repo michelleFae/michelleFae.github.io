@@ -437,7 +437,9 @@ const posts = [
     { file: 'spark.md', title: 'Spark', theme: 'orange', tags: ['Technologies'] },
     { file: 'spark-how-it-works.md', title: 'How Spark Works', theme: 'orange', tags: ['Technologies'] },
     { file: 'spark-functions.md', title: 'Spark Functions', theme: 'orange', tags: ['Technologies'] },
-    { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow', tags: ['AI'] }
+    { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow', tags: ['AI'] },
+    { file: 'rabbit_mq.md', title: 'RabbitMQ', theme: 'blue', tags: ['Technologies'] },
+    { file: 'kafka.md', title: 'Kafka', theme: 'red', tags: ['Technologies'] },
     // Add more posts here as you add .md files
 ];
 

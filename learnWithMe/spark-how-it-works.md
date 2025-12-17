@@ -29,6 +29,7 @@ Spark is a powerful distributed computing engine designed for big data processin
 
 ![Spark Architecture Diagram](images/spark_architecture.png)
 <sub>Figure: Spark cluster architecture, Michelle's version</sub>
+the driver might be the host computer if you choose local, but in normal production, it's going to be another one of those worker nodes that become the driver node.
 
 ## Typical Workflow
 
