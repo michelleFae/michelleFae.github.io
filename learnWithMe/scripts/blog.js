@@ -440,6 +440,7 @@ const posts = [
     { file: 'apps-that-use-models.md', title: 'Apps That Use Models', theme: 'snow', tags: ['AI'] },
     { file: 'rabbit_mq.md', title: 'RabbitMQ', theme: 'blue', tags: ['Technologies'] },
     { file: 'kafka.md', title: 'Kafka', theme: 'red', tags: ['Technologies'] },
+    { file: 'soda_meets_spark.md', title: 'Soda Meets Spark', theme: 'pink', tags: ['Technologies'] },
     // Add more posts here as you add .md files
 ];
 
