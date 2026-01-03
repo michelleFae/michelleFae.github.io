@@ -442,8 +442,9 @@ const posts = [
     { file: 'kafka.md', title: 'Kafka', theme: 'red', tags: ['Technologies'] },
     { file: 'soda_meets_spark.md', title: 'Soda Meets Spark', theme: 'pink', tags: ['Technologies'] },
     { file: 'data_formats.md', title: 'Data Formats', theme: 'sparkle', tags: ['Networks'] },
-    { file: 'celery.md', title: 'Celery', theme: 'leaves', tags: ['Technologies'] },
-    { file: 'airflow.md', title: 'Airflow', theme: 'fireworks', tags: ['Technologies'] },
+    { file: 'celery.md', title: 'Celery', theme: 'green', tags: ['Technologies'] },
+    { file: 'airflow.md', title: 'Airflow', theme: 'purple', tags: ['Technologies'] },
+    { file: 'apache_arrow.md', title: 'Apache Arrow', theme: 'mint', tags: ['Technologies'] },
     // Add more posts here as you add .md files
 ];
 
