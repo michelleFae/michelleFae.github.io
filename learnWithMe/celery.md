@@ -88,3 +88,94 @@ Sequential tasks →	chain
 use a combo of all of these in a complex dag.
 
 <embed src="images/celery.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+
+## @app.task and @shared_task
+
+@app.task → registers task on that specific app
+
+@shared_task → registers task on a global registry, then attaches it when an app is finalized
+
+@app.task
+
+App-bound task
+
+from myapp.celery import app
+
+@app.task
+def send_email(user_id):
+    ...
+
+Characteristics
+
+Bound to a specific Celery app instance
+
+Requires importing the app object
+
+Task is registered only on that app
+
+Clear and explicit
+
+Best when:
+
+You have one Celery app
+
+You want strict control over configuration
+
+Tasks live close to app bootstrap code
+
+Pros
+
+Explicit ownership
+
+Easier to reason about in small/medium codebases
+
+Cons
+
+Creates tight coupling
+
+Can cause circular imports in large Django / monorepo setups
+
+@shared_task
+
+App-agnostic (recommended for libraries & Django)
+
+from celery import shared_task
+
+@shared_task
+def send_email(user_id):
+    ...
+
+Characteristics
+
+Not bound to any app at definition time
+
+Automatically registers with whatever Celery app is active
+
+Designed to avoid import-order problems
+
+Preferred in Django projects and reusable modules
+
+Pros
+
+Loosely coupled
+
+Avoids circular imports
+
+Works cleanly across multiple apps
+
+Cons
+
+Slightly less explicit
+
+Requires a correctly configured default Celery app
+
+### Key differences at a glance
+
+| Aspect | `@app.task` | `@shared_task` |
+|------|-------------|----------------|
+| App binding | Immediate, explicit | Deferred, implicit |
+| Coupling | Tight | Loose |
+| Import safety | Risk of circular imports | Safer |
+| Multiple apps | Not ideal | Works well |
+| Django best practice | ❌ | ✅ |
+
