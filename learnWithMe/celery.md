@@ -378,3 +378,83 @@ If this fails, the problem is infra/config — not your business logic.
 * Logs > guessing
 * Fix worker runtime issues before Celery config issues
 * Keep producer and worker configs in sync
+
+
+## bind=True and the self parameter
+
+bind=True makes self the Celery task instance
+
+Required for:
+
+self.request
+
+self.replace(...)
+
+retries, metadata, control flow
+
+If you reference self without bind=True, the task will crash.
+
+## raise self.replace(...) is intentional (not an error)
+
+Pattern:
+
+@app.task(bind=True)
+def router(self, ...):
+    raise self.replace(chain(task_a, task_b))
+
+
+Meaning:
+
+This task is a router, not a worker
+
+It dynamically replaces itself with a canvas (chain/group/chord)
+
+The raise stops normal task completion
+
+The caller sees only the final result of the replacement workflow
+
+Returning a canvas or calling replace() without raise is incorrect.
+
+## Queues vs workers vs router tasks
+
+Queue = mailbox
+
+Worker = process consuming one or more queues
+
+Router task = decides what tasks/queues to use next
+
+Worker task = does real work
+
+Important:
+
+Downstream tasks can be routed to different queues
+
+Router’s queue does not constrain where the next tasks run
+
+Tasks sent to a queue with no consumers will stay PENDING
+
+## Celery vs Airflow (mental model)
+
+Celery = micro-orchestration
+
+request-driven
+
+low latency
+
+dynamic fan-out/fan-in
+
+orchestrates execution inside a service
+
+Airflow = workflow orchestration
+
+scheduled pipelines
+
+backfills, SLAs, auditing
+
+cross-system DAGs
+
+They are complementary, not competitors:
+
+Airflow orchestrates pipelines
+
+Celery orchestrates distributed execution within a pipeline step
