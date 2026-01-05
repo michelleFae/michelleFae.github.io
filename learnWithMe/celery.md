@@ -179,3 +179,202 @@ Requires a correctly configured default Celery app
 | Multiple apps | Not ideal | Works well |
 | Django best practice | ❌ | ✅ |
 
+### Celery Signatures (Quick Notes)
+
+- **Signature**: A *deferred task call* (task + args + options), e.g. `add.s(2, 3)`
+- **Partials**: Signatures act like `functools.partial` — args can be filled later
+- **Mutable (`.s`)**: Upstream task results are *prepended* to args (default)
+- **Immutable (`.si`)**: Ignores upstream results; args stay fixed
+- **Callbacks**:
+  - `link` → runs on success, receives task result
+  - `link_error` → runs on failure, receives exception info
+- **Rule of thumb**:
+  - Depends on previous result → use `.s()`
+  - Side-effect / fixed args → use `.si()`
+
+Here you go — clean, copy-pasteable **Markdown** you can drop straight into your notes.
+
+---
+
+# Celery Debugging Checklist
+
+Use this when a task hangs, stays `PENDING`, or behaves unexpectedly.
+
+---
+
+## 1. Always start in the Python shell (never block forever)
+
+```python
+result.status
+result.ready()
+result.get(timeout=10)
+```
+
+**Interpretation**
+
+* `PENDING` + timeout → task never executed *or* result backend never updated
+* `FAILURE` → task ran and raised; `get()` will surface the exception
+* `SUCCESS` → task completed correctly
+
+Also useful:
+
+```python
+result.id
+```
+
+---
+
+## 2. Immediately check worker logs (most important step)
+
+```bash
+docker compose logs -f xyzworker
+```
+
+Look for:
+
+* **`Received invalid task message` / `ContentDisallowed`**
+  → serializer / `accept_content` mismatch (producer vs worker)
+
+* **`Task <name> received` + traceback**
+  → task code error
+
+* **No `Received task` at all**
+  → routing/queue mismatch or worker not running
+
+* **Worker stopping / restarting**
+  → container lifecycle issue (e.g. “Container will stop after 60 seconds”)
+
+---
+
+## 3. Verify broker and result backend configuration
+
+In Python shell:
+
+```python
+app.conf.broker_url
+app.conf.result_backend
+```
+
+Confirm these match what the worker is using.
+
+Also sanity-check the backend:
+
+```python
+type(result.backend), result.backend
+```
+
+---
+
+## 4. Confirm the worker is alive and consuming your queue
+
+```bash
+docker compose ps
+```
+
+Make sure the worker container is **Up**, not restarting or exited.
+
+If sending to a specific queue (e.g. `queue="xyzworker"`), the worker must be consuming that queue.
+
+---
+
+## 5. Confirm the task is registered on the worker
+
+Common failure: producer sends a task name the worker never imported.
+
+Inside the worker container:
+
+```bash
+docker compose exec xyzworker /opt/bb/bin/python3.x -c '
+from app import app
+print("xyzworker.combine" in app.tasks)
+print([k for k in app.tasks.keys() if "xyzworker" in k])
+'
+```
+
+(Adjust `from app import app` if your module name differs.)
+
+---
+
+## 6. Serializer / content-type issues (very common)
+
+If logs show `ContentDisallowed`:
+
+* Producer and worker disagree on:
+
+  * `task_serializer`
+  * `accept_content`
+  * `result_serializer`
+
+**Best practice:** use the shared / official config:
+
+```python
+app.config_from_object("bloomberg.datalicense.dljobs2.config.celery_config")
+```
+
+**Tactical workaround (if appropriate):**
+
+```python
+app.send_task(..., serializer="json")
+```
+
+---
+
+## 7. Watch out for container lifecycle traps
+
+Symptoms:
+
+* Tasks work briefly, then hang
+* Worker logs show shutdown messages
+
+Fix by:
+
+* Disabling auto-stop / timeout env vars
+* Or overriding the worker command to run continuously
+
+Always fix lifecycle issues *before* debugging Celery logic.
+
+---
+
+## 8. Create a “known good” sanity test when stuck
+
+Define a trivial task:
+
+```python
+@app.task(name="xyzworker.ping")
+def ping():
+    return 2
+```
+
+Send it:
+
+```python
+result = app.send_task("xyzworker.ping", queue="xyzworker")
+result.get(timeout=10)
+```
+
+If this fails, the problem is infra/config — not your business logic.
+
+---
+
+## Quick Decision Tree
+
+* **`PENDING` + no `Received task` log**
+  → routing / queue mismatch or worker not running
+
+* **`PENDING` + `ContentDisallowed`**
+  → serializer mismatch
+
+* **`FAILURE` + traceback**
+  → task code bug
+
+* **Worker exits or restarts**
+  → container lifecycle issue
+
+---
+
+## Golden Rules
+
+* Always use `result.get(timeout=…)`
+* Logs > guessing
+* Fix worker runtime issues before Celery config issues
+* Keep producer and worker configs in sync
